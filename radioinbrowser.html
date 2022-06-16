@@ -3,6 +3,7 @@
 	<head>
 		<title> Radio Online </title>
 		<meta name="author" content="Zdeněk Svěrač">
+		<meta name="theme-color" content="#cccccc">
 		<meta charset="utf-8">
 		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYnJvYWRjYXN0IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiA8cGF0aCBkPSJNMy4wNSAzLjA1YTcgNyAwIDAgMCAwIDkuOS41LjUgMCAwIDEtLjcwNy43MDcgOCA4IDAgMCAxIDAtMTEuMzE0LjUuNSAwIDAgMSAuNzA3LjcwN3ptMi4xMjIgMi4xMjJhNCA0IDAgMCAwIDAgNS42NTYuNS41IDAgMSAxLS43MDguNzA4IDUgNSAwIDAgMSAwLTcuMDcyLjUuNSAwIDAgMSAuNzA4LjcwOHptNS42NTYtLjcwOGEuNS41IDAgMCAxIC43MDggMCA1IDUgMCAwIDEgMCA3LjA3Mi41LjUgMCAxIDEtLjcwOC0uNzA4IDQgNCAwIDAgMCAwLTUuNjU2LjUuNSAwIDAgMSAwLS43MDh6bTIuMTIyLTIuMTJhLjUuNSAwIDAgMSAuNzA3IDAgOCA4IDAgMCAxIDAgMTEuMzEzLjUuNSAwIDAgMS0uNzA3LS43MDcgNyA3IDAgMCAwIDAtOS45LjUuNSAwIDAgMSAwLS43MDd6TTEwIDhhMiAyIDAgMSAxLTQgMCAyIDIgMCAwIDEgNCAweiIvPiA8L3N2Zz4=" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />		
 		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYnJvYWRjYXN0IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiA8cGF0aCBkPSJNMy4wNSAzLjA1YTcgNyAwIDAgMCAwIDkuOS41LjUgMCAwIDEtLjcwNy43MDcgOCA4IDAgMCAxIDAtMTEuMzE0LjUuNSAwIDAgMSAuNzA3LjcwN3ptMi4xMjIgMi4xMjJhNCA0IDAgMCAwIDAgNS42NTYuNS41IDAgMSAxLS43MDguNzA4IDUgNSAwIDAgMSAwLTcuMDcyLjUuNSAwIDAgMSAuNzA4LjcwOHptNS42NTYtLjcwOGEuNS41IDAgMCAxIC43MDggMCA1IDUgMCAwIDEgMCA3LjA3Mi41LjUgMCAxIDEtLjcwOC0uNzA4IDQgNCAwIDAgMCAwLTUuNjU2LjUuNSAwIDAgMSAwLS43MDh6bTIuMTIyLTIuMTJhLjUuNSAwIDAgMSAuNzA3IDAgOCA4IDAgMCAxIDAgMTEuMzEzLjUuNSAwIDAgMS0uNzA3LS43MDcgNyA3IDAgMCAwIDAtOS45LjUuNSAwIDAgMSAwLS43MDd6TTEwIDhhMiAyIDAgMSAxLTQgMCAyIDIgMCAwIDEgNCAweiIvPiA8L3N2Zz4=" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:light)" />
@@ -21,6 +22,7 @@
 			      audio_element = audio_elements[i];
 			      if (audio_element !== event.target) {
 			        audio_element.pause();
+			        audio_element.currentTime = 0; 
 			      }
 			    }
 			  }, true);
@@ -112,10 +114,19 @@
 			margin-left: auto;
 		}
 
-		.todo{
-			display: none;
-			font-size: 12px;
-			padding: 10px;
+		.footer{
+			border-top: 1px solid var(--accent-border-color);
+			background: var(--accent-bg-color);
+			display: block;
+			height: 30px;
+			width: 100%;
+			text-align: center;
+			margin-top: 10px; 
+			margin-bottom: 0;
+		}
+
+		.footer p{
+			margin-top: 5px;
 		}
 
 		</style>
@@ -194,9 +205,9 @@
 
 
 		</div>
-		<div class="todo">
-			<h1>TODO:</h1>
-			-Make div with a tags that will show the player of the radio and hide other players
+		<div class="footer">
+			<p id="year"></p>
+			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
 		</div>
 	</body>
 </html>
