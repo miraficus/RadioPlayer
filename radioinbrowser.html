@@ -32,7 +32,6 @@
 			  onlyPlayOneIn(document.body);
 			});
 		</script>
-
 		<style>
 		:root {
 			--main-bg-color: white;
@@ -122,7 +121,6 @@
 			width: 100%;
 			text-align: center;
 			margin-top: 10px; 
-			margin-bottom: 0;
 		}
 
 		.footer p{
@@ -130,6 +128,31 @@
 		}
 
 		</style>
+		<script type="text/javascript">
+			// Get the root element
+			var rootvar = document.querySelector(':root');
+
+			var today = new Date().toLocaleString(undefined, {
+			    month: "short", day: "numeric"
+			})
+
+			switch(today) {
+			case "21. 6.":
+				console.log("Today is ");
+				rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+			break;
+			case "14. 2.":
+				console.log("Today is Valentine");
+				rootvar.style.setProperty('--accent-bg-color', 'pink');
+			break;
+			default:
+				console.log("Today is Regular Day");
+			break;
+			}
+
+			//rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+
+		</script>
 	</head>
 	<body>
 		<div class="header">
