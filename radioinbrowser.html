@@ -23,6 +23,8 @@
 			      if (audio_element !== event.target) {
 			        audio_element.pause();
 			        audio_element.currentTime = 0; 
+			        audio_element.removeAttribute('src'); // empty source
+					audio_element.load();
 			      }
 			    }
 			  }, true);
