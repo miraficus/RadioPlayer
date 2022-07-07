@@ -11,7 +11,7 @@ Website for listening to Online Radios at my workplace.
 
 ## Issues
 - When switching radio stations reload audio source.
-- When unpausing radio station reload audio source. (It plays chached bit over and over) (teoreticaly can be solved by adding random number after the link example: www.radio.eu/stream?randomnumber)
+- When unpausing radio station reload audio source. (It plays cached bit over and over) (theoreticaly can be solved by adding random number after the link example: www.radio.eu/stream?randomnumber)
 
 ## Code Snipppets
 
