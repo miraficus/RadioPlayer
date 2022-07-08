@@ -145,6 +145,8 @@
 			text-align: center;
 			margin-top: 10px; 
 			box-shadow: 0px 1px 5px 0px #888888;
+			position: fixed;
+			bottom: 0;
 		}
 
 		.footer p{
@@ -197,7 +199,14 @@
 			<div class="radio-list">
 				<ul>
 					<a onclick="krokodyl();">Krokodyl</a>
+					<a onclick="kiss();">KissHady</a>
+					<a onclick="free();">FreeRadio</a>
 					<a onclick="simulator();">Simulator</a>
+					<a onclick="simrock();">Simulator Rock</a>
+					<a onclick="simdance();">Simulator Dance</a>
+					<a onclick="evropa();">Evropa2</a>
+					<a onclick="beat();">Beat</a>
+					<a onclick="impuls();">Impuls</a>
 				</ul>
 			</div>
 
@@ -231,12 +240,72 @@
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			}
 
+			function free() {
+			    console.log("Free");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "FreeRadio"
+			    var link = "http://czstreamer.wcz.wistron:80/Free_Radio_107FM"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
 			function simulator() {
 			    console.log("Simulator");
 			    // Change Radio name
 			    const timenow = new Date();
 			    var playername = document.getElementById("player-name").innerHTML = "Simulator"
 			    var link = "https://simulatorradio.stream/64"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
+			function simrock() {
+			    console.log("Simulator Rock");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock"
+			    var link = "https://simulatorradio.stream/rock"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
+			function simdance() {
+			    console.log("Simulator Dance");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance"
+			    var link = "https://simulatorradio.stream/dance"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
+			function evropa() {
+			    console.log("Evropa2");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Evropa2"
+			    var link = "http://czstreamer.wcz.wistron:80/Evropa2"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
+			function beat() {
+			    console.log("Beat");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Beat"
+			    var link = "http://czstreamer.wcz.wistron:80/Beat"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			}
+
+			function impuls() {
+			    console.log("Impuls");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Impuls"
+			    var link = "http://czstreamer.wcz.wistron:80/Impuls"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			}
