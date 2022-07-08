@@ -189,7 +189,7 @@
 
 		<div class="player" id="player">
 			<p id="player-name">Krokodyl</p>
-			<audio controls preload="none">
+			<audio controls preload="none" id="audio">
 				<source id="player-src" src="http://czstreamer.wcz.wistron/Krokodyl" type="audio/mpeg">
 				The audio element is not supported.\n Váš prohlížeč nepodporuje audio přehrávač.
 			</audio>
@@ -228,6 +228,7 @@
 			    var link = "http://czstreamer.wcz.wistron/Krokodyl"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function kiss() {
@@ -238,6 +239,7 @@
 			    var link = "http://czstreamer.wcz.wistron:80/KissHady"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function free() {
@@ -248,6 +250,7 @@
 			    var link = "http://czstreamer.wcz.wistron:80/Free_Radio_107FM"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function simulator() {
@@ -258,6 +261,7 @@
 			    var link = "https://simulatorradio.stream/64"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function simrock() {
@@ -268,6 +272,7 @@
 			    var link = "https://simulatorradio.stream/rock"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function simdance() {
@@ -278,6 +283,7 @@
 			    var link = "https://simulatorradio.stream/dance"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function evropa() {
@@ -288,6 +294,7 @@
 			    var link = "http://czstreamer.wcz.wistron:80/Evropa2"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function beat() {
@@ -298,6 +305,7 @@
 			    var link = "http://czstreamer.wcz.wistron:80/Beat"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 			function impuls() {
@@ -308,6 +316,7 @@
 			    var link = "http://czstreamer.wcz.wistron:80/Impuls"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
 			}
 
 		</script>
