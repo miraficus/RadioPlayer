@@ -132,6 +132,10 @@
 			display: block;
 			box-shadow: 0px 1px 5px 0px #888888;
 		}
+
+		.player label{
+			font-size: 16px;
+		}
 		
 		.player audio{
 			display: block;
@@ -196,6 +200,8 @@
 				<source id="player-src" src="http://czstreamer.wcz.wistron/Krokodyl" type="audio/mpeg">
 				The audio element is not supported.\n Váš prohlížeč nepodporuje audio přehrávač.
 			</audio>
+			<input type="checkbox" id="autoplay" size="10">
+			<label for="autoplay">Autoplay</label>
 		</div>
 
 		<div class="wrapper">
@@ -222,27 +228,38 @@
 		<script type="text/javascript">
 			// --- Switch audio sources ---
 			
+			function checkautoplay() {
+				if (document.getElementById('autoplay').checked) {
+	            	console.log("Autoplay Checked");
+	            	var playersource = document.getElementById("audio").play();
+		        } else {
+		            console.log("Autoplay Unchecked");
+		        }
+			}
+
 
 			function krokodyl() {
 			    console.log("Krokodyl");
 			    // Change Radio name
-			    const timenow = new Date();
+			    var timenow = new Date();
 			    var playername = document.getElementById("player-name").innerHTML = "Krokodyl"
 			    var link = "http://czstreamer.wcz.wistron/Krokodyl"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function kiss() {
 			    console.log("Kiss");
 			    // Change Radio name
-			    const timenow = new Date();
+			    var timenow = new Date();
 			    var playername = document.getElementById("player-name").innerHTML = "KissHady"
 			    var link = "http://czstreamer.wcz.wistron:80/KissHady"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function free() {
@@ -254,6 +271,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function simulator() {
@@ -265,6 +283,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function simrock() {
@@ -276,6 +295,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function simdance() {
@@ -287,6 +307,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function evropa() {
@@ -298,6 +319,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function beat() {
@@ -309,6 +331,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 			function impuls() {
@@ -320,6 +343,7 @@
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
 			}
 
 		</script>
