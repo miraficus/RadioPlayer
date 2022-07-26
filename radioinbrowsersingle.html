@@ -36,12 +36,13 @@
 		:root {
 			--main-bg-color: white;
 			--sec-bg-color: white;
+			--ter-bg-color: white;
 			--accent-bg-color: lightblue;
 			--accent-border-color: transparent;
 			--main-text-color: black;
 			--main-text-font: Arial;
 			--main-radius: 3px;
-			--shadow-color: #222222;
+			--shadow-color: #555555;
 		}
 
 		body{
@@ -151,7 +152,7 @@
 
 		.footer{
 			border-top: 1px solid var(--accent-border-color);
-			background: var(--sec-bg-color);
+			background: var(--ter-bg-color);
 			display: block;
 			height: 30px;
 			width: 100%;
@@ -232,6 +233,20 @@
 			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
 		</div>
 		<script type="text/javascript">
+			// --- Change theme ---
+			var theme = 'light'
+
+			function themechange() {
+				switch(theme) {
+				case 'light':
+					rootvar.style.setProperty('--accent-bg-color', 'pink');
+				break;
+				case 'dark':
+
+				break;
+				}
+			}
+
 			// --- Switch audio sources ---
 			
 			function checkautoplay() {
@@ -242,7 +257,6 @@
 		            console.log("Autoplay Unchecked");
 		        }
 			}
-
 
 			function krokodyl() {
 			    console.log("Krokodyl");
