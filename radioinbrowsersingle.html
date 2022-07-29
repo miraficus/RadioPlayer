@@ -40,6 +40,7 @@
 			--accent-bg-color: lightblue;
 			--accent-border-color: transparent;
 			--main-text-color: black;
+			--sec-text-color: black;
 			--main-text-font: Arial;
 			--main-radius: 3px;
 			--shadow-color: #555555;
@@ -77,7 +78,7 @@
 
 		.header a{
 			text-decoration: none;
-			color: black;
+			color: var(--sec-text-color);
 			display: inline-block;
 			background: inherit;
 			padding-top: 6px;
@@ -99,6 +100,7 @@
 			padding: 0;
 			margin-left: 10px;
 			height: 100px;
+			color: var(--sec-text-color);
 		}
 
 		.wrapper ul li {
@@ -148,6 +150,7 @@
 
 		.player audio::-webkit-media-controls-panel {
 			background: white;
+			border-radius: 50px;
 		}
 
 		.footer{
@@ -196,7 +199,7 @@
 	</head>
 	<body>
 		<div class="header">
-			<a href="#" id="left">Radio</a>
+			<a onclick="themechange();" id="left">Radio</a>
 			<a href="http://czstreamer.wcz.wistron/status.xsl" id="right" target="_blank">CZ Streamer</a>
 			<a href="https://simulatorradio.stream/" id="right" target="_blank">Simulator</a>
 		</div>
@@ -239,13 +242,18 @@
 			function themechange() {
 				switch(theme) {
 				case 'light':
-					rootvar.style.setProperty('--accent-bg-color', 'pink');
+					rootvar.style.setProperty('--main-bg-color', '#222222');
+					rootvar.style.setProperty('--sec-bg-color', '#222222');
+					rootvar.style.setProperty('--ter-bg-color', '#222222');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
 				break;
 				case 'dark':
 
 				break;
 				}
 			}
+
 
 			// --- Switch audio sources ---
 			
