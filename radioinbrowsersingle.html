@@ -217,15 +217,17 @@
 		<div class="wrapper">
 			<div class="radio-list">
 				<ul>
-					<li><a onclick="krokodyl();">Krokodyl</a></li>
+					<li><a onclick="krokodyl();">Krokodýl</a></li>
 					<li><a onclick="kiss();">KissHady</a></li>
-					<li><a onclick="free();">FreeRadio</a></li>
+					<li><a onclick="free();">Free Radio</a></li>
 					<li><a onclick="simulator();">Simulator</a></li>
-					<li><a onclick="simrock();">Simulator Rock</a></li>
-					<li><a onclick="simdance();">Simulator Dance</a></li>
 					<li><a onclick="evropa();">Evropa2</a></li>
 					<li><a onclick="beat();">Beat</a></li>
 					<li><a onclick="impuls();">Impuls</a></li>
+					<li><a onclick="fajnradio();">Fajn Radio</a></li>
+					<li><a onclick="ceskyrozhlas();">Český Rozhlas</a></li>
+					<li><a onclick="proglas();">Proglas</a></li>
+					<li><a onclick="cimbalka();">Cimbálka</a></li>
 				</ul>
 			</div>
 
@@ -270,7 +272,7 @@
 			    console.log("Krokodyl");
 			    // Change Radio name
 			    var timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Krokodyl"
+			    var playername = document.getElementById("player-name").innerHTML = "Krokodýl"
 			    var link = "http://czstreamer.wcz.wistron/Krokodyl"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
@@ -294,44 +296,8 @@
 			    console.log("Free");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "FreeRadio"
+			    var playername = document.getElementById("player-name").innerHTML = "Free Radio"
 			    var link = "http://czstreamer.wcz.wistron:80/Free_Radio_107FM"
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
-			function simulator() {
-			    console.log("Simulator");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator"
-			    var link = "https://simulatorradio.stream/64"
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
-			function simrock() {
-			    console.log("Simulator Rock");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock"
-			    var link = "https://simulatorradio.stream/rock"
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
-			function simdance() {
-			    console.log("Simulator Dance");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance"
-			    var link = "https://simulatorradio.stream/dance"
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -373,6 +339,107 @@
 			    var playersource = document.getElementById("audio").load();
 			    checkautoplay();
 			}
+
+			function fajnradio() {
+			    console.log("Fajn Radio");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Fajn Radio"
+			    var link = "http://czstreamer.wcz.wistron:80/Fajn_Radio"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function ceskyrozhlas() {
+			    console.log("Cesky Rozhlas");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Český Rozhlas"
+			    var link = "http://czstreamer.wcz.wistron:80/Cesky_Rozhlas_1"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function proglas() {
+			    console.log("Proglas");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Proglas"
+			    var link = "http://czstreamer.wcz.wistron:80/Proglas"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function cimbalka() {
+			    console.log("Cimbalka");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Cimbálka"
+			    var link = "http://czstreamer.wcz.wistron:80/Jih_Cimbalka"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			// Simulator Radio Sources
+
+			function simulator() {
+			    console.log("Simulator");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator"
+			    var link = "https://simulatorradio.stream/64"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function simrock() {
+			    console.log("Simulator Rock");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock"
+			    var link = "https://simulatorradio.stream/rock"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function simdance() {
+			    console.log("Simulator Dance");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance"
+			    var link = "https://simulatorradio.stream/dance"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			// From different source
+
+			function rockradio() {
+			    console.log("RockRadio");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio"
+			    var link = "https://25583.live.streamtheworld.com/ROCK_RADIO.aac"
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
 
 		</script>
 	</body>
