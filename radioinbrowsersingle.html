@@ -38,12 +38,14 @@
 			--sec-bg-color: white;
 			--ter-bg-color: white;
 			--accent-bg-color: lightblue;
+			--hover-bg-color: #7bb9cd;
 			--accent-border-color: transparent;
 			--main-text-color: black;
 			--sec-text-color: black;
 			--main-text-font: Arial;
 			--main-radius: 3px;
 			--shadow-color: #555555;
+			color-scheme: light;
 		}
 
 		body{
@@ -74,6 +76,7 @@
 			height: 30px;
 			width: 100%;
 			box-shadow: 0px 1px 5px 0px var(--shadow-color);
+			overflow: hidden;
 		}
 
 		.header a{
@@ -82,12 +85,20 @@
 			display: inline-block;
 			background: inherit;
 			padding-top: 6px;
-			padding-bottom: 6px;
+			padding-bottom: 10px;
 		}
 
 		.header a:hover{
-			font-weight: bold;
-			background: var(--accent-border-color);
+			background: var(--hover-bg-color);
+		}
+
+		.header select{
+			padding-left: 15px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			margin-top: 4px;
+			border: 1px solid transparent;
+			border-radius: var(--main-radius);
 		}
 
 		.wrapper {
@@ -119,7 +130,7 @@
 
 		.wrapper ul a:hover{
 			transition: 150ms;
-			background: #7bb9cd;
+			background: var(--hover-bg-color);
 			cursor: pointer;
 		}
 
@@ -145,12 +156,6 @@
 			display: block;
 			margin-right: auto;
 			margin-left: auto;
-			background: white;
-		}
-
-		.player audio::-webkit-media-controls-panel {
-			background: white;
-			border-radius: 50px;
 		}
 
 		.footer{
@@ -172,34 +177,90 @@
 
 		</style>
 		<script type="text/javascript">
+			
+			// 21.6.2022 Was this Thing made!
 			// --- Get the root element ---
 			var rootvar = document.querySelector(':root');
 
-			var today = new Date().toLocaleString(undefined, {
-			    month: "short", day: "numeric"
-			})
+			// --- Change theme ---
+				// Why doesnt this work? themechoice always null
+			var choice = document.getElementById("themechoice");
+			console.log("themechoice:", choice);
 
-			switch(today) {
-			case "21. 6.":
-				console.log("Today is ");
-				rootvar.style.setProperty('--accent-bg-color', '#dddddd');
-			break;
-			case "14. 2.":
-				console.log("Today is Valentine");
-				rootvar.style.setProperty('--accent-bg-color', 'pink');
-			break;
-			default:
-				console.log("Today is Regular Day");
-			break;
+			function themechange() {
+				var theme = document.getElementById("themechoice").value;
+				console.log(theme);
+
+				switch(theme) {
+				case 'light':
+					console.log("Theme Light");
+					rootvar.style.setProperty('--main-bg-color', 'white');
+					rootvar.style.setProperty('--sec-bg-color', 'white');
+					rootvar.style.setProperty('--ter-bg-color', 'white');
+					rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+					rootvar.style.setProperty('--hover-bg-color', '#7bb9cd');
+					rootvar.style.setProperty('--main-text-color', 'black');
+					rootvar.style.setProperty('--sec-text-color', 'black');
+					rootvar.style.setProperty('--shadow-color', '#555555');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'light');
+				break;
+				case 'dark':
+					console.log("Theme Dark");
+					rootvar.style.setProperty('--main-bg-color', '#222222');
+					rootvar.style.setProperty('--sec-bg-color', '#222222');
+					rootvar.style.setProperty('--ter-bg-color', '#222222');
+					rootvar.style.setProperty('--accent-bg-color', 'black');
+					rootvar.style.setProperty('--hover-bg-color', '#1c1c1c');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'dark');
+				break;
+				case 'black':
+					console.log("Theme Black");
+					rootvar.style.setProperty('--main-bg-color', 'black');
+					rootvar.style.setProperty('--sec-bg-color', 'black');
+					rootvar.style.setProperty('--ter-bg-color', 'black');
+					rootvar.style.setProperty('--accent-bg-color', '#222222');
+					rootvar.style.setProperty('--hover-bg-color', '#444444');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', '#888888');
+					rootvar.style.setProperty('color-scheme', 'dark');
+				break;
+				case 'blue':
+					console.log("Theme Blue");
+					rootvar.style.setProperty('--main-bg-color', '#0A1929');
+					rootvar.style.setProperty('--sec-bg-color', '#173A5E');
+					rootvar.style.setProperty('--ter-bg-color', '#173A5E');
+					rootvar.style.setProperty('--accent-bg-color', '#5090D3');
+					rootvar.style.setProperty('--hover-bg-color', '#66B2FF');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'light');
+				break;
+				default:
+					console.log("No Theme");
+				break;
+				}
 			}
-
-			//rootvar.style.setProperty('--accent-bg-color', 'lightblue');
 
 		</script>
 	</head>
 	<body>
 		<div class="header">
 			<a onclick="themechange();" id="left">Radio</a>
+			<select name="themechoice" id="themechoice" onchange="themechange();">
+				<option value="light" selected>Světlý</option>
+			 	<option value="dark">Tmavý</option>
+				<option value="black">Černý</option>
+				<option value="blue">Modrý</option>
+			</select>
 			<a href="http://czstreamer.wcz.wistron/status.xsl" id="right" target="_blank">CZ Streamer</a>
 			<a href="https://simulatorradio.stream/" id="right" target="_blank">Simulator</a>
 		</div>
@@ -238,25 +299,7 @@
 			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
 		</div>
 		<script type="text/javascript">
-			// --- Change theme ---
-			var theme = 'light'
-
-			function themechange() {
-				switch(theme) {
-				case 'light':
-					rootvar.style.setProperty('--main-bg-color', '#222222');
-					rootvar.style.setProperty('--sec-bg-color', '#222222');
-					rootvar.style.setProperty('--ter-bg-color', '#222222');
-					rootvar.style.setProperty('--main-text-color', 'white');
-					rootvar.style.setProperty('--shadow-color', 'black');
-				break;
-				case 'dark':
-
-				break;
-				}
-			}
-
-
+		
 			// --- Switch audio sources ---
 			
 			function checkautoplay() {
@@ -272,8 +315,8 @@
 			    console.log("Krokodyl");
 			    // Change Radio name
 			    var timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Krokodýl"
-			    var link = "http://czstreamer.wcz.wistron/Krokodyl"
+			    var playername = document.getElementById("player-name").innerHTML = "Krokodýl";
+			    var link = "http://czstreamer.wcz.wistron/Krokodyl";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -284,8 +327,8 @@
 			    console.log("Kiss");
 			    // Change Radio name
 			    var timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "KissHady"
-			    var link = "http://czstreamer.wcz.wistron:80/KissHady"
+			    var playername = document.getElementById("player-name").innerHTML = "KissHady";
+			    var link = "http://czstreamer.wcz.wistron:80/KissHady";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -296,8 +339,8 @@
 			    console.log("Free");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Free Radio"
-			    var link = "http://czstreamer.wcz.wistron:80/Free_Radio_107FM"
+			    var playername = document.getElementById("player-name").innerHTML = "Free Radio";
+			    var link = "http://czstreamer.wcz.wistron:80/Free_Radio_107FM";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -308,8 +351,8 @@
 			    console.log("Evropa2");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Evropa2"
-			    var link = "http://czstreamer.wcz.wistron:80/Evropa2"
+			    var playername = document.getElementById("player-name").innerHTML = "Evropa2";
+			    var link = "http://czstreamer.wcz.wistron:80/Evropa2";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -320,8 +363,8 @@
 			    console.log("Beat");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Beat"
-			    var link = "http://czstreamer.wcz.wistron:80/Beat"
+			    var playername = document.getElementById("player-name").innerHTML = "Beat";
+			    var link = "http://czstreamer.wcz.wistron:80/Beat";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -332,8 +375,8 @@
 			    console.log("Impuls");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Impuls"
-			    var link = "http://czstreamer.wcz.wistron:80/Impuls"
+			    var playername = document.getElementById("player-name").innerHTML = "Impuls";
+			    var link = "http://czstreamer.wcz.wistron:80/Impuls";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -344,8 +387,8 @@
 			    console.log("Fajn Radio");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Fajn Radio"
-			    var link = "http://czstreamer.wcz.wistron:80/Fajn_Radio"
+			    var playername = document.getElementById("player-name").innerHTML = "Fajn Radio";
+			    var link = "http://czstreamer.wcz.wistron:80/Fajn_Radio";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -356,8 +399,8 @@
 			    console.log("Cesky Rozhlas");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Český Rozhlas"
-			    var link = "http://czstreamer.wcz.wistron:80/Cesky_Rozhlas_1"
+			    var playername = document.getElementById("player-name").innerHTML = "Český Rozhlas";
+			    var link = "http://czstreamer.wcz.wistron:80/Cesky_Rozhlas_1";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -368,8 +411,8 @@
 			    console.log("Proglas");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Proglas"
-			    var link = "http://czstreamer.wcz.wistron:80/Proglas"
+			    var playername = document.getElementById("player-name").innerHTML = "Proglas";
+			    var link = "http://czstreamer.wcz.wistron:80/Proglas";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -380,8 +423,8 @@
 			    console.log("Cimbalka");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Cimbálka"
-			    var link = "http://czstreamer.wcz.wistron:80/Jih_Cimbalka"
+			    var playername = document.getElementById("player-name").innerHTML = "Cimbálka";
+			    var link = "http://czstreamer.wcz.wistron:80/Jih_Cimbalka";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -394,8 +437,8 @@
 			    console.log("Simulator");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator"
-			    var link = "https://simulatorradio.stream/64"
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator";
+			    var link = "https://simulatorradio.stream/64";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -406,8 +449,8 @@
 			    console.log("Simulator Rock");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock"
-			    var link = "https://simulatorradio.stream/rock"
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock";
+			    var link = "https://simulatorradio.stream/rock";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -418,8 +461,8 @@
 			    console.log("Simulator Dance");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance"
-			    var link = "https://simulatorradio.stream/dance"
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance";
+			    var link = "https://simulatorradio.stream/dance";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
@@ -432,8 +475,8 @@
 			    console.log("RockRadio");
 			    // Change Radio name
 			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio"
-			    var link = "https://25583.live.streamtheworld.com/ROCK_RADIO.aac"
+			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio";
+			    var link = "https://25583.live.streamtheworld.com/ROCK_RADIO.aac";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
