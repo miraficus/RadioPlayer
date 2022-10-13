@@ -2,7 +2,7 @@
 <html lang="cs">
 	<head>
 		<title> Radio Online Single </title>
-		<meta name="author" content="Zdeněk Svěrač">
+		<meta name="author" content="Miraficus">
 		<meta name="theme-color" content="#cccccc">
 		<meta charset="utf-8">
 		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYnJvYWRjYXN0IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiA8cGF0aCBkPSJNMy4wNSAzLjA1YTcgNyAwIDAgMCAwIDkuOS41LjUgMCAwIDEtLjcwNy43MDcgOCA4IDAgMCAxIDAtMTEuMzE0LjUuNSAwIDAgMSAuNzA3LjcwN3ptMi4xMjIgMi4xMjJhNCA0IDAgMCAwIDAgNS42NTYuNS41IDAgMSAxLS43MDguNzA4IDUgNSAwIDAgMSAwLTcuMDcyLjUuNSAwIDAgMSAuNzA4LjcwOHptNS42NTYtLjcwOGEuNS41IDAgMCAxIC43MDggMCA1IDUgMCAwIDEgMCA3LjA3Mi41LjUgMCAxIDEtLjcwOC0uNzA4IDQgNCAwIDAgMCAwLTUuNjU2LjUuNSAwIDAgMSAwLS43MDh6bTIuMTIyLTIuMTJhLjUuNSAwIDAgMSAuNzA3IDAgOCA4IDAgMCAxIDAgMTEuMzEzLjUuNSAwIDAgMS0uNzA3LS43MDcgNyA3IDAgMCAwIDAtOS45LjUuNSAwIDAgMSAwLS43MDd6TTEwIDhhMiAyIDAgMSAxLTQgMCAyIDIgMCAwIDEgNCAweiIvPiA8L3N2Zz4=" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />		
@@ -10,7 +10,7 @@
 		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0id2hpdGUiIGNsYXNzPSJiaSBiaS1icm9hZGNhc3QiIHZpZXdCb3g9IjAgMCAxNiAxNiI+IDxwYXRoIGQ9Ik0zLjA1IDMuMDVhNyA3IDAgMCAwIDAgOS45LjUuNSAwIDAgMS0uNzA3LjcwNyA4IDggMCAwIDEgMC0xMS4zMTQuNS41IDAgMCAxIC43MDcuNzA3em0yLjEyMiAyLjEyMmE0IDQgMCAwIDAgMCA1LjY1Ni41LjUgMCAxIDEtLjcwOC43MDggNSA1IDAgMCAxIDAtNy4wNzIuNS41IDAgMCAxIC43MDguNzA4em01LjY1Ni0uNzA4YS41LjUgMCAwIDEgLjcwOCAwIDUgNSAwIDAgMSAwIDcuMDcyLjUuNSAwIDEgMS0uNzA4LS43MDggNCA0IDAgMCAwIDAtNS42NTYuNS41IDAgMCAxIDAtLjcwOHptMi4xMjItMi4xMmEuNS41IDAgMCAxIC43MDcgMCA4IDggMCAwIDEgMCAxMS4zMTMuNS41IDAgMCAxLS43MDctLjcwNyA3IDcgMCAwIDAgMC05LjkuNS41IDAgMCAxIDAtLjcwN3pNMTAgOGEyIDIgMCAxIDEtNCAwIDIgMiAwIDAgMSA0IDB6Ii8+IDwvc3ZnPg==" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
 		<link rel="manifest" href='data:application/manifest+json,{ "name": "Radio Online", "short_name": "Radio", "description": "Radio player in browser","icons": {"48": "icon.svg", "96": "icon.svg"}}' />
-		<script src="https://code.jquery.com/jquery-migrate-3.4.0.min.js" type="text/javascript"></script>
+		<script src="https://code.jquery.com/jquery-3.6.1.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			if (window.document.documentMode) {
 				  alert("Please use better Chromium or Firefox based web browser!\nProsím použijte webový prohližeč založený na Chromiu nebo Firefox!");
@@ -254,19 +254,19 @@
 	</head>
 	<body>
 		<div class="header">
-			<a onclick="alert('Verze 1.0');" id="left">Radio</a>
+			<a onclick="alert('Verze 1.1');" id="left">Radio</a>
 			<select name="themechoice" id="themechoice" onchange="themechange();">
 				<option value="light" selected>Světlý</option>
 			 	<option value="dark">Tmavý</option>
 				<option value="black">Černý</option>
 				<option value="blue">Modrý</option>
 			</select>
-			<a href="http://czstreamer.wcz.wistron/status.xsl" id="right" target="_blank">CZ Streamer</a>
+			<a href="https://codeberg.org/phmira/RadioPlayer" id="right" target="_blank">Source Code</a>
 			<a href="https://simulatorradio.stream/" id="right" target="_blank">Simulator</a>
 		</div>
 
 		<div class="player" id="player">
-			<p id="player-name">Krokodyl</p>
+			<p id="player-name">Krokodýl</p>
 			<audio controls preload="none" id="audio">
 				<source id="player-src" src="http://czstreamer.wcz.wistron/Krokodyl" type="audio/mpeg">
 				The audio element is not supported.\n Váš prohlížeč nepodporuje audio přehrávač.
@@ -287,9 +287,6 @@
 					<li><a onclick="rockradio();">Rockovy Radio</a></li>
 					<li><a onclick="impuls();">Impuls</a></li>
 					<li><a onclick="fajnradio();">Fajn Radio</a></li>
-					<li><a onclick="ceskyrozhlas();">Český Rozhlas</a></li>
-					<li><a onclick="proglas();">Proglas</a></li>
-					<li><a onclick="cimbalka();">Cimbálka</a></li>
 				</ul>
 			</div>
 
@@ -396,42 +393,6 @@
 			    checkautoplay();
 			}
 
-			function ceskyrozhlas() {
-			    console.log("Cesky Rozhlas");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Český Rozhlas";
-			    var link = "http://czstreamer.wcz.wistron:80/Cesky_Rozhlas_1";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
-			function proglas() {
-			    console.log("Proglas");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Proglas";
-			    var link = "http://czstreamer.wcz.wistron:80/Proglas";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
-			function cimbalka() {
-			    console.log("Cimbalka");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Cimbálka";
-			    var link = "http://czstreamer.wcz.wistron:80/Jih_Cimbalka";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
-			}
-
 			// Simulator Radio Sources
 
 			function simulator() {
@@ -439,7 +400,7 @@
 			    // Change Radio name
 			    const timenow = new Date();
 			    var playername = document.getElementById("player-name").innerHTML = "Simulator";
-			    var link = "https://simulatorradio.stream/64";
+			    var link = "https://simulatorradio.stream/stream";
 			    var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
