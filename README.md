@@ -14,10 +14,11 @@ I wanted single file so i can have it on my desktop without the need of hosting 
 - Choose a license.
 - Maybe show song playing right now (probably hard af for n00b like me).
 - Remove few console.log("unnecesary");
+- Sort radio staions alphabeticaly.
 
 ## Issues
 - ~~When switching radio stations reload audio source.~~
-- When unpausing radio station reload audio source (It plays cached bit over and over). (For that i would need to make my own controls for the player)
+- When unpausing radio station reload audio source (It plays cached bit over and over). (For that i would probably need to make my own controls for the player) (or make empty file and name it silence.mp3 and onpause change source to it and on play change it back)
 - ~~Add time after link so it seems like new link.~~
 
 ## Code Snipppets
