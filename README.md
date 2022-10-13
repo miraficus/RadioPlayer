@@ -12,12 +12,12 @@ I wanted single file so i can have it on my desktop without the need of hosting 
 - Make quality selector (changes the bitrate).
 - Make sources tab (with links to icecast sources and/or official websites).
 - Choose a license.
-- Maybe show song playing right now (probably hard af for n00b like me)
+- Maybe show song playing right now (probably hard af for n00b like me).
 - Remove few console.log("unnecesary");
 
 ## Issues
 - ~~When switching radio stations reload audio source.~~
-- When unpausing radio station reload audio source (It plays cached bit over and over).
+- When unpausing radio station reload audio source (It plays cached bit over and over). (For that i would need to make my own controls for the player)
 - ~~Add time after link so it seems like new link.~~
 
 ## Code Snipppets
