@@ -106,6 +106,11 @@ https://icecast8.play.cz/hey-radio64.mp3
 https://icecast1.play.cz/impuls128.mp3
 
 
-## 64
+### 64
 https://icecast5.play.cz/impuls64.mp3
 
+---
+
+## Evropa2
+### 128
+https://ice.actve.net/fm-evropa2-128
