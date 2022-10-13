@@ -9,7 +9,7 @@ I wanted single file so i can have it on my desktop without the need of hosting 
 - ~~Black Theme~~
 - ~~Blue Theme~~
 - Make browser rember the slected theme and checked autoplay (also bitrate when it will be implemented).
-- Make quality selector (changes the bitrate).
+- Make quality selector (changes the bitrate). (Probably will make me rewrite audio source switching)
 - Make sources tab (with links to icecast sources and/or official websites).
 - Choose a license.
 - Maybe show song playing right now (probably hard af for n00b like me).
