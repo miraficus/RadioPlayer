@@ -1,6 +1,6 @@
 # Radio Player
 ## Description
-Website for listening to Online Radios at my ~~workplace~~. I just left the company so i will strip this from local sources managed by my previous workplace.
+Website for listening to Online Radios ~~at my workplace~~. I just left the company so i will strip this from local sources managed by my previous workplace.
 
 ## TODO
 - Better design
