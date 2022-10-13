@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<title> Radio Online </title>
+		<meta name="author" content="Zdeněk Svěrač">
+		<meta name="theme-color" content="#cccccc">
+		<meta charset="utf-8">
+		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYnJvYWRjYXN0IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiA8cGF0aCBkPSJNMy4wNSAzLjA1YTcgNyAwIDAgMCAwIDkuOS41LjUgMCAwIDEtLjcwNy43MDcgOCA4IDAgMCAxIDAtMTEuMzE0LjUuNSAwIDAgMSAuNzA3LjcwN3ptMi4xMjIgMi4xMjJhNCA0IDAgMCAwIDAgNS42NTYuNS41IDAgMSAxLS43MDguNzA4IDUgNSAwIDAgMSAwLTcuMDcyLjUuNSAwIDAgMSAuNzA4LjcwOHptNS42NTYtLjcwOGEuNS41IDAgMCAxIC43MDggMCA1IDUgMCAwIDEgMCA3LjA3Mi41LjUgMCAxIDEtLjcwOC0uNzA4IDQgNCAwIDAgMCAwLTUuNjU2LjUuNSAwIDAgMSAwLS43MDh6bTIuMTIyLTIuMTJhLjUuNSAwIDAgMSAuNzA3IDAgOCA4IDAgMCAxIDAgMTEuMzEzLjUuNSAwIDAgMS0uNzA3LS43MDcgNyA3IDAgMCAwIDAtOS45LjUuNSAwIDAgMSAwLS43MDd6TTEwIDhhMiAyIDAgMSAxLTQgMCAyIDIgMCAwIDEgNCAweiIvPiA8L3N2Zz4=" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />		
+		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYnJvYWRjYXN0IiB2aWV3Qm94PSIwIDAgMTYgMTYiPiA8cGF0aCBkPSJNMy4wNSAzLjA1YTcgNyAwIDAgMCAwIDkuOS41LjUgMCAwIDEtLjcwNy43MDcgOCA4IDAgMCAxIDAtMTEuMzE0LjUuNSAwIDAgMSAuNzA3LjcwN3ptMi4xMjIgMi4xMjJhNCA0IDAgMCAwIDAgNS42NTYuNS41IDAgMSAxLS43MDguNzA4IDUgNSAwIDAgMSAwLTcuMDcyLjUuNSAwIDAgMSAuNzA4LjcwOHptNS42NTYtLjcwOGEuNS41IDAgMCAxIC43MDggMCA1IDUgMCAwIDEgMCA3LjA3Mi41LjUgMCAxIDEtLjcwOC0uNzA4IDQgNCAwIDAgMCAwLTUuNjU2LjUuNSAwIDAgMSAwLS43MDh6bTIuMTIyLTIuMTJhLjUuNSAwIDAgMSAuNzA3IDAgOCA4IDAgMCAxIDAgMTEuMzEzLjUuNSAwIDAgMS0uNzA3LS43MDcgNyA3IDAgMCAwIDAtOS45LjUuNSAwIDAgMSAwLS43MDd6TTEwIDhhMiAyIDAgMSAxLTQgMCAyIDIgMCAwIDEgNCAweiIvPiA8L3N2Zz4=" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:light)" />
+		<link rel="icon" id="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0id2hpdGUiIGNsYXNzPSJiaSBiaS1icm9hZGNhc3QiIHZpZXdCb3g9IjAgMCAxNiAxNiI+IDxwYXRoIGQ9Ik0zLjA1IDMuMDVhNyA3IDAgMCAwIDAgOS45LjUuNSAwIDAgMS0uNzA3LjcwNyA4IDggMCAwIDEgMC0xMS4zMTQuNS41IDAgMCAxIC43MDcuNzA3em0yLjEyMiAyLjEyMmE0IDQgMCAwIDAgMCA1LjY1Ni41LjUgMCAxIDEtLjcwOC43MDggNSA1IDAgMCAxIDAtNy4wNzIuNS41IDAgMCAxIC43MDguNzA4em01LjY1Ni0uNzA4YS41LjUgMCAwIDEgLjcwOCAwIDUgNSAwIDAgMSAwIDcuMDcyLjUuNSAwIDEgMS0uNzA4LS43MDggNCA0IDAgMCAwIDAtNS42NTYuNS41IDAgMCAxIDAtLjcwOHptMi4xMjItMi4xMmEuNS41IDAgMCAxIC43MDcgMCA4IDggMCAwIDEgMCAxMS4zMTMuNS41IDAgMCAxLS43MDctLjcwNyA3IDcgMCAwIDAgMC05LjkuNS41IDAgMCAxIDAtLjcwN3pNMTAgOGEyIDIgMCAxIDEtNCAwIDIgMiAwIDAgMSA0IDB6Ii8+IDwvc3ZnPg==" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+		<link rel="manifest" href='data:application/manifest+json,{ "name": "Radio Online", "short_name": "Radio", "description": "Radio player in browser","icons": {"48": "icon.svg", "96": "icon.svg"}}' />
+		<script type="text/javascript">
+			if (window.document.documentMode) {
+				  alert("Please use better Chromium or Firefox based web browser!\nProsím použijte webový prohližeč založený na Chromiu nebo Firefox!");
+			}
+
+			function onlyPlayOneIn(container) {
+			  container.addEventListener("play", function(event) {
+			  audio_elements = container.getElementsByTagName("audio")
+			    for(i=0; i < audio_elements.length; i++) {
+			      audio_element = audio_elements[i];
+			      if (audio_element !== event.target) {
+			        audio_element.pause();
+			        audio_element.currentTime = 0; 
+			        audio_element.removeAttribute('src'); // empty source
+					audio_element.load();
+			      }
+			    }
+			  }, true);
+			}
+
+			document.addEventListener("DOMContentLoaded", function() {
+			  onlyPlayOneIn(document.body);
+			});
+		</script>
+		<style>
+		:root {
+			--main-bg-color: white;
+			--accent-bg-color: #dddddd;
+			--accent-border-color: #cccccc;
+			--main-text-color: black;
+			--main-text-font: Arial;
+			--main-radius: 3px;
+		}
+
+		body{
+			width: 100%;
+			height: 100%;
+			color: var(--main-text-color);
+			background: var(--main-bg-color);
+			margin: 0;
+			font-family: var(--main-text-font);
+		}
+
+		#left{
+			float: left;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		#right{
+			float: right;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+
+		.header{
+			border-bottom: 1px solid var(--accent-border-color);
+			background: var(--accent-bg-color);
+			display: block;
+			height: 30px;
+			width: 100%;
+		}
+
+		.header a{
+			text-decoration: none;
+			color: black;
+			display: inline-block;
+			background: inherit;
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+
+		.header a:hover{
+			font-weight: bold;
+			background: var(--accent-border-color);
+		}
+
+		.wrapper {
+			display: grid;
+			/* grid-template-columns: repeat(3, 1fr); */
+			gap: 5px;
+			grid-auto-rows: minmax(100px, auto);
+			grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+			margin-right: 10px;
+		}
+
+		.player{
+			max-width: 450px;
+			height: 250px;
+			background: var(--accent-bg-color);
+			font-size: 32px;
+			text-align: center;
+			border: 1px solid var(--accent-border-color);
+			border-radius: var(--main-radius);
+			padding: 10px;
+			margin: 10px 0 0 10px;
+			display: inline-block;
+		}
+		
+		.player audio{
+			display: block;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.footer{
+			border-top: 1px solid var(--accent-border-color);
+			background: var(--accent-bg-color);
+			display: block;
+			height: 30px;
+			width: 100%;
+			text-align: center;
+			margin-top: 10px; 
+		}
+
+		.footer p{
+			margin-top: 5px;
+		}
+
+		</style>
+		<script type="text/javascript">
+			// Get the root element
+			var rootvar = document.querySelector(':root');
+
+			var today = new Date().toLocaleString(undefined, {
+			    month: "short", day: "numeric"
+			})
+
+			switch(today) {
+			case "21. 6.":
+				console.log("Today is ");
+				rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+			break;
+			case "14. 2.":
+				console.log("Today is Valentine");
+				rootvar.style.setProperty('--accent-bg-color', 'pink');
+			break;
+			default:
+				console.log("Today is Regular Day");
+			break;
+			}
+
+			//rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<a href="#" id="left">Radio</a>
+			<a href="http://czstreamer.wcz.wistron/status.xsl" id="right" target="_blank">CZ Streamer</a>
+			<a href="https://simulatorradio.stream/" id="right" target="_blank">Simulator</a>
+		</div>
+		<div class="wrapper">
+			<div class="player" id="krokodyl">
+				<p>Krokodyl</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron/Krokodyl" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="kiss">
+				<p>KissHady</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron:80/KissHady" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="free">
+				<p>Free</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron:80/Free_Radio_107FM" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="sim">
+				<p>Simulator</p>
+				<audio controls preload="none">
+					<source src="https://simulatorradio.stream/64" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="sim-rock">
+				<p>Simulator Rock</p>
+				<audio controls preload="none">
+					<source src="https://simulatorradio.stream/rock" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="sim-dance">
+				<p>Simulator Dance</p>
+				<audio controls preload="none">
+					<source src="https://simulatorradio.stream/dance" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="evropa">
+				<p>Evropa2</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron:80/Evropa2" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="beat">
+				<p>Beat</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron:80/Beat" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+			<div class="player" id="impuls">
+				<p>Impuls</p>
+				<audio controls preload="none">
+					<source src="http://czstreamer.wcz.wistron:80/Impuls" type="audio/mpeg">
+					The audio element is not supported.
+				</audio>
+			</div>
+
+
+
+		</div>
+		<div class="footer">
+			<p id="year"></p>
+			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
+		</div>
+	</body>
+</html>
