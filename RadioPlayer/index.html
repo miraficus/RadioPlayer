@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs">
+	<head>
+		<title> Radio Online Single </title>
+		<meta name="author" content="Miraficus">
+		<meta name="theme-color" content="#cccccc">
+		<meta charset="utf-8">
+		<link rel="icon" id="icon" href="assets/favicon_black.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />		
+		<link rel="icon" id="icon" href="assets/favicon_black.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:light)" />
+		<link rel="icon" id="icon" href="assets/favicon_white.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="manifest" href='data:application/manifest+json,{ "name": "Radio Online", "short_name": "Radio", "description": "Radio player in browser","icons": {"48": "icon.svg", "96": "icon.svg"}}' />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+		<script src="https://code.jquery.com/jquery-3.6.1.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			if (window.document.documentMode) {
+				  alert("Please use better Chromium or Firefox based web browser!\nProsím použijte webový prohližeč založený na Chromiu nebo Firefox!");
+			}
+
+			function onlyPlayOneIn(container) {
+			  container.addEventListener("play", function(event) {
+			  audio_elements = container.getElementsByTagName("audio")
+			    for(i=0; i < audio_elements.length; i++) {
+			      audio_element = audio_elements[i];
+			      if (audio_element !== event.target) {
+			        audio_element.pause();
+			      }
+			    }
+			  }, true);
+			}
+
+			document.addEventListener("DOMContentLoaded", function() {
+			  onlyPlayOneIn(document.body);
+			});
+		</script>
+		<script type="text/javascript">
+			
+			// 21.6.2022 Was this Thing made!
+			// --- Get the root element ---
+			var rootvar = document.querySelector(':root');
+
+			// --- Change theme ---
+				// Why doesnt this work? themechoice always null
+			var choice = document.getElementById("themechoice");
+			console.log("themechoice:", choice);
+
+			function themechange() {
+				var theme = document.getElementById("themechoice").value;
+				console.log(theme);
+
+				switch(theme) {
+				case 'light':
+					console.log("Theme Light");
+					rootvar.style.setProperty('--main-bg-color', 'white');
+					rootvar.style.setProperty('--sec-bg-color', 'white');
+					rootvar.style.setProperty('--ter-bg-color', 'white');
+					rootvar.style.setProperty('--accent-bg-color', 'lightblue');
+					rootvar.style.setProperty('--hover-bg-color', '#7bb9cd');
+					rootvar.style.setProperty('--main-text-color', 'black');
+					rootvar.style.setProperty('--sec-text-color', 'black');
+					rootvar.style.setProperty('--shadow-color', '#555555');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'light');
+				break;
+				case 'dark':
+					console.log("Theme Dark");
+					rootvar.style.setProperty('--main-bg-color', '#222222');
+					rootvar.style.setProperty('--sec-bg-color', '#222222');
+					rootvar.style.setProperty('--ter-bg-color', '#222222');
+					rootvar.style.setProperty('--accent-bg-color', 'black');
+					rootvar.style.setProperty('--hover-bg-color', '#1c1c1c');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'dark');
+				break;
+				case 'black':
+					console.log("Theme Black");
+					rootvar.style.setProperty('--main-bg-color', 'black');
+					rootvar.style.setProperty('--sec-bg-color', 'black');
+					rootvar.style.setProperty('--ter-bg-color', 'black');
+					rootvar.style.setProperty('--accent-bg-color', '#222222');
+					rootvar.style.setProperty('--hover-bg-color', '#444444');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', '#888888');
+					rootvar.style.setProperty('color-scheme', 'dark');
+				break;
+				case 'blue':
+					console.log("Theme Blue");
+					rootvar.style.setProperty('--main-bg-color', '#0A1929');
+					rootvar.style.setProperty('--sec-bg-color', '#173A5E');
+					rootvar.style.setProperty('--ter-bg-color', '#173A5E');
+					rootvar.style.setProperty('--accent-bg-color', '#5090D3');
+					rootvar.style.setProperty('--hover-bg-color', '#66B2FF');
+					rootvar.style.setProperty('--main-text-color', 'white');
+					rootvar.style.setProperty('--sec-text-color', 'white');
+					rootvar.style.setProperty('--shadow-color', 'black');
+					rootvar.style.setProperty('--accent-border-color', 'transparent');
+					rootvar.style.setProperty('color-scheme', 'light');
+				break;
+				default:
+					console.log("No Theme");
+				break;
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<a onclick="alert('Verze 1.1');" id="left">Radio</a>
+			<select name="themechoice" id="themechoice" onchange="themechange();">
+				<option value="light" selected>Světlý</option>
+			 	<option value="dark">Tmavý</option>
+				<option value="black">Černý</option>
+				<option value="blue">Modrý</option>
+			</select>
+			<a href="https://codeberg.org/phmira/RadioPlayer" id="right" target="_blank">Zdrojový kod</a>
+			<a href="https://simulatorradio.stream/" id="right" target="_blank">Simulator</a>
+		</div>
+
+		<div class="player" id="player">
+			<p id="player-name">Krokodýl</p>
+			<audio controls preload="none" id="audio">
+				<source id="player-src" src="https://icecast4.play.cz/krokodyl128.mp3" type="audio/mpeg">
+				The audio element is not supported.\n Váš prohlížeč nepodporuje audio přehrávač.
+			</audio>
+			<input type="checkbox" id="autoplay" size="10">
+			<label for="autoplay">Autoplay</label>
+		</div>
+
+		<div class="wrapper">
+			<div class="radio-list">
+				<ul>
+					<li><a onclick="krokodyl();">Radio Krokodýl</a></li>
+					<li><a onclick="kiss();">Radio KissHady</a></li>
+					<li><a onclick="free();">Free Radio</a></li>
+					<li><a onclick="simulator();">Simulator Radio</a></li>
+					<li><a onclick="evropa();">Radio Evropa2</a></li>
+					<li><a onclick="beat();">Radio Beat</a></li>
+					<li><a onclick="rockradio();">Rockovy Radio</a></li>
+					<li><a onclick="rockradioalt();">Rockovy Radio - Alternative</a></li>
+					<li><a onclick="heavyrockradio();">Rockovy Radio - Hard & Heavy</a></li>
+					<li><a onclick="hey();">Radio Hey</a></li>
+					<li><a onclick="impuls();">Radio Impuls</a></li>
+					<li><a onclick="city();">Hitradio City</a></li>
+					<li><a onclick="oldies();">Oldies Radio</a></li>
+					<li><a onclick="fajnradio();">Fajn Radio</a></li>
+				</ul>
+			</div>
+
+
+		</div>
+		<div class="footer">
+			<p id="year"></p>
+			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
+		</div>
+		<script type="text/javascript">
+		
+			// --- Switch audio sources ---
+			
+			function checkautoplay() {
+				if (document.getElementById('autoplay').checked) {
+	            	console.log("Autoplay Checked");
+	            	var playersource = document.getElementById("audio").play();
+		        } else {
+		            console.log("Autoplay Unchecked");
+		        }
+			}
+
+			function krokodyl() {
+			    console.log("Krokodyl");
+			    // Change Radio name
+			    var timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Krokodýl";
+			    var link = "https://icecast4.play.cz/krokodyl128.mp3";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function kiss() {
+			    console.log("Kiss");
+			    // Change Radio name
+			    var timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "KissHady";
+			    var link = "https://ice5.abradio.cz/kiss128.mp3";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function free() {
+			    console.log("Free");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Free Radio";
+			    var link = "https://icecast8.play.cz/freeradio128.mp3";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function evropa() {
+			    console.log("Evropa2");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Evropa2";
+			    var link = "https://ice.actve.net/fm-evropa2-128";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function beat() {
+			    console.log("Beat");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Beat";
+			    var link = "https://ice6.abradio.cz/beat128.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function impuls() {
+			    console.log("Impuls");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Impuls";
+			    var link = "https://icecast1.play.cz/impuls128.mp3";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function fajnradio() {
+			    console.log("Fajn Radio");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Fajn Radio";
+			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function rockradio() {
+			    console.log("RockRadio");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio";
+			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function heavyrockradio() {
+			    console.log("Rockradio - Hard & Heavy");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio - Hard & Heavy";
+			    var link = "https://ice2.abradio.cz/metalomanie128.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function rockradioalt() {
+			    console.log("Rockradio - Alternative");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio - Alternative";
+			    var link = "https://ice2.abradio.cz/znamkapunku128.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function hey() {
+			    console.log("Radio Hey");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Radio Hey";
+			    var link = "https://icecast3.play.cz/hey-radio128.mp3";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function oldies() {
+			    console.log("Oldies Radio");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Oldies Radio";
+			    var link = "https://ice2.abradio.cz/oldiesradio128.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function city() {
+			    console.log("Hitradio City");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Hitradio City";
+			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			// Simulator Radio Sources
+
+			function simulator() {
+			    console.log("Simulator");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator";
+			    var link = "https://simulatorradio.stream/stream";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function simrock() {
+			    console.log("Simulator Rock");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock";
+			    var link = "https://simulatorradio.stream/rock";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+			function simdance() {
+			    console.log("Simulator Dance");
+			    // Change Radio name
+			    const timenow = new Date();
+			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance";
+			    var link = "https://simulatorradio.stream/dance";
+			    var linkandtime = link + "?time=" + timenow.getTime();
+			    var playersource = document.getElementById("player-src").src = linkandtime;
+			    var playersource = document.getElementById("audio").load();
+			    checkautoplay();
+			}
+
+
+		</script>
+	</body>
+</html>
