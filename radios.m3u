@@ -77,6 +77,18 @@ https://ice.actve.net/fm-evropa2-128
 #EXTINF:0,Česky - Radio Čas Rock 128
 https://icecast7.play.cz/casrock128.mp3
 
+#EXTINF:0,Česky - Frekvence 1 64
+https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
+
+#EXTINF:0,Česky - Metal Heart Radio CZSK 128
+http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
+
+#EXTINF:0,Česky - Metal Heart Radio 64
+http://cz.radio-streamhosting.com:8000/metalheartradio64aac
+
+#EXTINF:0,Česky - Metal Heart Radio 128
+http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
+
 
 
 #EXTINF:0,Anglicky - Simulator Radio 320
