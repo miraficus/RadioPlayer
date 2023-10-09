@@ -1,7 +1,7 @@
 # Radio Player
 ## Description
-Website for listening to Online Radios ~~at my workplace~~. (I just left the company so i will strip this from local sources managed by my previous workplace.)
-~~I wanted single file so i can have it on my desktop without the need of hosting it on webserver.~~ Im czech so i will have mostly czech radios on this "website".
+Website for listening to Online Radios
+~~I wanted single file so i can have it on my desktop without the need of hosting it on webserver.~~ I changed my mind and i will separate RadioPlayer into more files becouse i can make shortcut to index.html and host it on github pages. I still want it to work without hosting. Im czech so i will have mostly czech radios on this website.
 
 ## Disclaimer
 This thing is in development. (It may be forever)
