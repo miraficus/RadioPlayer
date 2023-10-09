@@ -1,7 +1,7 @@
 # Radio Player
 ## Description
 Website for listening to Online Radios
-~~I wanted single file so i can have it on my desktop without the need of hosting it on webserver.~~ I changed my mind and i will separate RadioPlayer into more files becouse i can make shortcut to index.html and host it on github pages. I still want it to work without hosting. Im czech so i will have mostly czech radios on this website.
+~~I wanted single file so i can have it on my desktop without the need of hosting it on webserver.~~ I changed my mind and i will separate RadioPlayer into more files becouse i can make shortcut to index.html and host it on github pages. You can use the radios.m3u file to play radios in VLC for example. Im czech so i will have mostly czech radios on this website.
 
 ## Disclaimer
 This thing is in development. (It may be forever)
