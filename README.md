@@ -26,6 +26,8 @@ This thing is in development. (It may be forever)
 
 ## Code Snipppets
 
+### Links
+- [This website on Github Pages](https://miraficus.github.io/RadioPlayer/)
 
 ### Links (Just for me)
 - [language switch](https://www.google.com/search?q=javascript+language+switch&hl=cs&source=hp&ei=K6S9YonFAdT1gQab7KmwAg&iflsig=AJiK0e8AAAAAYr2yO0TX0iXic_dyw-Rj01IMeEqSGGCY&oq=javascrpit+lang&gs_lcp=Cgdnd3Mtd2l6EAEYBTIECAAQDTIECAAQDTIECAAQDTIECAAQDTIECAAQDTIECAAQDTIGCAAQHhAWMgYIABAeEBYyBggAEB4QFjIGCAAQHhAWOgoIABDqAhC0AhBDOhAILhDHARDRAxDqAhC0AhBDOhQIABDqAhC0AhCKAxC3AxDUAxDlAjoFCC4QgAQ6CwgAEIAEELEDEIMBOg4ILhCABBCxAxDHARCjAjoICC4QgAQQsQM6CAgAEIAEELEDOggILhCxAxCDAToLCC4QgAQQsQMQgwE6BAgAEEM6BAguEEM6BwgAELEDEEM6DgguEIAEELEDEIMBENQCOgUIABCABDoECAAQCkoFCDsSATFQqQRYkjVghFBoAHAAeACAAdUCiAGFD5IBCDExLjIuMi4xmAEAoAEBsAEK&sclient=gws-wiz)
