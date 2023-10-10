@@ -136,6 +136,9 @@
 					<li><a onclick="city();">Hitradio City</a></li>
 					<li><a onclick="oldies();">Oldies Radio</a></li>
 					<li><a onclick="fajnradio();">Fajn Radio</a></li>
+					<li><a onclick="frekvence();">Radio Frekvence 1</a></li>
+					<li><a onclick="casrock();">Radio Čas Rock</a></li>
+					<li><a onclick="metalheart();">Metal Heart Radio</a></li>
 				</ul>
 			</div>
 
@@ -259,6 +262,27 @@
 			    console.log("Hitradio City");
 			    stationname = "Hitradio City";
 			    link = "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac";
+				changestation();
+			}
+
+			function frekvence() {
+			    console.log("Radio Frekvence 1");
+			    stationname = "Radio Frekvence 1";
+			    link = "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac";
+				changestation();
+			}
+
+			function casrock() {
+			    console.log("Radio Čas Rock");
+			    stationname = "Radio Čas Rock";
+			    link = "https://icecast7.play.cz/casrock128.mp3";
+				changestation();
+			}
+
+			function metalheart() {
+			    console.log("Metal Heart Radio");
+			    stationname = "Metal Heart Radio";
+			    link = "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3";
 				changestation();
 			}
 
