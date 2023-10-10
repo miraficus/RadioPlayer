@@ -156,6 +156,8 @@
 		        }
 			}
 
+			
+
 			function changestation() {
 				var timenow = new Date();
 				var playername = document.getElementById("player-name").innerHTML = stationname;
@@ -167,7 +169,6 @@
 
 			function krokodyl() {
 			    console.log("Krokodyl");
-			    // Change Radio name
 			    stationname = "Krokodýl";
 			    link = "https://icecast4.play.cz/krokodyl128.mp3";
 			    changestation();
@@ -175,184 +176,109 @@
 
 			function kiss() {
 			    console.log("Kiss");
-			    // Change Radio name
-			    var timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "KissHady";
-			    var link = "https://ice5.abradio.cz/kiss128.mp3";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "KissHady";
+			    link = "https://ice5.abradio.cz/kiss128.mp3";
+				changestation();
 			}
 
 			function free() {
 			    console.log("Free");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Free Radio";
-			    var link = "https://icecast8.play.cz/freeradio128.mp3";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Free Radio";
+			    link = "https://icecast8.play.cz/freeradio128.mp3";
+				changestation();
 			}
 
 			function evropa() {
 			    console.log("Evropa2");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Evropa2";
-			    var link = "https://ice.actve.net/fm-evropa2-128";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Evropa2";
+			    link = "https://ice.actve.net/fm-evropa2-128";
+				changestation();
 			}
 
 			function beat() {
 			    console.log("Beat");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Beat";
-			    var link = "https://ice6.abradio.cz/beat128.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Beat";
+			    link = "https://ice6.abradio.cz/beat128.aac";
+				changestation();
 			}
 
 			function impuls() {
 			    console.log("Impuls");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Impuls";
-			    var link = "https://icecast1.play.cz/impuls128.mp3";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Impuls";
+			    link = "https://icecast1.play.cz/impuls128.mp3";
+				changestation();
 			}
 
 			function fajnradio() {
 			    console.log("Fajn Radio");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Fajn Radio";
-			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Fajn Radio";
+			    link = "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac";
+				changestation();
 			}
 
 			function rockradio() {
 			    console.log("RockRadio");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio";
-			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Rockovy Radio";
+			    link = "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac";
+				changestation();
 			}
 
 			function heavyrockradio() {
 			    console.log("Rockradio - Hard & Heavy");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio - Hard & Heavy";
-			    var link = "https://ice2.abradio.cz/metalomanie128.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Rockovy Radio - Hard & Heavy";
+			    link = "https://ice2.abradio.cz/metalomanie128.aac";
+				changestation();
 			}
 
 			function rockradioalt() {
 			    console.log("Rockradio - Alternative");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Rockovy Radio - Alternative";
-			    var link = "https://ice2.abradio.cz/znamkapunku128.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Rockovy Radio - Alternative";
+			    link = "https://ice2.abradio.cz/znamkapunku128.aac";
+				changestation();
 			}
 
 			function hey() {
 			    console.log("Radio Hey");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Radio Hey";
-			    var link = "https://icecast3.play.cz/hey-radio128.mp3";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Radio Hey";
+			    link = "https://icecast3.play.cz/hey-radio128.mp3";
+				changestation();
 			}
 
 			function oldies() {
 			    console.log("Oldies Radio");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Oldies Radio";
-			    var link = "https://ice2.abradio.cz/oldiesradio128.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Oldies Radio";
+			    link = "https://ice2.abradio.cz/oldiesradio128.aac";
+				changestation();
 			}
 
 			function city() {
 			    console.log("Hitradio City");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Hitradio City";
-			    var link = "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Hitradio City";
+			    link = "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac";
+				changestation();
 			}
 
 			// Simulator Radio Sources
 
 			function simulator() {
 			    console.log("Simulator");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator";
-			    var link = "https://simulatorradio.stream/stream";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Simulator";
+			    link = "https://simulatorradio.stream/stream";
+				changestation();
 			}
 
 			function simrock() {
 			    console.log("Simulator Rock");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Rock";
-			    var link = "https://simulatorradio.stream/rock";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Simulator Rock";
+			    link = "https://simulatorradio.stream/rock";
+				changestation();
 			}
 
 			function simdance() {
 			    console.log("Simulator Dance");
-			    // Change Radio name
-			    const timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Simulator Dance";
-			    var link = "https://simulatorradio.stream/dance";
-			    var linkandtime = link + "?time=" + timenow.getTime();
-			    var playersource = document.getElementById("player-src").src = linkandtime;
-			    var playersource = document.getElementById("audio").load();
-			    checkautoplay();
+			    stationname = "Simulator Dance";
+			    link = "https://simulatorradio.stream/dance";
+				changestation();
 			}
 
 
