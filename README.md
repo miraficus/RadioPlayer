@@ -23,6 +23,7 @@ This thing is in development. (It may be forever)
 - ~~When switching radio stations reload audio source.~~
 - When unpausing radio station reload audio source (It plays cached bit over and over). (For that i would probably need to make my own controls for the player) (or make empty file and name it silence.mp3 and onpause change source to it and on play change it back)
 - ~~Add time after link so it seems like new link.~~
+- When the source is http it automaticaly tries to load https site and that fails so Metal Heart Radio doesnt work right now.
 
 ## Code Snipppets
 
