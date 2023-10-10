@@ -156,16 +156,21 @@
 		        }
 			}
 
-			function krokodyl() {
-			    console.log("Krokodyl");
-			    // Change Radio name
-			    var timenow = new Date();
-			    var playername = document.getElementById("player-name").innerHTML = "Krokodýl";
-			    var link = "https://icecast4.play.cz/krokodyl128.mp3";
-			    var linkandtime = link + "?time=" + timenow.getTime();
+			function changestation() {
+				var timenow = new Date();
+				var playername = document.getElementById("player-name").innerHTML = stationname;
+				var linkandtime = link + "?time=" + timenow.getTime();
 			    var playersource = document.getElementById("player-src").src = linkandtime;
 			    var playersource = document.getElementById("audio").load();
 			    checkautoplay();
+			}
+
+			function krokodyl() {
+			    console.log("Krokodyl");
+			    // Change Radio name
+			    var stationname = "Krokodýl";
+			    var link = "https://icecast4.play.cz/krokodyl128.mp3";
+			    changestation();
 			}
 
 			function kiss() {
