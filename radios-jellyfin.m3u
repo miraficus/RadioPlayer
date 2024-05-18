@@ -2,111 +2,111 @@
 #PLAYLIST:Mirova Rádia
 #EXTALB:Mirova Rádia
 
-#EXTINF:-1,Česky - Krokodyl 128
+#EXTINF:-1,Česky - tvg-name="Krokodyl 128"
 https://icecast4.play.cz/krokodyl128.mp3
 
-#EXTINF:-1,Česky - Krokodyl 64
+#EXTINF:-1,Česky - tvg-name="Krokodyl 64"
 https://icecast6.play.cz/krokodyl64.mp3
 
-#EXTINF:-1,Česky - Krokodyl 32
+#EXTINF:-1,Česky - tvg-name="Krokodyl 32"
 https://icecast6.play.cz/krokodyl32.mp3
 
-#EXTINF:-1,Česky - Rockradio 128
+#EXTINF:-1,Česky - tvg-name="Rockradio 128"
 https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac
 
-#EXTINF:-1,Česky - Rockradio 64
+#EXTINF:-1,Česky - tvg-name="Rockradio 64"
 https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIOAAC.aac
 
-#EXTINF:-1,Česky - Rockradio Hard & Heavy 128
+#EXTINF:-1,Česky - tvg-name="Rockradio Hard & Heavy 128"
 https://ice2.abradio.cz/metalomanie128.aac
 
-#EXTINF:-1,Česky - Rockradio Hard & Heavy 64
+#EXTINF:-1,Česky - tvg-name="Rockradio Hard & Heavy 64"
 https://ice2.abradio.cz/metalomanie64.aac
 
-#EXTINF:-1,Česky - Rockradio Alternative 128
+#EXTINF:-1,Česky - tvg-name="Rockradio Alternative 128"
 https://ice2.abradio.cz/znamkapunku128.aac
 
-#EXTINF:-1,Česky - Rockradio Alternative 64
+#EXTINF:-1,Česky - tvg-name="Rockradio Alternative 64"
 https://ice.abradio.cz/znamkapunku64.aac
 
-#EXTINF:-1,Česky - Oldies Radio 128
+#EXTINF:-1,Česky - tvg-name="Oldies Radio 128"
 https://ice2.abradio.cz/oldiesradio128.aac
 
-#EXTINF:-1,Česky - Oldies Radio 64
+#EXTINF:-1,Česky - tvg-name="Oldies Radio 64"
 https://ice2.abradio.cz/oldiesradio64.aac
 
-#EXTINF:-1,Česky - Kiss 128
+#EXTINF:-1,Česky - tvg-name="Kiss 128"
 https://ice5.abradio.cz/kiss128.mp3
 
-#EXTINF:-1,Česky - Beat 128
+#EXTINF:-1,Česky - tvg-name="Beat 128"
 https://ice6.abradio.cz/beat128.aac
 
-#EXTINF:-1,Česky - Beat 64
+#EXTINF:-1,Česky - tvg-name="Beat 64"
 https://ice6.abradio.cz/beat64.aac
 
-#EXTINF:-1,Česky - Hitradio City 128
+#EXTINF:-1,Česky - tvg-name="Hitradio City 128"
 https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac
 
-#EXTINF:-1,Česky - Hitradio City 64
+#EXTINF:-1,Česky - tvg-name="Hitradio City 64"
 https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHAAAC.aac
 
-#EXTINF:-1,Česky - Free Radio 128
+#EXTINF:-1,Česky - tvg-name="Free Radio 128"
 https://icecast8.play.cz/freeradio128.mp3
 
-#EXTINF:-1,Česky - Free Radio 64
+#EXTINF:-1,Česky - tvg-name="Free Radio 64"
 https://icecast6.play.cz/freeradio64.mp3
 
-#EXTINF:-1,Česky - Free Radio 128
+#EXTINF:-1,Česky - tvg-name="Free Radio 128"
 https://icecast8.play.cz/freeradio32.mp3
 
-#EXTINF:-1,Česky - Radio Hey 128
+#EXTINF:-1,Česky - tvg-name="Radio Hey 128"
 https://icecast3.play.cz/hey-radio128.mp3
 
-#EXTINF:-1,Česky - Radio Hey 164
+#EXTINF:-1,Česky - tvg-name="Radio Hey 164"
 https://icecast8.play.cz/hey-radio64.mp3
 
-#EXTINF:-1,Česky - Impuls 128
+#EXTINF:-1,Česky - tvg-name="Impuls 128"
 https://icecast1.play.cz/impuls128.mp3
 
-#EXTINF:-1,Česky - Impuls 64
+#EXTINF:-1,Česky - tvg-name="Impuls 64"
 https://icecast5.play.cz/impuls64.mp3
 
-#EXTINF:-1,Česky - Evropa2 128
+#EXTINF:-1,Česky - tvg-name="Evropa2 128"
 https://ice.actve.net/fm-evropa2-128
 
-#EXTINF:-1,Česky - Radio Čas Rock 128
+#EXTINF:-1,Česky - tvg-name="Radio Čas Rock 128"
 https://icecast7.play.cz/casrock128.mp3
 
-#EXTINF:-1,Česky - Frekvence 1 64
+#EXTINF:-1,Česky - tvg-name="Frekvence 1 64"
 https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
 
-#EXTINF:-1,Česky - Metal Heart Radio CZSK 128
+#EXTINF:-1,Česky - tvg-name="Metal Heart Radio CZSK 128"
 http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
 
-#EXTINF:-1,Česky - Metal Heart Radio 64
+#EXTINF:-1,Česky - tvg-name="Metal Heart Radio 64"
 http://cz.radio-streamhosting.com:8000/metalheartradio64aac
 
-#EXTINF:-1,Česky - Metal Heart Radio 128
+#EXTINF:-1,Česky - tvg-name="Metal Heart Radio 128"
 http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
 
 
 
-#EXTINF:-1,Anglicky - Simulator Radio 320
+#EXTINF:-1,Anglicky - tvg-name="Simulator Radio 320"
 https://simulatorradio.stream/320
 
-#EXTINF:-1,Anglicky - Simulator Radio 128
+#EXTINF:-1,Anglicky - tvg-name="Simulator Radio 128"
 https://simulatorradio.stream/128
 
-#EXTINF:-1,Anglicky - Simulator Radio 64
+#EXTINF:-1,Anglicky - tvg-name="Simulator Radio 64"
 https://simulatorradio.stream/64
 
-#EXTINF:-1,Anglicky - Simulator Radio Dance 320
+#EXTINF:-1,Anglicky - tvg-name="Simulator Radio Dance 320"
 https://simulatorradio.stream/dance.mp3
 
-#EXTINF:-1,Anglicky - Simulator Radio Rock 320
+#EXTINF:-1,Anglicky - tvg-name="Simulator Radio Rock 320"
 https://simulatorradio.stream/rock
 
 
 
-#EXTINF:-1,Polsky - Eska Wroclaw (Vratislav) 128
+#EXTINF:-1,Polsky - tvg-name="Eska Wroclaw (Vratislav) 128"
 https://ic2.smcdn.pl/2180-1.mp3
