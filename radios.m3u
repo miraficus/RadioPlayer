@@ -56,13 +56,13 @@ https://icecast8.play.cz/freeradio128.mp3
 #EXTINF:0,Česky - Free Radio 64
 https://icecast6.play.cz/freeradio64.mp3
 
-#EXTINF:0,Česky - Free Radio 128
+#EXTINF:0,Česky - Free Radio 32
 https://icecast8.play.cz/freeradio32.mp3
 
 #EXTINF:0,Česky - Radio Hey 128
 https://icecast3.play.cz/hey-radio128.mp3
 
-#EXTINF:0,Česky - Radio Hey 164
+#EXTINF:0,Česky - Radio Hey 64
 https://icecast8.play.cz/hey-radio64.mp3
 
 #EXTINF:0,Česky - Impuls 128
