@@ -56,13 +56,13 @@ https://icecast8.play.cz/freeradio128.mp3
 #EXTINF:-1 tvg-name="Free Radio 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 64
 https://icecast6.play.cz/freeradio64.mp3
 
-#EXTINF:-1 tvg-name="Free Radio 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 128
+#EXTINF:-1 tvg-name="Free Radio 32" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 128
 https://icecast8.play.cz/freeradio32.mp3
 
 #EXTINF:-1 tvg-name="Radio Hey 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 128
 https://icecast3.play.cz/hey-radio128.mp3
 
-#EXTINF:-1 tvg-name="Radio Hey 164" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 164
+#EXTINF:-1 tvg-name="Radio Hey 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 164
 https://icecast8.play.cz/hey-radio64.mp3
 
 #EXTINF:-1 tvg-name="Impuls 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Impuls.png",Impuls 128
