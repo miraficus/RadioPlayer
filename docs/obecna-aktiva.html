@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏬</text></svg>">
+    <meta name="keywords" content="Aktiva,Aktivum,Asset,Aset">
+    <meta name="author" content="Mira">
+    <meta name="theme-color" content="#222">
+    <title>Obecná Aktiva</title>
+    <script> /* Script for copying ASSET number */
+    /* https://stackoverflow.com/questions/54498853/how-to-onclick-copy-text-to-clipboard-from-a-p-tag-using-javascript-jquery*/
+    
+    // for this to work correctly every element has to have different id.
+    function copyElementText(id) {
+        var text = document.getElementById(id).innerText;
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = text;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    }
+    
+    function copyElementTextNoStar(id) {
+        var text = document.getElementById(id).innerText;
+        var rem = text.replace(/[^0-9A-Za-z\-]+/g, ""); //Removes everything that is not a number, uppercase letter, lowercase letter and dash.
+        var elem = document.createElement("textarea");
+        document.body.appendChild(elem);
+        elem.value = rem;
+        elem.select();
+        document.execCommand("copy");
+        document.body.removeChild(elem);
+    }
+    </script>
+    <style type="text/css"> /* Stylesheet with font imports and settings */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        
+        .roboto-thin {
+            font-family: "Roboto", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .roboto-light {
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .roboto-regular {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .roboto-bold {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+    </style>
+    <style type="text/css"> /* Main stylesheet */
+        :root {
+			--main-bg-color: #EEEEEE;
+            --sec-bg-color: #FFFFFF;
+            --main-text-color: #000000;
+            --sec-text-color: #EEEEEE;
+            --header-bg-color: #14539A;
+            --shadow-color: #000000;
+            --header-height: 32px;
+            --main-font: "Roboto", sans-serif;
+            --main-font-size: 22px;
+            --barcode-font: "IDAHC39M Code 39 Barcode";
+            --barcode-font-size: 22px;
+            --border-color: transparent;
+            --border-radius: 7px;
+            color-scheme: light;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--main-bg-color);
+            font-family: var(--main-font);
+            font-size: var(--main-font-size);
+            color: var(--main-text-color);
+
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .header {
+            display: block;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--header-bg-color);
+        }
+
+        .header p {
+            display: inline-block;
+            color: var(--sec-text-color);
+            margin-left: calc(5% + 5px);
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        .textfield {
+            float: right;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .content {
+            width: 100%;
+            height: calc(100% - var(--header-height));
+        }
+
+        .wrapper {
+            height: 100%;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 0;
+        }
+
+        .asset {
+            display: inline-block;
+            width: 360px;
+            height: 175px;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            padding: 7px;
+            background-color: var(--sec-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: 0px -0px 2px var(--shadow-color);
+            overflow: hidden;
+        }
+
+        .barcode {
+            display: block;
+            padding-bottom: 10px;
+            font-size: var(--barcode-font-size);
+            font-family: var(--barcode-font);
+            text-align: center;
+        }
+
+        .text {
+            display: block;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Obecná Aktiva</p>
+        <input type="text" class="textfield" name="textfield" id="textfield" placeholder="Testovací pole">
+    </div>
+    <div class="content">
+        <div class="wrapper">
+            <div class="asset">
+                <p class="barcode" id="b1" onclick="copyElementTextNoStar(this.id)">*A-2342*</p>
+                <p class="text">Konvektomat <br>Convotherm - <br> Restaurace</p>  
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b2" onclick="copyElementTextNoStar(this.id)">*A-12345*</p>
+                <p class="text">Aktivum číslo jedna dva <br>tři čtyři pět</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b3" onclick="copyElementTextNoStar(this.id)">*A-12345*</p>
+                <p class="text">Aktivum číslo jedna dva tři čtyři pět</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
