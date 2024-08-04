@@ -160,6 +160,33 @@
 
 
     </style>
+    <style type="text/css"> /* Stylesheet for colored backgrounds. Red for fire etc. */
+        :root {
+            --fire-equipment-color: #ffcccc;
+            --lights-color: #ffffcc;
+            --electro-color: #cce6ff;
+            --sewage-color: #ecd9c6;
+
+        }
+
+        .fire {
+            background-color: var(--fire-equipment-color);
+        }
+
+        .lights {
+            background-color: var(--lights-color);
+        }
+
+        .electro {
+            background-color: var(--electro-color);
+        }
+
+        .sewage {
+            background-color: var(--sewage-color);
+        }
+
+
+    </style>
 </head>
 <body>
     <div class="header">
@@ -169,16 +196,136 @@
     <div class="content">
         <div class="wrapper">
             <div class="asset">
-                <p class="barcode" id="b1" onclick="copyElementTextNoStar(this.id)">*A-2342*</p>
-                <p class="text">Konvektomat <br>Convotherm - <br> Restaurace</p>  
+                <p class="barcode" id="b1" onclick="copyElementTextNoStar(this.id)">*A-10149*</p>
+                <p class="text">Vozíky (Food)</p>  
             </div>
             <div class="asset">
-                <p class="barcode" id="b2" onclick="copyElementTextNoStar(this.id)">*A-12345*</p>
-                <p class="text">Aktivum číslo jedna dva <br>tři čtyři pět</p>
+                <p class="barcode" id="b2" onclick="copyElementTextNoStar(this.id)">*A-10292*</p>
+                <p class="text">Nákupní vozíky</p>
+            </div>
+            <div class="asset sewage">
+                <p class="barcode" id="b3" onclick="copyElementTextNoStar(this.id)">*A-2948*</p>
+                <p class="text">Odpadové potrubí</p>
             </div>
             <div class="asset">
-                <p class="barcode" id="b3" onclick="copyElementTextNoStar(this.id)">*A-12345*</p>
-                <p class="text">Aktivum číslo jedna dva tři čtyři pět</p>
+                <p class="barcode" id="b4" onclick="copyElementTextNoStar(this.id)">*A-2889*</p>
+                <p class="text">Potrubní pošta</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b5" onclick="copyElementTextNoStar(this.id)">*A-10002*</p>
+                <p class="text">Roof (Střecha)</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b6" onclick="copyElementTextNoStar(this.id)">*A-10004*</p>
+                <p class="text">Fasáda</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b7" onclick="copyElementTextNoStar(this.id)">*A-10005*</p>
+                <p class="text">Parkoviště a silnice</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b8" onclick="copyElementTextNoStar(this.id)">*A-2284*</p>
+                <p class="text">Gridy 1.N.P Market</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b9" onclick="copyElementTextNoStar(this.id)">*A-10006*</p>
+                <p class="text">grid ceiling system (Gridy 2.N.P Showrrom)</p>
+            </div>
+            <div class="asset lights">
+                <p class="barcode" id="b10" onclick="copyElementTextNoStar(this.id)">*A-10040*</p>
+                <p class="text">Nouzové osvětlení</p>
+            </div>
+            <div class="asset lights">
+                <p class="barcode" id="b11" onclick="copyElementTextNoStar(this.id)">*A-10057*</p>
+                <p class="text">Celkové osvětlení</p>
+            </div>
+            <div class="asset lights">
+                <p class="barcode" id="b12" onclick="copyElementTextNoStar(this.id)">*A-10058*</p>
+                <p class="text">Venkovní osvětlení a osvětlení parkovišť</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b13" onclick="copyElementTextNoStar(this.id)">*A-10059*</p>
+                <p class="text">CCTV (JIMI)</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b14" onclick="copyElementTextNoStar(this.id)">*A-10060*</p>
+                <p class="text">Systém detekce požáru EPS (JIMI)</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b15" onclick="copyElementTextNoStar(this.id)">*A-10061*</p>
+                <p class="text">Požární hadice/navijáky</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b16" onclick="copyElementTextNoStar(this.id)">*A-10062*</p>
+                <p class="text">Hydranty (external)</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b17" onclick="copyElementTextNoStar(this.id)">*A-10063*</p>
+                <p class="text">Systém řízení přístupu a detekce neoprávněného vniknutí - PZTS (EZS)  (JIMI)</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b18" onclick="copyElementTextNoStar(this.id)">*A-10066*</p>
+                <p class="text">Přenosné hasicí přístroje</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b19" onclick="copyElementTextNoStar(this.id)">*A-10082*</p>
+                <p class="text">SHZ - Sprinklerové systémy</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b20" onclick="copyElementTextNoStar(this.id)">*A-10147*</p>
+                <p class="text">Pokladna (Food)</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b21" onclick="copyElementTextNoStar(this.id)">*A-10148*</p>
+                <p class="text">Přípravné stoly (Food)</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b22" onclick="copyElementTextNoStar(this.id)">*A-10287*</p>
+                <p class="text">Regál SB</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b23" onclick="copyElementTextNoStar(this.id)">*A-2853*</p>
+                <p class="text">Stropní podhledy</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b24" onclick="copyElementTextNoStar(this.id)">*A-2854*</p>
+                <p class="text">Požární klapky</p>
+            </div>
+            <div class="asset sewage">
+                <p class="barcode" id="b25" onclick="copyElementTextNoStar(this.id)">*A-2858*</p>
+                <p class="text">Střešní vpusti</p>
+            </div>
+            <div class="asset electro">
+                <p class="barcode" id="b26" onclick="copyElementTextNoStar(this.id)">*A-2876*</p>
+                <p class="text">Hromosvod</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b27" onclick="copyElementTextNoStar(this.id)">*A-2877*</p>
+                <p class="text">Konstrukce budovy</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b28" onclick="copyElementTextNoStar(this.id)">*A-2878*</p>
+                <p class="text">Požární venkovní schodiště</p>
+            </div>
+            <div class="asset fire">
+                <p class="barcode" id="b29" onclick="copyElementTextNoStar(this.id)">*A-2879*</p>
+                <p class="text">Požární obklad</p>
+            </div>
+            <div class="asset sewage">
+                <p class="barcode" id="b30" onclick="copyElementTextNoStar(this.id)">*A-2880*</p>
+                <p class="text">Pisoár</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b31" onclick="copyElementTextNoStar(this.id)">*A-2885*</p>
+                <p class="text">Vybavení na úklid sněhu</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b32" onclick="copyElementTextNoStar(this.id)">*A-2920*</p>
+                <p class="text">Vlajky</p>
+            </div>
+            <div class="asset">
+                <p class="barcode" id="b33" onclick="copyElementTextNoStar(this.id)">*A-2921*</p>
+                <p class="text">Přebalovací pult</p>
             </div>
         </div>
     </div>
