@@ -1,0 +1,21 @@
+{
+  "short_name": "Radio",
+  "name": "Radio Online",
+  "icons": [
+    {
+      "src": "/assets/favicon-black.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/favicon-white.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#cccccc",
+  "background_color": "#cccccc"
+  "description": "Online radio player",
+}
