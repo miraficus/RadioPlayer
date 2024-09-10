@@ -15,6 +15,8 @@
   ],
   "start_url": "index.html",
   "display": "standalone",
+  "orientation": "any",
+  "dir": "ltr",
   "theme_color": "#cccccc",
   "background_color": "#cccccc"
   "description": "Online radio player",
