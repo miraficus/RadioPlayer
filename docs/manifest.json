@@ -3,12 +3,12 @@
   "name": "Radio Online",
   "icons": [
     {
-      "src": "/assets/favicon_black.svg",
+      "src": "/RadioPlayer/assets/favicon_black.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     },
     {
-      "src": "/assets/favicon_white.svg",
+      "src": "/RadioPlayer/assets/favicon_white.svg",
       "sizes": "512x512",
       "type": "image/svg+xml"
     }
