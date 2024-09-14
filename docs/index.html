@@ -143,6 +143,8 @@
 					<li><a onclick="fajnradio();">Fajn Radio</a></li>
 					<li><a onclick="frekvence();">Radio Frekvence 1</a></li>
 					<li><a onclick="casrock();">Radio Čas Rock</a></li>
+					<li><a onclick="metalheart();">Metal Heart Radio</a></li>
+					<li><a onclick="country();">Country Radio</a></li>
 				</ul>
 			</div>
 
@@ -287,6 +289,13 @@
 			    console.log("Metal Heart Radio");
 			    stationname = "Metal Heart Radio";
 			    link = "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3";
+				changestation();
+			}
+
+			function country() {
+			    console.log("Country Radio");
+			    stationname = "Country Radio";
+			    link = "https://n10a-eu.rcs.revma.com/h7rwanvb938uv";
 				changestation();
 			}
 

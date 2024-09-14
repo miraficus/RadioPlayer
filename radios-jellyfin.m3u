@@ -89,6 +89,10 @@ http://cz.radio-streamhosting.com:8000/metalheartradio64aac
 #EXTINF:-1 tvg-name="Metal Heart Radio 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio 128
 http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
 
+#EXTINF:-1 tvg-name="Country Radio" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/CountryRadio.png",Country Radio
+https://n10a-eu.rcs.revma.com/h7rwanvb938uv
+
+
 
 
 #EXTINF:-1 tvg-name="Simulator Radio 320" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio.png",Simulator Radio 320
