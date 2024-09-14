@@ -9,6 +9,7 @@
 			--sec-text-color: black;
 			--main-text-font: Arial;
 			--main-radius: 3px;
+			--sec-radius: 3px;
 			--shadow-color: #777777;
 			color-scheme: light;
 		}
@@ -54,6 +55,7 @@
 		}
 
 		.header a:hover{
+			transition: 150ms;
 			background: var(--hover-bg-color);
 		}
 
@@ -96,6 +98,36 @@
 			transition: 150ms;
 			background: var(--hover-bg-color);
 			cursor: pointer;
+		}
+
+		.radio-icon {
+			display: none;
+			/*display: inline-block;*/
+			border: 1px solid var(--accent-border-color);
+			border-radius: var(--main-radius);
+			margin-left: 10px;
+			box-shadow: 0px 1px 3px 0px var(--shadow-color);
+		}
+
+		.radio-icon:hover {
+			transition: 150ms;
+			background: var(--hover-bg-color);
+			cursor: pointer;
+		}
+
+		.radio-icon img {
+			display: block;
+			width: 195px;
+			height: 195px;
+			border: 1px solid var(--accent-border-color);
+			border-radius: var(--sec-radius);
+		}
+
+		.radio-icon a {
+			display: block;
+			text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
 		}
 
 		.player{
