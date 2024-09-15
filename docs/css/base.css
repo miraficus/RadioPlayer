@@ -69,12 +69,15 @@
 		}
 
 		.wrapper {
-			margin-right: 10px;
+			padding-right: 10px;
+			padding-top: 10px;
+			margin-bottom: 30px;
 		}
 		
 		.wrapper ul {
+			display: none;
 			list-style-type: none;
-			display: inline-block;
+			/*display: inline-block;*/
 			padding: 0;
 			margin-left: 10px;
 			height: 100px;
@@ -101,12 +104,17 @@
 		}
 
 		.radio-icon {
-			display: none;
-			/*display: inline-block;*/
+			/*display: none;*/
+			display: inline-block;
 			border: 1px solid var(--accent-border-color);
 			border-radius: var(--main-radius);
 			margin-left: 10px;
+			margin-bottom: 10px;
+			padding: 0;
+			height: 240px;
+			width: 196px;
 			box-shadow: 0px 1px 3px 0px var(--shadow-color);
+			overflow: hidden;
 		}
 
 		.radio-icon:hover {
@@ -117,8 +125,8 @@
 
 		.radio-icon img {
 			display: block;
-			width: 195px;
-			height: 195px;
+			width: 194px;
+			height: 194px;
 			border: 1px solid var(--accent-border-color);
 			border-radius: var(--sec-radius);
 		}
