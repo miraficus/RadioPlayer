@@ -180,6 +180,20 @@
 			margin-top: 5px;
 		}
 
+		@media (min-width: 1921px) {
+			.radio-icon {
+				height: 240px;
+				width: 196px;
+			}
+	
+			.radio-icon img {
+				display: block;
+				width: 194px;
+				height: 194px;
+				border: 1px solid var(--accent-border-color);
+				border-radius: var(--sec-radius);
+			}
+		}
 
 		@media (max-width: 1024px) {
 			.radio-icon {
