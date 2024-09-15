@@ -187,7 +187,7 @@
 			}
 
 			.radio-icon {
-				height: 160px;
+				height: 175px;
 				width: 130px;
 			}
 	
@@ -198,16 +198,28 @@
 				border: 1px solid var(--accent-border-color);
 				border-radius: var(--sec-radius);
 			}
-			
-			.radio-icon a {
-				padding-top: 5px;
-				padding-bottom: 5px;
-			}
 		}
 
 		@media (max-width: 600px) {
 			body {
 				background-color: red;
+			}
+
+			.radio-icon {
+				height: 135px;
+				width: 99px;
+			}
+	
+			.radio-icon img {
+				display: block;
+				width: 97px;
+				height: 97px;
+				border: 1px solid var(--accent-border-color);
+				border-radius: var(--sec-radius);
+			}
+
+			.radio-icon a {
+				font-size: 12px;
 			}
 		}
 		
