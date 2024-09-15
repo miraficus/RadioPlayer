@@ -182,10 +182,6 @@
 
 
 		@media (max-width: 1024px) {
-			body {
-				background-color: green;
-			}
-
 			.radio-icon {
 				height: 175px;
 				width: 130px;
@@ -201,10 +197,6 @@
 		}
 
 		@media (max-width: 600px) {
-			body {
-				background-color: red;
-			}
-
 			.radio-icon {
 				height: 135px;
 				width: 99px;
