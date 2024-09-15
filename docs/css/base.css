@@ -111,8 +111,8 @@
 			margin-left: 10px;
 			margin-bottom: 10px;
 			padding: 0;
-			height: 240px;
-			width: 196px;
+			height: 175px;
+			width: 130px;
 			box-shadow: 0px 1px 3px 0px var(--shadow-color);
 			overflow: hidden;
 		}
@@ -125,8 +125,8 @@
 
 		.radio-icon img {
 			display: block;
-			width: 194px;
-			height: 194px;
+			width: 128px;
+			height: 128px;
 			border: 1px solid var(--accent-border-color);
 			border-radius: var(--sec-radius);
 		}
