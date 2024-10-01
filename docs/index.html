@@ -144,7 +144,8 @@
 					<li><a onclick="heavyrockradio();">Rockovy Radio - Hard & Heavy</a></li>
 					<li><a onclick="simulator();">Simulator Radio</a></li>
 					<li><a onclick="simrock();">Simulator Radio Rock</a></li>
-					<li><a onclick="simdance();">Simulator Radio Dance</a></li>
+					<li><a onclick="simdance();">Simulator Radio Dance</a></li>Eska Wroclaw (Vratislav)
+					<li><a onclick="eska();">Eska Wroclaw (Vratislav)</a></li>
 				</ul>
 
 				<div class="radio-icon">
@@ -247,7 +248,10 @@
 					<a onclick="simdance();">Simulator Radio Dance</a>
 				</div>
 
-
+				<div class="radio-icon">
+					<img src="https://wroclaw.eska.pl/media/eska/desktop/images/eska-plug-icon2023.jpg" alt="Free Radio" onclick="eska();"/>
+					<a onclick="eska();">Eska Wroclaw (Vratislav)</a>
+				</div>
 
 
 			</div>
@@ -423,6 +427,13 @@
 			    console.log("Simulator Dance");
 			    stationname = "Simulator Dance";
 			    link = "https://simulatorradio.stream/dance.mp3";
+				changestation();
+			}
+
+			function eska() {
+			    console.log("Eska Wroclaw (Vratislav)");
+			    stationname = "Eska Wroclaw (Vratislav)";
+			    link = "https://ic2.smcdn.pl/2180-1.mp3";
 				changestation();
 			}
 
