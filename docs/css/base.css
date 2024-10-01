@@ -114,6 +114,7 @@
 			height: 175px;
 			width: 130px;
 			box-shadow: 0px 1px 3px 0px var(--shadow-color);
+			background: var(--accent-bg-color);
 			overflow: hidden;
 		}
 
