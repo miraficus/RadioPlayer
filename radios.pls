@@ -142,3 +142,7 @@ Length1=-1
 File36=https://ic2.smcdn.pl/2180-1.mp3
 Title36=Polsky - Eska Wroclaw (Vratislav) 128
 Length1=-1
+
+File37=https://secureonair.krone.at/kronehit64.aac
+Title37=Rakousky - Kronehit 64
+Length1=-1

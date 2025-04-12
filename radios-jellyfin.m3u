@@ -114,3 +114,8 @@ https://simulatorradio.stream/rock
 
 #EXTINF:-1 tvg-name="Eska Wroclaw (Vratislav) 128" group-title="Polsky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Polish/Eska.png",Eska Wroclaw (Vratislav) 128
 https://ic2.smcdn.pl/2180-1.mp3
+
+
+
+#EXTINF:-1 tvg-name="Kronehit 64" group-title="Rakousky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Austrian/Kronehit.png",Kronehit 64
+https://secureonair.krone.at/kronehit64.aac
