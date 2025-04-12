@@ -57,7 +57,7 @@
 					rootvar.style.setProperty('--main-bg-color', '#222222');
 					rootvar.style.setProperty('--sec-bg-color', '#222222');
 					rootvar.style.setProperty('--ter-bg-color', '#222222');
-					rootvar.style.setProperty('--accent-bg-color', 'black');
+					rootvar.style.setProperty('--accent-bg-color', '#444444');
 					rootvar.style.setProperty('--hover-bg-color', '#1c1c1c');
 					rootvar.style.setProperty('--main-text-color', 'white');
 					rootvar.style.setProperty('--sec-text-color', 'white');
@@ -146,6 +146,7 @@
 					<li><a onclick="simrock();">Simulator Radio Rock</a></li>
 					<li><a onclick="simdance();">Simulator Radio Dance</a></li>Eska Wroclaw (Vratislav)
 					<li><a onclick="eska();">Eska Wroclaw (Vratislav)</a></li>
+					<li><a onclick="kronehit();">Kronehit</a></li>
 				</ul>
 
 				<div class="radio-icon">
@@ -252,8 +253,10 @@
 					<img src="https://raw.githubusercontent.com/miraficus/RadioPlayer/refs/heads/main/docs/assets/covers/Polish/Eska.png" alt="Eska Wroclaw" onclick="eska();"/>
 					<a onclick="eska();">Eska Wroclaw (Vratislav)</a>
 				</div>
-
-
+				<div class="radio-icon">
+					<img src="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Austrian/Kronehit.png" alt="kronehit" onclick="kronehit();"/>
+					<a onclick="kronehit();">Kronehit</a>
+				</div>
 			</div>
 
 
@@ -430,6 +433,8 @@
 				changestation();
 			}
 
+			// Polish
+
 			function eska() {
 			    console.log("Eska Wroclaw (Vratislav)");
 			    stationname = "Eska Wroclaw (Vratislav)";
@@ -437,6 +442,14 @@
 				changestation();
 			}
 
+			// Austrian
+
+			function kronehit() {
+			    console.log("Kronehit");
+			    stationname = "Kronehit";
+			    link = "https://secureonair.krone.at/kronehit64.aac";
+				changestation();
+			}
 
 		</script>
 	</body>
