@@ -103,10 +103,10 @@
 		<div class="header">
 			<a onclick="alert('Verze 1.2');" id="left">Radio</a>
 			<select name="themechoice" id="themechoice" onchange="themechange();">
-				<option value="light" selected>Světlý</option>
-			 	<option value="dark">Tmavý</option>
-				<option value="black">Černý</option>
-				<option value="blue">Modrý</option>
+				<option value="light" selected>Světlý vzhled</option>
+			 	<option value="dark">Tmavý vzhled</option>
+				<option value="black">Černý vzhled</option>
+				<option value="blue">Modrý vzhled</option>
 			</select>
 			<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank">Zdrojový kod</a>
 		</div>
@@ -142,9 +142,34 @@
 		        }
 			}
 
-			function changebitrate() {
+			document.addEventListener('DOMContentLoaded', function() {
+				// Theme select
+				const themeSelect = document.getElementById('themechoice');
+				// Restore saved theme from localStorage
+				const savedTheme = localStorage.getItem('selectedTheme');
+				if (savedTheme) {
+					themeSelect.value = savedTheme;
+					themechange(); // Apply theme on load
+				}
+				// Save the theme to localStorage when changed
+				themeSelect.addEventListener('change', function() {
+					localStorage.setItem('selectedTheme', themeSelect.value);
+				});
 
-			}
+				// Autoplay checkbox
+				const autoplayCheckbox = document.getElementById('autoplay');
+				const savedAutoplay = localStorage.getItem('autoplayChecked');
+				if (savedAutoplay === "true") {
+					autoplayCheckbox.checked = true;
+				} else {
+					autoplayCheckbox.checked = false;
+				}
+				autoplayCheckbox.addEventListener('change', function() {
+					localStorage.setItem('autoplayChecked', autoplayCheckbox.checked);
+				});
+				// Optional: trigger autoplay if checked
+				//if (autoplayCheckbox.checked) checkautoplay();
+			});
 
 			const stations = {
 				beat:        { name: "Radio Beat", url: "https://ice6.abradio.cz/beat128.aac", img: "assets/covers/Czech/Beat.svg" },
