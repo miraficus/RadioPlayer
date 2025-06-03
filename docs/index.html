@@ -30,9 +30,6 @@
 			var rootvar = document.querySelector(':root');
 
 			// --- Change theme ---
-				// Why doesnt this work? themechoice always null
-			var choice = document.getElementById("themechoice");
-			console.log("themechoice:", choice);
 
 			function themechange() {
 				var theme = document.getElementById("themechoice").value;
@@ -101,14 +98,14 @@
 	</head>
 	<body>
 		<div class="header">
-			<a onclick="alert('Verze 1.2');" id="left">Radio</a>
+			<a onclick="alert('Verze 1.3');" id="left">Radio</a>
 			<select name="themechoice" id="themechoice" onchange="themechange();">
 				<option value="light" selected>Světlý vzhled</option>
 			 	<option value="dark">Tmavý vzhled</option>
 				<option value="black">Černý vzhled</option>
 				<option value="blue">Modrý vzhled</option>
 			</select>
-			<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank">Zdrojový kod</a>
+			<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank">Zdrojový kód</a>
 		</div>
 
 		<div class="player" id="player">
