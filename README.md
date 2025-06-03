@@ -11,12 +11,12 @@ This thing is in development. (It may be forever)
 - ~~Dark Theme~~
 - ~~Black Theme~~
 - ~~Blue Theme~~
-- Make browser rember the slected theme and autoplay settings (also bitrate when it will be implemented).
+- Make browser remember the selected theme and autoplay settings (also bitrate when it will be implemented).
 - Make quality selector (changes the bitrate). (Probably will make me rewrite audio source switching)
 - Make sources tab (with links to icecast sources and/or official websites).
 - Choose a license.
 - Maybe show song playing right now (probably hard af for n00b like me).
-- Remove few console.log("unnecesary");
+- Remove unnecessary console.log("");
 - Sort radio staions alphabeticaly.
 
 ## Issues
