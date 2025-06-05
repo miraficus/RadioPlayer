@@ -69,9 +69,14 @@
 		}
 
 		.wrapper {
-			padding-right: 10px;
-			padding-top: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 10px 10px;
+			padding: 10px;
 			margin-bottom: 30px;
+			box-sizing: border-box;
 		}
 		
 		.wrapper ul {
@@ -108,7 +113,6 @@
 			display: inline-block;
 			border: 1px solid var(--accent-border-color);
 			border-radius: var(--main-radius);
-			margin-left: 10px;
 			margin-bottom: 10px;
 			padding: 0;
 			height: 175px;
