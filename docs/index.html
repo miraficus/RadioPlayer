@@ -201,6 +201,7 @@
 				
 				const div = document.createElement('div');
 				div.className = 'radio-icon';
+				div.onclick = () => changeStation(key);
 				
 				const img = document.createElement('img');
 				img.src = station.img.startsWith('http') ? station.img : `https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/${station.img}`;
