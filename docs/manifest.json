@@ -149,6 +149,12 @@
       "src": "/RadioPlayer/assets/pngfavicon/1024.png",
       "sizes": "1024x1024",
       "type": "image/png"
+    },
+    {
+    "src": "/RadioPlayer/assets/pngfavicon/maskable_icon.png",
+    "sizes": "1024x1024",
+    "type": "image/png",
+    "purpose": "maskable"
     }
   ],
   "start_url": "index.html",
@@ -158,5 +164,43 @@
   "lang": "cs",
   "theme_color": "#add8e6",
   "background_color": "#ffffff",
-  "description": "Online Radio Player"
+  "description": "Online Radio Player",
+  "screenshots": [
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/White.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/WhiteN.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x2214",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/Blue.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/BlueN.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x2214",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/Dark.png",
+      "type": "image/png",
+      "sizes": "1920x1080",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/RadioPlayer/docs/assets/screenshots/DarkN.jpg",
+      "type": "image/jpg",
+      "sizes": "1080x2214",
+      "form_factor": "narrow"
+    }
+  ]
 }
