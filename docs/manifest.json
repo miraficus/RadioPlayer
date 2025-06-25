@@ -158,6 +158,7 @@
     }
   ],
   "start_url": "index.html",
+  "id": "https://miraficus.github.io/RadioPlayer/",
   "display": "standalone",
   "orientation": "any",
   "dir": "ltr",
