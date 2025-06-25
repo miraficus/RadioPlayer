@@ -167,37 +167,37 @@
   "description": "Online Radio Player",
   "screenshots": [
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/White.png",
+      "src": "/RadioPlayer/assets/screenshots/White.png",
       "type": "image/png",
       "sizes": "1920x1080",
       "form_factor": "wide"
     },
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/WhiteN.jpg",
+      "src": "/RadioPlayer/assets/screenshots/WhiteN.jpg",
       "type": "image/jpg",
       "sizes": "1080x2214",
       "form_factor": "narrow"
     },
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/Blue.png",
+      "src": "/RadioPlayer/assets/screenshots/Blue.png",
       "type": "image/png",
       "sizes": "1920x1080",
       "form_factor": "wide"
     },
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/BlueN.jpg",
+      "src": "/RadioPlayer/assets/screenshots/BlueN.jpg",
       "type": "image/jpg",
       "sizes": "1080x2214",
       "form_factor": "narrow"
     },
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/Dark.png",
+      "src": "/RadioPlayer/assets/screenshots/Dark.png",
       "type": "image/png",
       "sizes": "1920x1080",
       "form_factor": "wide"
     },
     {
-      "src": "/RadioPlayer/docs/assets/screenshots/DarkN.jpg",
+      "src": "/RadioPlayer/assets/screenshots/DarkN.jpg",
       "type": "image/jpg",
       "sizes": "1080x2214",
       "form_factor": "narrow"
