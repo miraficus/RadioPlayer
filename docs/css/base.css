@@ -216,14 +216,14 @@
 
 		@media (max-width: 600px) {
 			.radio-icon {
-				height: 135px;
-				width: 99px;
+				height: 140px;
+				width: 104px;
 			}
 	
 			.radio-icon img {
 				display: block;
-				width: 97px;
-				height: 97px;
+				width: 102px;
+				height: 102px;
 				border: 1px solid var(--accent-border-color);
 				border-radius: var(--sec-radius);
 			}
@@ -233,4 +233,21 @@
 			}
 		}
 		
-		
+		@media (max-width: 350px) {
+			.radio-icon {
+				height: 132px;
+				width: 96px;
+			}
+	
+			.radio-icon img {
+				display: block;
+				width: 94px;
+				height: 94px;
+				border: 1px solid var(--accent-border-color);
+				border-radius: var(--sec-radius);
+			}
+
+			.radio-icon a {
+				font-size: 12px;
+			}
+		}
