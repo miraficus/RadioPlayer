@@ -150,7 +150,7 @@ body {
 	width: 110px;
 	height: 110px;
 	aspect-ratio: 1/1;
-	border-radius: 50%;
+	border-radius: var(--sec-radius);
 	border: 2px solid var(--accent-border-color);
 	margin: 18px 0 10px 0;
 	object-fit: cover;
