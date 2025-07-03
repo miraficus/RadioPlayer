@@ -143,12 +143,14 @@ body{
 	object-fit: cover;
 }
 
+/* --- CHANGE 1: Responsive font size for text inside radio-icon --- */
 .radio-icon a {
 	display: block;
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	font-size: 16px;
+	/* Use clamp for better scaling: min 1rem, preferred 1.8vw, max 1.35rem */
+	font-size: clamp(1rem, 1.8vw, 1.35rem);
 	word-break: break-word;
 }
 
@@ -164,8 +166,14 @@ body{
 		grid-template-columns: repeat(7, minmax(130px, 1fr));
 	}
 }
+
+@media (min-width: 690px) and (max-width: 899px) {
+	.wrapper {
+		grid-template-columns: repeat(5, minmax(110px, 1fr));
+	}
+}
 /* Minimum 3 columns for phones/small screens */
-@media (max-width: 899px) {
+@media (max-width: 689px) {
 	.wrapper {
 		grid-template-columns: repeat(3, minmax(110px, 1fr));
 	}
@@ -175,14 +183,19 @@ body{
 		aspect-ratio: 1 / 1;
 		margin-top: 0px;
 	}
-	.radio-icon a {
-		font-size: 16px;
-	}
 }
+
 /* fallback for very small screens: 2 columns */
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 	.wrapper {
 		grid-template-columns: repeat(2, minmax(90px, 1fr));
+	}
+}
+
+/* --- CHANGE 2: 6 columns minimum in landscape mode for mobile/tablet --- */
+@media (orientation: landscape) and (max-width: 899px) {
+	.wrapper {
+		grid-template-columns: repeat(6, minmax(90px, 1fr));
 	}
 }
 
