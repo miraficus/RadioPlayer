@@ -147,8 +147,8 @@ body{
 .radio-icon a {
 	display: block;
 	text-align: center;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	/* Use clamp for better scaling: min 1rem, preferred 1.8vw, max 1.35rem */
 	font-size: clamp(1rem, 1.8vw, 1.35rem);
 	word-break: break-word;
