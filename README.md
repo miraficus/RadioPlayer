@@ -13,11 +13,11 @@ This thing is in development. (It may be forever)
 - ~~Blue Theme~~
 - ~~Make browser remember the selected theme and autoplay settings (also bitrate when it will be implemented).~~
 - Make quality selector (changes the bitrate). (Probably will make me rewrite audio source switching)
-- Make sources tab (with links to icecast sources and/or official websites).
+- ~~Make sources tab (with links to icecast sources and/or official websites).~~ (Simulator radio removed icecast sources website so i scrapped this idea)
 - Choose a license.
 - Maybe show song playing right now (probably hard af for n00b like me).
 - Remove unnecessary console.log("");
-- Sort radio staions alphabeticaly.
+- Sort radio stations alphabeticaly.
 
 ## Issues
 - ~~When switching radio stations reload audio source.~~
