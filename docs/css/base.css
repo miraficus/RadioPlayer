@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
 	--main-bg-color: #f6f7f9;
 	--sec-bg-color: #ffffff;
@@ -13,8 +15,6 @@
 	--shadow-color: rgba(33, 33, 33, 0.06);
 	color-scheme: light;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 html, body {
 	width: 100%;
@@ -177,7 +177,6 @@ body {
 /* Player Card Material Style */
 .player {
 	max-width: 100%;
-	width: 100%;
 	box-sizing: border-box;
 	background: var(--sec-bg-color);
 	box-shadow: 0 2px 12px 0 var(--shadow-color);
@@ -191,6 +190,21 @@ body {
 	overflow-x: auto;
 }
 
+/* Make audio responsive and never overflow on mobile */
+.player audio {
+	width: 100%;
+	max-width: 340px;
+	min-width: 0;
+	margin: 0 auto 0 auto;
+	border-radius: 32px;
+	background: var(--accent-bg-color);
+	box-shadow: 0 1px 6px 0 var(--shadow-color);
+	overflow: hidden;
+	display: block;
+	box-sizing: border-box;
+}
+
+
 #player-name {
 	font-size: 1.2rem;
 	font-weight: 600;
@@ -203,16 +217,6 @@ body {
 	font-size: 1rem;
 	color: var(--sec-text-color);
 	margin-left: 6px;
-}
-
-.player audio {
-	width: 100%;
-	max-width: 340px;
-	margin: 0 auto 0 auto;
-	border-radius: 32px;
-	background: var(--accent-bg-color);
-	box-shadow: 0 1px 6px 0 var(--shadow-color);
-	overflow: hidden;
 }
 
 input[type="checkbox"]#autoplay {
