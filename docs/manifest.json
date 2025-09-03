@@ -160,7 +160,6 @@
   "start_url": "index.html",
   "id": "https://miraficus.github.io/RadioPlayer/",
   "display": "standalone",
-  "orientation": "any",
   "dir": "ltr",
   "lang": "cs",
   "theme_color": "#add8e6",
