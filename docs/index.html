@@ -166,7 +166,7 @@
 					localStorage.setItem('autoplayChecked', autoplayCheckbox.checked);
 				});
 
-				// Render station icons
+				// Render station icons (grouped by language)
 				renderStations();
 
 				// Restore last used station (if any)
@@ -179,54 +179,85 @@
 			});
 
 			const stations = {
-				beat:        { name: "Radio Beat", url: "https://ice6.abradio.cz/beat128.aac", img: "assets/covers/Czech/Beat.svg" },
-				casrock:     { name: "Radio Čas Rock", url: "https://icecast7.play.cz/casrock128.mp3", img: "assets/covers/Czech/CasRock.png" },
-				country:     { name: "Country Radio", url: "https://n10a-eu.rcs.revma.com/h7rwanvb938uv", img: "assets/covers/Czech/CountryRadio.png" },
-				evropa:      { name: "Radio Evropa2", url: "https://ice.actve.net/fm-evropa2-128", img: "assets/covers/Czech/Evropa2.svg" },
-				fajnradio:   { name: "Fajn Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac", img: "assets/covers/Czech/Fajnradio.svg" },
-				free:        { name: "Free Radio", url: "https://icecast8.play.cz/freeradio128.mp3", img: "assets/covers/Czech/Freeradio.svg" },
-				frekvence:   { name: "Radio Frekvence 1", url: "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac", img: "assets/covers/Czech/Frekvence1.svg" },
-				hey:         { name: "Radio Hey", url: "https://icecast3.play.cz/hey-radio128.mp3", img: "assets/covers/Czech/RadioHey.svg" },
-				city:        { name: "Hitradio City", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac", img: "assets/covers/Czech/HitradioCity.svg" },
-				impuls:      { name: "Radio Impuls", url: "https://icecast1.play.cz/impuls128.mp3", img: "assets/covers/Czech/Impuls.svg" },
-				kiss:        { name: "Radio KissHady", url: "https://ice5.abradio.cz/kiss128.mp3", img: "assets/covers/Czech/Kiss.svg" },
-				krokodyl:    { name: "Radio Krokodýl", url: "https://icecast4.play.cz/krokodyl128.mp3", img: "assets/covers/Czech/Krokodyl.svg" },
-				metalheart:  { name: "Metal Heart Radio", url: "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3", img: "assets/covers/Czech/MetalHeart.png" },
-				oldies:      { name: "Oldies Radio", url: "https://ice2.abradio.cz/oldiesradio128.aac", img: "assets/covers/Czech/Oldies.svg" },
-				rockradio:   { name: "Rockovy Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac", img: "assets/covers/Czech/RockRadio.svg" },
-				rockradioalt:{ name: "Rockovy Radio - Alternative", url: "https://ice2.abradio.cz/znamkapunku128.aac", img: "assets/covers/Czech/RockRadioAlternative.svg" },
-				heavyrockradio: { name: "Rockovy Radio - Hard & Heavy", url: "https://ice2.abradio.cz/metalomanie128.aac", img: "assets/covers/Czech/RockRadioHardAHeavy.svg" },
-				rockzone:   { name: "Rock Zone", url: "https://stream.sepia.sk:8000/rockzone128.mp3", img: "assets/covers/Czech/RockZone.svg" },
-				simulator:   { name: "Simulator Radio", url: "https://simulatorradio.stream/stream", img: "assets/covers/English/SimulatorRadio.png" },
-				simrock:     { name: "Simulator Radio Rock", url: "https://simulatorradio.stream/rock.mp3", img: "assets/covers/English/SimulatorRadio2.png" },
-				simdance:    { name: "Simulator Radio Dance", url: "https://simulatorradio.stream/dance.mp3", img: "assets/covers/English/SimulatorRadio3.png" },
-				eska:        { name: "Eska Wroclaw (Vratislav)", url: "https://ic2.smcdn.pl/2180-1.mp3", img: "assets/covers/Polish/Eska.png" },
-				kronehit:    { name: "Kronehit", url: "https://secureonair.krone.at/kronehit64.aac", img: "assets/covers/Austrian/Kronehit.png" }
+				beat:        { name: "Radio Beat", url: "https://ice6.abradio.cz/beat128.aac", img: "assets/covers/Czech/Beat.svg", lang: "Česky" },
+				casrock:     { name: "Radio Čas Rock", url: "https://icecast7.play.cz/casrock128.mp3", img: "assets/covers/Czech/CasRock.png", lang: "Česky" },
+				country:     { name: "Country Radio", url: "https://n10a-eu.rcs.revma.com/h7rwanvb938uv", img: "assets/covers/Czech/CountryRadio.png", lang: "Česky" },
+				evropa:      { name: "Radio Evropa2", url: "https://ice.actve.net/fm-evropa2-128", img: "assets/covers/Czech/Evropa2.svg", lang: "Česky" },
+				fajnradio:   { name: "Fajn Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac", img: "assets/covers/Czech/Fajnradio.svg", lang: "Česky" },
+				free:        { name: "Free Radio", url: "https://icecast8.play.cz/freeradio128.mp3", img: "assets/covers/Czech/Freeradio.svg", lang: "Česky" },
+				frekvence:   { name: "Radio Frekvence 1", url: "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac", img: "assets/covers/Czech/Frekvence1.svg", lang: "Česky" },
+				hey:         { name: "Radio Hey", url: "https://icecast3.play.cz/hey-radio128.mp3", img: "assets/covers/Czech/RadioHey.svg", lang: "Česky" },
+				city:        { name: "Hitradio City", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac", img: "assets/covers/Czech/HitradioCity.svg", lang: "Česky" },
+				impuls:      { name: "Radio Impuls", url: "https://icecast1.play.cz/impuls128.mp3", img: "assets/covers/Czech/Impuls.svg", lang: "Česky" },
+				kiss:        { name: "Radio KissHady", url: "https://ice5.abradio.cz/kiss128.mp3", img: "assets/covers/Czech/Kiss.svg", lang: "Česky" },
+				krokodyl:    { name: "Radio Krokodýl", url: "https://icecast4.play.cz/krokodyl128.mp3", img: "assets/covers/Czech/Krokodyl.svg", lang: "Česky" },
+				metalheart:  { name: "Metal Heart Radio", url: "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3", img: "assets/covers/Czech/MetalHeart.png", lang: "Česky" },
+				oldies:      { name: "Oldies Radio", url: "https://ice2.abradio.cz/oldiesradio128.aac", img: "assets/covers/Czech/Oldies.svg", lang: "Česky" },
+				rockradio:   { name: "Rockovy Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac", img: "assets/covers/Czech/RockRadio.svg", lang: "Česky" },
+				rockradioalt:{ name: "Rockovy Radio - Alternative", url: "https://ice2.abradio.cz/znamkapunku128.aac", img: "assets/covers/Czech/RockRadioAlternative.svg", lang: "Česky" },
+				heavyrockradio: { name: "Rockovy Radio - Hard & Heavy", url: "https://ice2.abradio.cz/metalomanie128.aac", img: "assets/covers/Czech/RockRadioHardAHeavy.svg", lang: "Česky" },
+				rockzone:   { name: "Rock Zone", url: "https://stream.sepia.sk:8000/rockzone128.mp3", img: "assets/covers/Czech/RockZone.svg", lang: "Česky" },
+				simulator:   { name: "Simulator Radio", url: "https://simulatorradio.stream/stream", img: "assets/covers/English/SimulatorRadio.png", lang: "Anglicky" },
+				simrock:     { name: "Simulator Radio Rock", url: "https://simulatorradio.stream/rock.mp3", img: "assets/covers/English/SimulatorRadio2.png", lang: "Anglicky" },
+				simdance:    { name: "Simulator Radio Dance", url: "https://simulatorradio.stream/dance.mp3", img: "assets/covers/English/SimulatorRadio3.png", lang: "Anglicky" },
+				eska:        { name: "Eska Wroclaw (Vratislav)", url: "https://ic2.smcdn.pl/2180-1.mp3", img: "assets/covers/Polish/Eska.png", lang: "Polsky" },
+				kronehit:    { name: "Kronehit", url: "https://secureonair.krone.at/kronehit64.aac", img: "assets/covers/Austrian/Kronehit.png", lang: "Německy" }
 			};
 
 			function renderStations() {
-			const wrapper = document.querySelector('.wrapper');
-			wrapper.innerHTML = ''; // Clear existing
+				const wrapper = document.querySelector('.wrapper');
+				wrapper.innerHTML = ''; // Clear existing
 
-			Object.entries(stations).forEach(([key, station]) => {
-				
-				const div = document.createElement('div');
-				div.className = 'radio-icon';
-				div.onclick = () => changeStation(key);
-				
-				const img = document.createElement('img');
-				img.src = station.img.startsWith('http') ? station.img : `https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/${station.img}`;
-				img.alt = station.name;
-				img.onclick = () => changeStation(key);
-				
-				const a = document.createElement('a');
-				a.textContent = station.name;
-				a.onclick = () => changeStation(key);
-				
-				div.appendChild(img);
-				div.appendChild(a);
-				wrapper.appendChild(div);
-			});
+				// Group stations by language
+				const groups = {};
+				Object.entries(stations).forEach(([key, station]) => {
+					const lang = station.lang || 'Jiné';
+					if (!groups[lang]) groups[lang] = [];
+					groups[lang].push({ key, ...station });
+				});
+
+				// Order languages: prefer Česky first, Anglicky second, then rest alphabetically
+				const preferredOrder = ['Česky', 'Anglicky'];
+				const otherLangs = Object.keys(groups).filter(l => !preferredOrder.includes(l)).sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' }));
+				const orderedLangs = [
+					...preferredOrder.filter(l => groups[l]),
+					...otherLangs
+				];
+
+				orderedLangs.forEach(lang => {
+					// Language header
+					const header = document.createElement('h2');
+					header.textContent = lang;
+					header.className = 'language-header';
+					wrapper.appendChild(header);
+
+					// Sort stations alphabetically by name (use Czech locale for proper diacritics sort)
+					const items = groups[lang].sort((a, b) => a.name.localeCompare(b.name, 'cs', { sensitivity: 'base' }));
+
+					const groupDiv = document.createElement('div');
+					groupDiv.className = 'language-group';
+
+					items.forEach(station => {
+						const div = document.createElement('div');
+						div.className = 'radio-icon';
+						div.onclick = () => changeStation(station.key);
+
+						const img = document.createElement('img');
+						img.src = station.img.startsWith('http') ? station.img : `https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/${station.img}`;
+						img.alt = station.name;
+						img.onclick = () => changeStation(station.key);
+
+						const a = document.createElement('a');
+						a.textContent = station.name;
+						a.onclick = () => changeStation(station.key);
+
+						div.appendChild(img);
+						div.appendChild(a);
+						groupDiv.appendChild(div);
+					});
+
+					wrapper.appendChild(groupDiv);
+				});
 			}
 
 			function changeStation(stationKey) {
