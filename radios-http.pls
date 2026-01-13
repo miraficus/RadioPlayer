@@ -119,30 +119,34 @@ File30=http://n10a-eu.rcs.revma.com/h7rwanvb938uv
 Title30=Česky - Country Radio
 Length1=-1
 
-File31=http://simulatorradio.stream/320
-Title31=Anglicky - Simulator Radio 320
+File31=http://stream.sepia.sk:8000/rockzone128.mp3
+Title31=Česky - Rock Zone 128
 Length1=-1
 
-File32=http://simulatorradio.stream/128
-Title32=Anglicky - Simulator Radio 128
+File32=http://simulatorradio.stream/320
+Title32=Anglicky - Simulator Radio 320
 Length1=-1
 
-File33=http://simulatorradio.stream/64
-Title33=Anglicky - Simulator Radio 64
+File33=http://simulatorradio.stream/128
+Title33=Anglicky - Simulator Radio 128
 Length1=-1
 
-File34=http://simulatorradio.stream/dance.mp3
-Title34=Anglicky - Simulator Radio Dance 320
+File34=http://simulatorradio.stream/64
+Title34=Anglicky - Simulator Radio 64
 Length1=-1
 
-File35=http://simulatorradio.stream/rock
-Title35=Anglicky - Simulator Radio Rock 320
+File35=http://simulatorradio.stream/dance.mp3
+Title35=Anglicky - Simulator Radio Dance 320
 Length1=-1
 
-File36=http://ic2.smcdn.pl/2180-1.mp3
-Title36=Polsky - Eska Wroclaw (Vratislav) 128
+File36=http://simulatorradio.stream/rock
+Title36=Anglicky - Simulator Radio Rock 320
 Length1=-1
 
-File37=http://secureonair.krone.at/kronehit64.aac
-Title37=Rakousky - Kronehit 64
+File37=http://ic2.smcdn.pl/2180-1.mp3
+Title37=Polsky - Eska Wroclaw (Vratislav) 128
+Length1=-1
+
+File38=http://secureonair.krone.at/kronehit64.aac
+Title38=Rakousky - Kronehit 64
 Length1=-1

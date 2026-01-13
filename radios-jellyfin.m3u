@@ -92,6 +92,8 @@ http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
 #EXTINF:-1 tvg-name="Country Radio" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/CountryRadio.png",Country Radio
 https://n10a-eu.rcs.revma.com/h7rwanvb938uv
 
+#EXTINF:-1 tvg-name="Rock Zone" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RockZone.svg",Country Radio
+https://stream.sepia.sk:8000/rockzone128.mp3
 
 
 
