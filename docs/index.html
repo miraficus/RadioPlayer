@@ -165,8 +165,17 @@
 				autoplayCheckbox.addEventListener('change', function() {
 					localStorage.setItem('autoplayChecked', autoplayCheckbox.checked);
 				});
-				// Optional: trigger autoplay if checked
-				//if (autoplayCheckbox.checked) checkautoplay();
+
+				// Render station icons
+				renderStations();
+
+				// Restore last used station (if any)
+				const savedStation = localStorage.getItem('lastStation');
+				if (savedStation && stations[savedStation]) {
+					// changeStation will update the UI and call checkautoplay()
+					changeStation(savedStation);
+					// If autoplay was saved, ensure play is attempted (changeStation already calls checkautoplay)
+				}
 			});
 
 			const stations = {
@@ -227,12 +236,15 @@
 				document.getElementById("player-name").innerHTML = station.name;
 				document.getElementById("player-src").src = station.url + "?time=" + timenow.getTime();
 				document.getElementById("audio").load();
+
+				// Save the last used station so it can be restored on reload
+				try {
+					localStorage.setItem('lastStation', stationKey);
+				} catch (e) {
+					console.warn("Could not save lastStation to localStorage:", e);
+				}
+
 				checkautoplay();
-			}
-
-			window.onload = function() {
-				renderStations();
-
 			}
 
 		</script>
