@@ -135,40 +135,27 @@ body {
 	letter-spacing: 0.02em;
 }
 
-/* LANGUAGE GROUP
-   Desktop / tablets: center the group using flexbox so rows are centered,
-   items keep a fixed width (var(--card-width)) and flow left-to-right.
-   Mobile (small screens): switch to float:left for cards (as you requested)
-   and use a clearfix so floats wrap and the whole group can be centered.
-*/
+/* Language-group: fixed-size cards, centered when there are few items.
+   Using auto-fit with a fixed min/max keeps cards the same size across groups.
+   justify-content: center prevents items stretching to fill the row when fewer items exist. */
 .language-group {
 	grid-column: 1 / -1;
-	/* default: use flex to center rows on wide screens */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center; /* center the row group on wide screens */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--card-width), var(--card-width)));
 	gap: 18px;
+	justify-content: center; /* center the group if there is leftover space */
 	padding: 0 0 12px 0;
 	box-sizing: border-box;
 	width: 100%;
 }
 
-/* clearfix for when we switch to floats on small screens */
-.language-group.clearfix::after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-/* Radio icon card */
+/* Radio icon card: fixed width equal to --card-width so all groups have same card size */
 .radio-icon {
 	box-sizing: border-box;
 	border-radius: var(--main-radius);
 	background: var(--sec-bg-color);
 	box-shadow: 0 2px 8px 0 var(--shadow-color);
 	overflow: hidden;
-	/* For flex layout: allow fixed width */
-	flex: 0 0 var(--card-width);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -180,17 +167,15 @@ body {
 	min-height: 235px;
 	width: var(--card-width);
 	max-width: var(--card-width);
-	margin: 0; /* spacing handled by gap */
+	margin: 0; /* spacing handled by grid gap */
 }
 
-/* Hover / active */
 .radio-icon:active,
 .radio-icon:hover {
 	background: var(--hover-bg-color);
 	box-shadow: 0 4px 16px 2px rgba(55,124,251,0.11);
 }
 
-/* Image inside card */
 .radio-icon img {
 	width: 110px;
 	height: 110px;
@@ -204,7 +189,6 @@ body {
 	transition: box-shadow 0.2s;
 }
 
-/* Link / label inside card */
 .radio-icon a {
 	display: block;
 	text-align: center;
@@ -338,32 +322,17 @@ input[type="checkbox"]#autoplay {
 	}
 }
 
-/* Small phones: switch to float layout (keeps the phone behaviour you liked),
-   keep the whole language-group centered by using the clearfix container
-   and relying on the group's intrinsic width (wrapped floats) plus auto margins. */
+/* Small phones: force 3 columns and slightly smaller cards so devices like P30 Lite show 3 per row */
 @media (max-width: 420px) {
 	:root {
 		--card-width: 110px;
 	}
-	/* make the language-group use a block layout and act as a centered clearfix container */
 	.language-group {
-		display: block;
-		text-align: left; /* left-align inside, floats control line flow */
+		grid-template-columns: repeat(3, minmax(var(--card-width), var(--card-width)));
+		justify-content: center;
 	}
-	.language-group.clearfix {
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 6px;
-		padding-right: 6px;
-	}
-
-	/* floats for the cards on small devices */
 	.radio-icon {
-		float: left;
-		width: var(--card-width);
-		max-width: var(--card-width);
 		min-height: 160px;
-		margin: 0 12px 12px 0;
 	}
 	.radio-icon img {
 		width: 70px;
@@ -378,20 +347,11 @@ input[type="checkbox"]#autoplay {
 		--card-width: 100px;
 	}
 	.language-group {
-		display: block;
-	}
-	.language-group.clearfix {
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 6px;
-		padding-right: 6px;
+		grid-template-columns: repeat(3, minmax(var(--card-width), var(--card-width)));
+		justify-content: center;
 	}
 	.radio-icon {
-		float: left;
-		width: var(--card-width);
-		max-width: var(--card-width);
 		min-height: 150px;
-		margin: 0 10px 10px 0;
 	}
 	.radio-icon img {
 		width: 64px;
@@ -405,10 +365,7 @@ input[type="checkbox"]#autoplay {
 		grid-template-columns: repeat(3, minmax(110px, 1fr));
 	}
 	.language-group {
-		/* on small landscape, keep centered flex layout */
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		grid-template-columns: repeat(3, minmax(var(--card-width), var(--card-width)));
 	}
 }
 
