@@ -15,8 +15,6 @@
 	--shadow-color: rgba(33, 33, 33, 0.06);
 	/* Controls the card size: adjust if you want larger/smaller cards */
 	--card-width: 160px;
-	/* Max width of the main content area (keeps equal margins left/right on wide screens) */
-	--content-max-width: 1200px;
 	color-scheme: light;
 }
 
@@ -111,16 +109,15 @@ body {
 	border: 1.5px solid var(--main-text-color);
 }
 
-/* Main wrapper: centered content area with equal left/right margins */
 .wrapper {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 	gap: 18px;
 	padding: 18px;
-	margin: 0 auto 60px; /* center the content and keep bottom space for footer */
-	max-width: var(--content-max-width); /* centers page on wide screens */
+	margin-bottom: 60px;
 	box-sizing: border-box;
 	width: 100%;
+	max-width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -128,26 +125,28 @@ body {
 	display: none;
 }
 
-/* Language header should span full width of the centered content area */
+/* Language header should span full width */
 .language-header {
 	grid-column: 1 / -1;
 	font-size: 1.05rem;
 	font-weight: 600;
 	color: var(--main-text-color);
-	/* align with wrapper padding (no extra left margin so header lines up with cards) */
-	margin: 12px 0 6px 0;
+	margin: 12px 18px 6px 18px;
 	letter-spacing: 0.02em;
 }
 
 /* LANGUAGE GROUP
-   Desktop / tablet (default): use flex so items keep fixed width but align to the left
-   inside the centered content area (so cards start at the left edge of the content).
-   Mobile: floats are used (keeps the small-screen behavior you liked). */
+   Desktop / tablets: center the group using flexbox so rows are centered,
+   items keep a fixed width (var(--card-width)) and flow left-to-right.
+   Mobile (small screens): switch to float:left for cards (as you requested)
+   and use a clearfix so floats wrap and the whole group can be centered.
+*/
 .language-group {
 	grid-column: 1 / -1;
+	/* default: use flex to center rows on wide screens */
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start; /* left-align cards within the centered wrapper */
+	justify-content: center; /* center the row group on wide screens */
 	gap: 18px;
 	padding: 0 0 12px 0;
 	box-sizing: border-box;
@@ -168,7 +167,7 @@ body {
 	background: var(--sec-bg-color);
 	box-shadow: 0 2px 8px 0 var(--shadow-color);
 	overflow: hidden;
-	/* For flex layout: fixed width so all groups have the same card size */
+	/* For flex layout: allow fixed width */
 	flex: 0 0 var(--card-width);
 	display: flex;
 	flex-direction: column;
@@ -181,15 +180,17 @@ body {
 	min-height: 235px;
 	width: var(--card-width);
 	max-width: var(--card-width);
-	margin: 0; /* grid/gap spacing handled by gap */
+	margin: 0; /* spacing handled by gap */
 }
 
+/* Hover / active */
 .radio-icon:active,
 .radio-icon:hover {
 	background: var(--hover-bg-color);
 	box-shadow: 0 4px 16px 2px rgba(55,124,251,0.11);
 }
 
+/* Image inside card */
 .radio-icon img {
 	width: 110px;
 	height: 110px;
@@ -203,6 +204,7 @@ body {
 	transition: box-shadow 0.2s;
 }
 
+/* Link / label inside card */
 .radio-icon a {
 	display: block;
 	text-align: center;
@@ -311,10 +313,12 @@ input[type="checkbox"]#autoplay {
 		font-size: 0.95rem;
 		padding: 7px 24px 7px 8px;
 	}
-	/* keep wrapper centered with same padding */
 	.wrapper {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		padding: 7px;
 		gap: 9px;
+		width: 100%;
+		max-width: 100vw;
 	}
 	.radio-icon {
 		min-height: 190px;
@@ -335,12 +339,13 @@ input[type="checkbox"]#autoplay {
 }
 
 /* Small phones: switch to float layout (keeps the phone behaviour you liked),
-   the centered wrapper ensures equal left/right margins while floats control per-line layout. */
+   keep the whole language-group centered by using the clearfix container
+   and relying on the group's intrinsic width (wrapped floats) plus auto margins. */
 @media (max-width: 420px) {
 	:root {
 		--card-width: 110px;
 	}
-	/* language-group becomes a centered clearfix container */
+	/* make the language-group use a block layout and act as a centered clearfix container */
 	.language-group {
 		display: block;
 		text-align: left; /* left-align inside, floats control line flow */
@@ -350,7 +355,6 @@ input[type="checkbox"]#autoplay {
 		margin-right: auto;
 		padding-left: 6px;
 		padding-right: 6px;
-		max-width: calc(var(--card-width) * 3 + 12px * 2); /* approximate width to nicely center 3 cards */
 	}
 
 	/* floats for the cards on small devices */
@@ -381,7 +385,6 @@ input[type="checkbox"]#autoplay {
 		margin-right: auto;
 		padding-left: 6px;
 		padding-right: 6px;
-		max-width: calc(var(--card-width) * 3 + 10px * 2);
 	}
 	.radio-icon {
 		float: left;
@@ -402,10 +405,10 @@ input[type="checkbox"]#autoplay {
 		grid-template-columns: repeat(3, minmax(110px, 1fr));
 	}
 	.language-group {
-		/* on small landscape, keep a left-aligned flex layout */
+		/* on small landscape, keep centered flex layout */
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: flex-start;
+		justify-content: center;
 	}
 }
 
