@@ -1,0 +1,203 @@
+{
+  "beat": {
+    "name": "Radio Beat",
+    "url": {
+      "128k": "https://ice6.abradio.cz/beat128.aac",
+      "64k": "https://ice6.abradio.cz/beat64.aac"
+    },
+    "img": "assets/covers/Czech/Beat.svg",
+    "lang": "Česky"
+  },
+  "casrock": {
+    "name": "Radio Čas Rock",
+    "url": {
+      "128k": "https://icecast7.play.cz/casrock128.mp3"
+    },
+    "img": "assets/covers/Czech/CasRock.png",
+    "lang": "Česky"
+  },
+  "country": {
+    "name": "Country Radio",
+    "url": {
+      "standard": "https://n10a-eu.rcs.revma.com/h7rwanvb938uv"
+    },
+    "img": "assets/covers/Czech/CountryRadio.png",
+    "lang": "Česky"
+  },
+  "evropa": {
+    "name": "Radio Evropa2",
+    "url": {
+      "128k": "https://ice.actve.net/fm-evropa2-128"
+    },
+    "img": "assets/covers/Czech/Evropa2.svg",
+    "lang": "Česky"
+  },
+  "fajnradio": {
+    "name": "Fajn Radio",
+    "url": {
+      "standard": "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac"
+    },
+    "img": "assets/covers/Czech/Fajnradio.svg",
+    "lang": "Česky"
+  },
+  "free": {
+    "name": "Free Radio",
+    "url": {
+      "128k": "https://icecast8.play.cz/freeradio128.mp3",
+      "64k": "https://icecast6.play.cz/freeradio64.mp3",
+      "32k": "https://icecast8.play.cz/freeradio32.mp3"
+    },
+    "img": "assets/covers/Czech/Freeradio.svg",
+    "lang": "Česky"
+  },
+  "frekvence": {
+    "name": "Radio Frekvence 1",
+    "url": {
+      "64k": "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac"
+    },
+    "img": "assets/covers/Czech/Frekvence1.svg",
+    "lang": "Česky"
+  },
+  "hey": {
+    "name": "Radio Hey",
+    "url": {
+      "128k": "https://icecast3.play.cz/hey-radio128.mp3",
+      "64k": "https://icecast8.play.cz/hey-radio64.mp3"
+    },
+    "img": "assets/covers/Czech/RadioHey.svg",
+    "lang": "Česky"
+  },
+  "city": {
+    "name": "Hitradio City",
+    "url": {
+      "128k": "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac",
+      "64k": "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHAAAC.aac"
+    },
+    "img": "assets/covers/Czech/HitradioCity.svg",
+    "lang": "Česky"
+  },
+  "impuls": {
+    "name": "Radio Impuls",
+    "url": {
+      "128k": "https://icecast1.play.cz/impuls128.mp3",
+      "64k": "https://icecast5.play.cz/impuls64.mp3"
+    },
+    "img": "assets/covers/Czech/Impuls.svg",
+    "lang": "Česky"
+  },
+  "kiss": {
+    "name": "Radio KissHady",
+    "url": {
+      "128k": "https://ice5.abradio.cz/kiss128.mp3"
+    },
+    "img": "assets/covers/Czech/Kiss.svg",
+    "lang": "Česky"
+  },
+  "krokodyl": {
+    "name": "Radio Krokodýl",
+    "url": {
+      "128k": "https://icecast4.play.cz/krokodyl128.mp3",
+      "64k": "https://icecast6.play.cz/krokodyl64.mp3",
+      "32k": "https://icecast6.play.cz/krokodyl32.mp3"
+    },
+    "img": "assets/covers/Czech/Krokodyl.svg",
+    "lang": "Česky"
+  },
+  "metalheart": {
+    "name": "Metal Heart Radio",
+    "url": {
+      "128k": "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3",
+      "64k": "http://cz.radio-streamhosting.com:8000/metalheartradio64aac"
+    },
+    "img": "assets/covers/Czech/MetalHeart.png",
+    "lang": "Česky"
+  },
+  "oldies": {
+    "name": "Oldies Radio",
+    "url": {
+      "128k": "https://ice2.abradio.cz/oldiesradio128.aac",
+      "64k": "https://ice2.abradio.cz/oldiesradio64.aac"
+    },
+    "img": "assets/covers/Czech/Oldies.svg",
+    "lang": "Česky"
+  },
+  "rockradio": {
+    "name": "Rockovy Radio",
+    "url": {
+      "128k": "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac",
+      "64k": "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIOAAC.aac"
+    },
+    "img": "assets/covers/Czech/RockRadio.svg",
+    "lang": "Česky"
+  },
+  "rockradioalt": {
+    "name": "Rockovy Radio - Alternative",
+    "url": {
+      "128k": "https://ice2.abradio.cz/znamkapunku128.aac",
+      "64k": "https://ice.abradio.cz/znamkapunku64.aac"
+    },
+    "img": "assets/covers/Czech/RockRadioAlternative.svg",
+    "lang": "Česky"
+  },
+  "heavyrockradio": {
+    "name": "Rockovy Radio - Hard & Heavy",
+    "url": {
+      "128k": "https://ice2.abradio.cz/metalomanie128.aac",
+      "64k": "https://ice2.abradio.cz/metalomanie64.aac"
+    },
+    "img": "assets/covers/Czech/RockRadioHardAHeavy.svg",
+    "lang": "Česky"
+  },
+  "rockzone": {
+    "name": "Rock Zone",
+    "url": {
+      "128k": "https://stream.sepia.sk:8000/rockzone128.mp3"
+    },
+    "img": "assets/covers/Czech/RockZone.svg",
+    "lang": "Česky"
+  },
+  "simulator": {
+    "name": "Simulator Radio",
+    "url": {
+      "320k": "https://simulatorradio.stream/320",
+      "128k": "https://simulatorradio.stream/128",
+      "64k": "https://simulatorradio.stream/64",
+      "dstandard": "https://simulatorradio.stream/stream"
+    },
+    "img": "assets/covers/English/SimulatorRadio.png",
+    "lang": "Anglicky"
+  },
+  "simrock": {
+    "name": "Simulator Radio Rock",
+    "url": {
+      "320k": "https://simulatorradio.stream/rock",
+      "standard": "https://simulatorradio.stream/rock.mp3"
+    },
+    "img": "assets/covers/English/SimulatorRadio2.png",
+    "lang": "Anglicky"
+  },
+  "simdance": {
+    "name": "Simulator Radio Dance",
+    "url": {
+      "320k": "https://simulatorradio.stream/dance.mp3"
+    },
+    "img": "assets/covers/English/SimulatorRadio3.png",
+    "lang": "Anglicky"
+  },
+  "eska": {
+    "name": "Eska Wroclaw (Vratislav)",
+    "url": {
+      "128k": "https://ic2.smcdn.pl/2180-1.mp3"
+    },
+    "img": "assets/covers/Polish/Eska.png",
+    "lang": "Polsky"
+  },
+  "kronehit": {
+    "name": "Kronehit",
+    "url": {
+      "64k": "https://secureonair.krone.at/kronehit64.aac"
+    },
+    "img": "assets/covers/Austrian/Kronehit.png",
+    "lang": "Německy"
+  }
+}

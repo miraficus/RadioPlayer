@@ -447,3 +447,18 @@ input[type="checkbox"]#autoplay {
 .autoplay-wrapper {
     margin-top: 8px;
 }
+
+#autoplay {
+    accent-color: var(--main-text-color);
+    cursor: pointer;
+    transform: scale(1.2);
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.autoplay-wrapper label {
+    color: var(--sec-text-color);
+    font-family: var(--font-family, inherit);
+    cursor: pointer;
+    vertical-align: middle;
+}

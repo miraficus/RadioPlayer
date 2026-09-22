@@ -5,6 +5,12 @@ Website for listening to Online Radios. You can also use the radios.m3u or .pls 
 ## Disclaimer
 This thing is in development. (It may be forever)
 
+## Local Testing
+### Windows
+Open Terminal in the docs folder and type in: python -m http.server.
+Website can be acessed on: http://localhost:8000
+
+
 ## Code Snipppets 
 
 ### Links

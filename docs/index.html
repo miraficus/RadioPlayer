@@ -240,6 +240,14 @@
 						}
 					});
 
+					function stopStream() {
+						audio.pause();
+						audio.src = ""; // Vymazáním src donutíme prohlížeč zavřít spojení a vymazat buffer
+						$playBtn.removeClass("playing");
+						// Reset ikony na původní Play
+						$playBtn.find("svg").html('<path d="M8 5v14l11-7z"/>');
+					}
+
 					// Sledování stavu přehrávače pro změnu ikony Play na Pause
 					audio.addEventListener('play', function() {
 						$playBtn.addClass("playing");
