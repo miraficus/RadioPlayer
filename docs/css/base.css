@@ -356,3 +356,94 @@ input[type="checkbox"]#autoplay {
 ::-webkit-scrollbar-thumb:hover {
 	background: #b1c8e8;
 }
+
+.custom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap; /* Pro ohebnost na malých mobilech */
+}
+
+.custom-controls button {
+    background: var(--accent-bg-color);
+    border: 1px solid var(--accent-border-color);
+    color: var(--main-text-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%; /* Kulatá Material tlačítka */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.2s ease;
+}
+
+/* Pokud máte aktivní psp motiv s ostrými rohy, tlačítka budou čtvercová */
+[style*="--border-radius: 0px"] .custom-controls button {
+    border-radius: 0px !important;
+}
+
+.custom-controls button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* Přebírá barvu textu podle zvoleného tématu */
+    transition: transform 0.1s ease;
+}
+
+.custom-controls button:hover {
+    background: var(--hover-bg-color);
+    box-shadow: 0 0 8px var(--shadow-color);
+}
+
+.custom-controls button:active svg {
+    transform: scale(0.9);
+}
+
+/* Zvýraznění aktivního přehrávání */
+.custom-controls button.playing {
+    background: var(--main-text-color);
+    color: var(--main-bg-color);
+    box-shadow: 0 0 12px var(--shadow-color);
+}
+
+/* Vzhled posuvníku hlasitosti (Material styl kompatibilní s proměnnými) */
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px;
+    height: 6px;
+    background: var(--accent-bg-color);
+    border: 1px solid var(--accent-border-color);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Stylování jezdce (tlačítka na posuvníku) */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--main-text-color);
+    cursor: pointer;
+    box-shadow: 0 0 4px var(--shadow-color);
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--main-text-color);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 4px var(--shadow-color);
+}
+
+.autoplay-wrapper {
+    margin-top: 8px;
+}
