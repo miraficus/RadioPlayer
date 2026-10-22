@@ -8,11 +8,19 @@ on:
     branches: [main]
     paths:
       - docs/js/*.js
+      - docs/css/*.css
+      - docs/index.html
+      - scripts/version_assets.py
+      - tests/test_version_assets.py
       - tests/*.test.cjs
       - .github/workflows/player-tests.yml
   pull_request:
     paths:
       - docs/js/*.js
+      - docs/css/*.css
+      - docs/index.html
+      - scripts/version_assets.py
+      - tests/test_version_assets.py
       - tests/*.test.cjs
       - .github/workflows/player-tests.yml
 
@@ -28,3 +36,7 @@ jobs:
         run: for file in docs/js/*.js; do node --check "$file"; done
       - name: Check language selection and stream cache busting
         run: node --test tests/*.test.cjs
+      - name: Check asset versions and regression tests
+        run: |
+          python -m unittest discover -s tests -p 'test_version_assets.py' -v
+          python scripts/version_assets.py --check

@@ -59,6 +59,22 @@ Run the language and cache regression checks with Node.js 18+:
 node --test tests/*.test.cjs
 ```
 
+## Browser asset cache
+
+CSS and JavaScript links in `docs/index.html` include a content hash (`?v=...`).
+This prevents a browser from combining a new HTML layout with an older cached
+player or stylesheet. After changing any local CSS/JavaScript, run:
+
+```sh
+python scripts/version_assets.py --write
+python scripts/version_assets.py --check
+```
+
+Commit the updated HTML together with the changed assets. The player workflow
+checks the hashes and fails if they are stale. The station JSON is revalidated
+when the page loads; this is separate from the per-connection stream timestamp.
+The mobile menu starts closed even before player initialization completes.
+
 ## Code Snipppets 
 
 ### Links
