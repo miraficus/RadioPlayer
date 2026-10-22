@@ -83,16 +83,16 @@ https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
 #EXTINF:0,Česky - Metal Heart Radio CZSK 128
 http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
 
-#EXTINF:0,Česky - Metal Heart Radio 64
-http://cz.radio-streamhosting.com:8000/metalheartradio64aac
-
 #EXTINF:0,Česky - Metal Heart Radio 128
 http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
 
-#EXTINF:0,Česky - Country Radio
+#EXTINF:0,Česky - Metal Heart Radio 64
+http://cz.radio-streamhosting.com:8000/metalheartradio64aac
+
+#EXTINF:0,Česky - Country Radio (standard)
 https://n10a-eu.rcs.revma.com/h7rwanvb938uv
 
-#EXTINF:0,Česky - Rock Zone
+#EXTINF:0,Česky - Rock Zone 128
 https://stream.sepia.sk:8000/rockzone128.mp3
 
 #EXTINF:0,Anglicky - Simulator Radio 320
@@ -104,18 +104,23 @@ https://simulatorradio.stream/128
 #EXTINF:0,Anglicky - Simulator Radio 64
 https://simulatorradio.stream/64
 
+#EXTINF:0,Anglicky - Simulator Radio (standard)
+https://simulatorradio.stream/stream
+
 #EXTINF:0,Anglicky - Simulator Radio Dance 320
 https://simulatorradio.stream/dance.mp3
 
 #EXTINF:0,Anglicky - Simulator Radio Rock 320
 https://simulatorradio.stream/rock
 
-
+#EXTINF:0,Anglicky - Simulator Radio Rock (standard)
+https://simulatorradio.stream/rock.mp3
 
 #EXTINF:0,Polsky - Eska Wroclaw (Vratislav) 128
 https://ic2.smcdn.pl/2180-1.mp3
 
-
-
 #EXTINF:0,Rakousky - Kronehit 64
 https://secureonair.krone.at/kronehit64.aac
+
+#EXTINF:0,Česky - Fajn Radio (standard)
+https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac
