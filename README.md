@@ -11,6 +11,24 @@ Open Terminal in the docs folder and type in: python -m http.server.
 Website can be acessed on: http://localhost:8000
 
 
+## Stations and stream quality
+The website loads its station list from `docs/stations.json`. Add or edit stations there;
+there is no second station list in `index.html`. Each station has a `name`, `img`,
+`lang`, and a `url` object with quality keys such as `128k`, `64k`, or `standard`.
+
+The player shows only the qualities configured for the selected station and remembers
+the selection per station in the browser. The default is `standard` when present,
+otherwise the highest configured bitrate. The selector is disabled for stations with
+only one stream. Switching quality continues playback if the radio was playing;
+it leaves a stopped radio stopped. Stream addresses and bitrate labels must be
+checked with the broadcaster; the player does not measure or convert audio quality.
+
+Use the local HTTP server described above rather than opening `index.html` as a
+`file://` URL, because browsers need to fetch `stations.json` over HTTP.
+
+On phones (up to 689px), open the hamburger menu for the theme selector and source
+code link. On wider screens these controls stay visible in the header.
+
 ## Code Snipppets 
 
 ### Links

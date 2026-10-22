@@ -162,7 +162,7 @@
       "320k": "https://simulatorradio.stream/320",
       "128k": "https://simulatorradio.stream/128",
       "64k": "https://simulatorradio.stream/64",
-      "dstandard": "https://simulatorradio.stream/stream"
+      "standard": "https://simulatorradio.stream/stream"
     },
     "img": "assets/covers/English/SimulatorRadio.png",
     "lang": "Anglicky"
