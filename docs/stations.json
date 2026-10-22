@@ -110,7 +110,7 @@
   "frekvence": {
     "name": "Radio Frekvence 1",
     "url": {
-      "64k": "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac"
+      "64k": "https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac"
     },
     "img": "assets/covers/Czech/Frekvence1.svg",
     "lang": "Česky",
@@ -121,7 +121,7 @@
       "order": 13
     },
     "http_url": {
-      "64k": "http://25703.live.streamtheworld.com/FREKVENCE1AAC.aac"
+      "64k": "http://29093.live.streamtheworld.com/FREKVENCE1AAC.aac"
     }
   },
   "hey": {
@@ -165,8 +165,7 @@
   "impuls": {
     "name": "Radio Impuls",
     "url": {
-      "128k": "https://icecast1.play.cz/impuls128.mp3",
-      "64k": "https://icecast5.play.cz/impuls64.mp3"
+      "128k": "https://icecast7.play.cz/impuls.mp3"
     },
     "img": "assets/covers/Czech/Impuls.svg",
     "lang": "Česky",
@@ -177,8 +176,7 @@
       "order": 10
     },
     "http_url": {
-      "128k": "http://icecast1.play.cz/impuls128.mp3",
-      "64k": "http://icecast5.play.cz/impuls64.mp3"
+      "128k": "http://icecast7.play.cz/impuls.mp3"
     }
   },
   "kiss": {

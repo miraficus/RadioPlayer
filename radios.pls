@@ -83,85 +83,81 @@ File21=https://icecast8.play.cz/hey-radio64.mp3
 Title21=Česky - Radio Hey 64
 Length21=-1
 
-File22=https://icecast1.play.cz/impuls128.mp3
+File22=https://icecast7.play.cz/impuls.mp3
 Title22=Česky - Impuls 128
 Length22=-1
 
-File23=https://icecast5.play.cz/impuls64.mp3
-Title23=Česky - Impuls 64
+File23=https://ice.actve.net/fm-evropa2-128
+Title23=Česky - Evropa2 128
 Length23=-1
 
-File24=https://ice.actve.net/fm-evropa2-128
-Title24=Česky - Evropa2 128
+File24=https://icecast7.play.cz/casrock128.mp3
+Title24=Česky - Radio Čas Rock 128
 Length24=-1
 
-File25=https://icecast7.play.cz/casrock128.mp3
-Title25=Česky - Radio Čas Rock 128
+File25=https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac
+Title25=Česky - Frekvence 1 64
 Length25=-1
 
-File26=https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
-Title26=Česky - Frekvence 1 64
+File26=http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
+Title26=Česky - Metal Heart Radio CZSK 128
 Length26=-1
 
-File27=http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
-Title27=Česky - Metal Heart Radio CZSK 128
+File27=http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
+Title27=Česky - Metal Heart Radio 128
 Length27=-1
 
-File28=http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
-Title28=Česky - Metal Heart Radio 128
+File28=http://cz.radio-streamhosting.com:8000/metalheartradio64aac
+Title28=Česky - Metal Heart Radio 64
 Length28=-1
 
-File29=http://cz.radio-streamhosting.com:8000/metalheartradio64aac
-Title29=Česky - Metal Heart Radio 64
+File29=https://n10a-eu.rcs.revma.com/h7rwanvb938uv
+Title29=Česky - Country Radio (standard)
 Length29=-1
 
-File30=https://n10a-eu.rcs.revma.com/h7rwanvb938uv
-Title30=Česky - Country Radio (standard)
+File30=https://stream.sepia.sk:8000/rockzone128.mp3
+Title30=Česky - Rock Zone 128
 Length30=-1
 
-File31=https://stream.sepia.sk:8000/rockzone128.mp3
-Title31=Česky - Rock Zone 128
+File31=https://simulatorradio.stream/320
+Title31=Anglicky - Simulator Radio 320
 Length31=-1
 
-File32=https://simulatorradio.stream/320
-Title32=Anglicky - Simulator Radio 320
+File32=https://simulatorradio.stream/128
+Title32=Anglicky - Simulator Radio 128
 Length32=-1
 
-File33=https://simulatorradio.stream/128
-Title33=Anglicky - Simulator Radio 128
+File33=https://simulatorradio.stream/64
+Title33=Anglicky - Simulator Radio 64
 Length33=-1
 
-File34=https://simulatorradio.stream/64
-Title34=Anglicky - Simulator Radio 64
+File34=https://simulatorradio.stream/stream
+Title34=Anglicky - Simulator Radio (standard)
 Length34=-1
 
-File35=https://simulatorradio.stream/stream
-Title35=Anglicky - Simulator Radio (standard)
+File35=https://simulatorradio.stream/dance.mp3
+Title35=Anglicky - Simulator Radio Dance 320
 Length35=-1
 
-File36=https://simulatorradio.stream/dance.mp3
-Title36=Anglicky - Simulator Radio Dance 320
+File36=https://simulatorradio.stream/rock
+Title36=Anglicky - Simulator Radio Rock 320
 Length36=-1
 
-File37=https://simulatorradio.stream/rock
-Title37=Anglicky - Simulator Radio Rock 320
+File37=https://simulatorradio.stream/rock.mp3
+Title37=Anglicky - Simulator Radio Rock (standard)
 Length37=-1
 
-File38=https://simulatorradio.stream/rock.mp3
-Title38=Anglicky - Simulator Radio Rock (standard)
+File38=https://ic2.smcdn.pl/2180-1.mp3
+Title38=Polsky - Eska Wroclaw (Vratislav) 128
 Length38=-1
 
-File39=https://ic2.smcdn.pl/2180-1.mp3
-Title39=Polsky - Eska Wroclaw (Vratislav) 128
+File39=https://secureonair.krone.at/kronehit64.aac
+Title39=Rakousky - Kronehit 64
 Length39=-1
 
-File40=https://secureonair.krone.at/kronehit64.aac
-Title40=Rakousky - Kronehit 64
+File40=https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac
+Title40=Česky - Fajn Radio (standard)
 Length40=-1
 
-File41=https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac
-Title41=Česky - Fajn Radio (standard)
-Length41=-1
-
-NumberOfEntries=41
+NumberOfEntries=40
 Version=2

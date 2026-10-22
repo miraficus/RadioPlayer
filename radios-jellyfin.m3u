@@ -66,10 +66,7 @@ https://icecast3.play.cz/hey-radio128.mp3
 https://icecast8.play.cz/hey-radio64.mp3
 
 #EXTINF:-1 tvg-name="Impuls 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Impuls.png",Impuls 128
-https://icecast1.play.cz/impuls128.mp3
-
-#EXTINF:-1 tvg-name="Impuls 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Impuls.png",Impuls 64
-https://icecast5.play.cz/impuls64.mp3
+https://icecast7.play.cz/impuls.mp3
 
 #EXTINF:-1 tvg-name="Evropa2 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Evropa2.jpg",Evropa2 128
 https://ice.actve.net/fm-evropa2-128
@@ -78,7 +75,7 @@ https://ice.actve.net/fm-evropa2-128
 https://icecast7.play.cz/casrock128.mp3
 
 #EXTINF:-1 tvg-name="Frekvence 1 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Frekvence1.png",Frekvence 1 64
-https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
+https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac
 
 #EXTINF:-1 tvg-name="Metal Heart Radio CZSK 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio CZSK 128
 http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3

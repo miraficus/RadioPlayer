@@ -66,10 +66,7 @@ https://icecast3.play.cz/hey-radio128.mp3
 https://icecast8.play.cz/hey-radio64.mp3
 
 #EXTINF:0,Česky - Impuls 128
-https://icecast1.play.cz/impuls128.mp3
-
-#EXTINF:0,Česky - Impuls 64
-https://icecast5.play.cz/impuls64.mp3
+https://icecast7.play.cz/impuls.mp3
 
 #EXTINF:0,Česky - Evropa2 128
 https://ice.actve.net/fm-evropa2-128
@@ -78,7 +75,7 @@ https://ice.actve.net/fm-evropa2-128
 https://icecast7.play.cz/casrock128.mp3
 
 #EXTINF:0,Česky - Frekvence 1 64
-https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
+https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac
 
 #EXTINF:0,Česky - Metal Heart Radio CZSK 128
 http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
