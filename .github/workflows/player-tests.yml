@@ -7,12 +7,12 @@ on:
   push:
     branches: [main]
     paths:
-      - docs/js/player.js
+      - docs/js/*.js
       - tests/*.test.cjs
       - .github/workflows/player-tests.yml
   pull_request:
     paths:
-      - docs/js/player.js
+      - docs/js/*.js
       - tests/*.test.cjs
       - .github/workflows/player-tests.yml
 
@@ -25,6 +25,6 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Check JavaScript syntax
-        run: node --check docs/js/player.js
-      - name: Check stream cache busting
+        run: for file in docs/js/*.js; do node --check "$file"; done
+      - name: Check language selection and stream cache busting
         run: node --test tests/*.test.cjs

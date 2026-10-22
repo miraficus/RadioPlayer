@@ -27,12 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	const autoplay = document.getElementById('autoplay');
 	const status = document.getElementById('player-status');
 	const wrapper = document.querySelector('.wrapper');
+	const languageSelect = document.getElementById('language-choice');
+	const playerLogo = document.getElementById('player-logo');
+	const logoFallback = document.getElementById('player-logo-fallback');
 	let stations = {};
 	let activeStation = null;
 	let streamUrl = '';
 	let playRequest = 0;
 	let lastStreamTimestamp = 0;
 	let qualities = {};
+	let language = RadioI18n.resolveLanguage(readSetting('uiLanguage'), navigator);
+	let statusKey = '';
+	let playbackState = 'loading';
+	const t = (key, values) => RadioI18n.translate(key, language, values);
 
 	// A blocked/full localStorage must not prevent the player from starting.
 	function readSetting(key) {
@@ -47,12 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch { /* Ignore an invalid saved preference. */ }
 
 	const themeSelect = document.getElementById('themechoice');
-	const savedTheme = readSetting('selectedTheme');
-	if ([...themeSelect.options].some(option => option.value === savedTheme)) {
-		themeSelect.value = savedTheme;
-		themechange();
-	}
-	themeSelect.addEventListener('change', () => saveSetting('selectedTheme', themeSelect.value));
+	themeSelect.value = RadioThemes.apply(readSetting('selectedTheme'));
+	themeSelect.addEventListener('change', () => {
+		RadioThemes.apply(themeSelect.value);
+		saveSetting('selectedTheme', themeSelect.value);
+	});
+	languageSelect.addEventListener('change', () => {
+		language = RadioI18n.resolveLanguage(languageSelect.value, navigator);
+		saveSetting('uiLanguage', language);
+		translatePage();
+	});
+	document.getElementById('left').addEventListener('click', () => alert(t('about', {version: '1.5'})));
+	document.getElementById('year').textContent = '© ' + new Date().getFullYear();
+	playerLogo.addEventListener('error', () => { playerLogo.hidden = true; logoFallback.hidden = false; });
 	autoplay.checked = readSetting('autoplayChecked') === 'true';
 	autoplay.addEventListener('change', () => saveSetting('autoplayChecked', String(autoplay.checked)));
 
@@ -71,14 +85,43 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	function showStatus(message = '') {
-		status.textContent = message;
-		status.hidden = !message;
+	function showStatus(key = '') {
+		statusKey = key;
+		status.textContent = key ? t(key) : '';
+		status.hidden = !key;
+	}
+	function setPlaybackState(state) {
+		playbackState = state;
+		document.getElementById('playback-state').dataset.state = state;
+		document.getElementById('playback-state-text').textContent = t('state.' + state);
+	}
+	function qualityLabel(quality) {
+		return /^\d+k$/.test(quality) ? t('bitrate', {value: parseInt(quality, 10)}) : t('standard');
+	}
+	function translatePage() {
+		document.documentElement.lang = language;
+		document.title = t('title');
+		languageSelect.value = language;
+		for (const element of document.querySelectorAll('[data-i18n]')) element.textContent = t(element.dataset.i18n);
+		for (const attribute of ['aria-label', 'title']) {
+			for (const element of document.querySelectorAll('[data-i18n-' + attribute + ']')) {
+				element.setAttribute(attribute, t(element.getAttribute('data-i18n-' + attribute)));
+			}
+		}
+		for (const heading of wrapper.querySelectorAll('[data-language]')) {
+			const key = 'group.' + heading.dataset.language;
+			heading.textContent = t(key) === key ? heading.dataset.language : t(key);
+		}
+		if (activeStation) for (const option of qualitySelector.options) option.textContent = qualityLabel(option.value);
+		showStatus(statusKey);
+		setPlaybackState(playbackState);
+		updatePlayButton();
+		updateMuteButton();
 	}
 	function updatePlayButton() {
 		const playing = !audio.paused;
 		playButton.classList.toggle('playing', playing);
-		playButton.title = playing ? 'Zastavit' : 'Přehrát';
+		playButton.title = t(playing ? 'stop' : 'play');
 		playButton.setAttribute('aria-label', playButton.title);
 		playButton.querySelector('svg').innerHTML = playing
 			? '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'
@@ -87,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	function updateMuteButton() {
 		const muted = audio.muted || audio.volume === 0;
 		muteButton.setAttribute('aria-pressed', String(muted));
-		muteButton.title = muted ? 'Zapnout zvuk' : 'Ztlumit';
+		muteButton.title = t(muted ? 'unmute' : 'mute');
 		muteButton.setAttribute('aria-label', muteButton.title);
 		document.getElementById('mute-icon').innerHTML = muted
 			? '<path d="M3 9v6h4l5 5V4L7 9H3zm13-2 2.5 2.5L21 7l1 1-2.5 2.5L22 13l-1 1-2.5-2.5L16 14l-1-1 2.5-2.5L15 8z"/>'
@@ -97,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!streamUrl) return;
 		const request = ++playRequest;
 		showStatus();
+		setPlaybackState('connecting');
 		// Each connection needs a fresh URL so a restart cannot reuse cached audio.
 		const source = new URL(streamUrl);
 		lastStreamTimestamp = Math.max(Date.now(), lastStreamTimestamp + 1);
@@ -104,9 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		audio.src = source.href;
 		try { await audio.play(); } catch (error) {
 			if (request !== playRequest || error.name === 'AbortError') return;
-			showStatus(error.name === 'NotAllowedError'
-				? 'Pro spuštění rádia stiskni Přehrát.'
-				: 'Stream se nepodařilo spustit. Zkus jinou kvalitu nebo stanici.');
+			setPlaybackState(error.name === 'NotAllowedError' ? 'ready' : 'error');
+			showStatus(error.name === 'NotAllowedError' ? 'error.autoplay' : 'error.play');
 		}
 	}
 	function stopPlayback() {
@@ -115,15 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		audio.removeAttribute('src');
 		audio.load();
 		updatePlayButton();
+		setPlaybackState('stopped');
 	}
 	playButton.addEventListener('click', () => {
 		if (audio.paused) startPlayback();
 		else { stopPlayback(); showStatus(); }
 	});
-	audio.addEventListener('play', updatePlayButton);
-	audio.addEventListener('pause', updatePlayButton);
+	audio.addEventListener('play', () => { updatePlayButton(); setPlaybackState('connecting'); });
+	audio.addEventListener('pause', () => { updatePlayButton(); setPlaybackState('stopped'); });
+	audio.addEventListener('playing', () => setPlaybackState('playing'));
+	audio.addEventListener('waiting', () => { if (!audio.paused) setPlaybackState('connecting'); });
 	audio.addEventListener('error', () => {
-		if (audio.hasAttribute('src')) showStatus('Stream není dostupný. Zkus jinou kvalitu nebo stanici.');
+		if (audio.hasAttribute('src')) { setPlaybackState('error'); showStatus('error.stream'); }
 	});
 	audio.volume = Number(volumeSlider.value) / 100;
 	volumeSlider.addEventListener('input', () => {
@@ -142,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		stopPlayback();
 		streamUrl = source;
 		showStatus();
+		setPlaybackState('ready');
 		if (resume) startPlayback();
 	}
 	function changeStation(key) {
@@ -149,12 +196,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		const resume = !audio.paused || autoplay.checked;
 		activeStation = key;
 		const station = stations[key];
-		document.getElementById('player-name').textContent = station.name;
+		const name = document.getElementById('player-name');
+		name.removeAttribute('data-i18n');
+		name.textContent = station.name;
+		playerLogo.src = station.img;
+		playerLogo.hidden = false;
+		logoFallback.hidden = true;
+		for (const card of wrapper.querySelectorAll('.radio-icon')) card.setAttribute('aria-pressed', String(card.dataset.station === key));
 		qualitySelector.replaceChildren();
 		const available = Object.keys(station.url);
 		for (const quality of available) {
-			qualitySelector.add(new Option(/^\d+k$/.test(quality)
-				? `${parseInt(quality, 10)} kb/s` : 'Standardní', quality));
+			qualitySelector.add(new Option(qualityLabel(quality), quality));
 		}
 		const preferred = qualities[key];
 		qualitySelector.value = available.includes(preferred) ? preferred
@@ -185,23 +237,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		for (const language of languages) {
 			const heading = document.createElement('h2');
 			heading.className = 'language-header';
-			heading.textContent = language;
+			heading.dataset.language = language;
+			const headingKey = 'group.' + language;
+			heading.textContent = t(headingKey) === headingKey ? language : t(headingKey);
 			const group = document.createElement('div');
 			group.className = 'language-group';
 			for (const station of groups.get(language).sort((a, b) => a.name.localeCompare(b.name, 'cs', {sensitivity:'base'}))) {
-				const card = document.createElement('div');
+				const card = document.createElement('button');
+				card.type = 'button';
+				card.dataset.station = station.key;
+				card.setAttribute('aria-pressed', String(station.key === activeStation));
 				card.className = 'radio-icon';
-				card.setAttribute('role', 'button');
-				card.tabIndex = 0;
 				card.setAttribute('aria-label', station.name);
 				card.addEventListener('click', () => changeStation(station.key));
-				card.addEventListener('keydown', event => {
-					if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); changeStation(station.key); }
-				});
 				const image = document.createElement('img');
 				image.src = station.img;
 				image.alt = '';
-				const name = document.createElement('a');
+				const name = document.createElement('span');
+				name.className = 'station-name';
 				name.textContent = station.name;
 				card.append(image, name);
 				group.append(card);
@@ -229,13 +282,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			changeStation(Object.hasOwn(stations, saved) ? saved : Object.hasOwn(stations, 'krokodyl') ? 'krokodyl' : Object.keys(stations)[0]);
 		} catch (error) {
 			console.error('Failed to load stations:', error);
-			document.getElementById('player-name').textContent = 'Stanice nejsou dostupné';
+			document.getElementById('player-name').dataset.i18n = 'stationsUnavailable';
+			document.getElementById('player-name').textContent = t('stationsUnavailable');
 			wrapper.replaceChildren();
-			qualitySelector.replaceChildren(new Option('Nedostupné', ''));
-			showStatus('Seznam stanic se nepodařilo načíst. Zkus obnovit stránku.');
+			const unavailable = new Option(t('unavailable'), '');
+			unavailable.dataset.i18n = 'unavailable';
+			qualitySelector.replaceChildren(unavailable);
+			setPlaybackState('error');
+			showStatus('error.stations');
 		} finally {
 			wrapper.setAttribute('aria-busy', 'false');
 		}
 	}
+	translatePage();
 	loadStations();
 });

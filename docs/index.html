@@ -19,178 +19,78 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 Radio station artwork is excluded; see the notice in docs/assets/covers.
 -->
 <html lang="cs">
-	<head>
-		<title> Radio Online </title>
-		<meta name="author" content="Miraficus">
-		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#add8e6">
-		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#444444">
-		<meta charset="utf-8">
-		<link rel="icon" id="icon" href="assets/favicon_white_black_border" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />		
-		<link rel="icon" id="icon" href="assets/favicon_black.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:light)" />
-		<link rel="icon" id="icon" href="assets/favicon_white.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
-		<link rel="stylesheet" type="text/css" href="css/base.css">
-		<link rel="stylesheet" href="css/player-ui.css">
-		<link rel="manifest" href="manifest.json" />
-		<meta name="mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="application-name" content="Radio Online" />
-		<meta name="apple-mobile-web-app-title" content="Radio Online" />
-		<meta name="msapplication-starturl" content="/index.html" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-		<script type="text/javascript">
-			if (window.document.documentMode) {
-				  alert("Please use better Chromium or Firefox based web browser!\nProsím použijte webový prohližeč založený na Chromiu nebo Firefox!");
-			}
-
-		</script>
-		<script type="text/javascript">
-			
-			// 21.6.2022 Was this Thing made!
-			// --- Get the root element ---
-			var rootvar = document.querySelector(':root');
-
-			// --- Change theme ---
-
-			function themechange() {
-				var theme = document.getElementById("themechoice").value;
-				console.log(theme);
-
-				switch(theme) {
-				case 'light':
-					console.log("Theme Light");
-					rootvar.style.setProperty('--main-bg-color', 'white');
-					rootvar.style.setProperty('--sec-bg-color', 'white');
-					rootvar.style.setProperty('--ter-bg-color', 'white');
-					rootvar.style.setProperty('--accent-bg-color', 'lightblue');
-					rootvar.style.setProperty('--hover-bg-color', '#7bb9cd');
-					rootvar.style.setProperty('--main-text-color', 'black');
-					rootvar.style.setProperty('--sec-text-color', 'black');
-					rootvar.style.setProperty('--shadow-color', '#555555');
-					rootvar.style.setProperty('--accent-border-color', 'transparent');
-					rootvar.style.setProperty('color-scheme', 'light');
-				break;
-				case 'dark':
-					console.log("Theme Dark");
-					rootvar.style.setProperty('--main-bg-color', '#222222');
-					rootvar.style.setProperty('--sec-bg-color', '#222222');
-					rootvar.style.setProperty('--ter-bg-color', '#222222');
-					rootvar.style.setProperty('--accent-bg-color', '#444444');
-					rootvar.style.setProperty('--hover-bg-color', '#1c1c1c');
-					rootvar.style.setProperty('--main-text-color', 'white');
-					rootvar.style.setProperty('--sec-text-color', 'white');
-					rootvar.style.setProperty('--shadow-color', 'black');
-					rootvar.style.setProperty('--accent-border-color', 'transparent');
-					rootvar.style.setProperty('color-scheme', 'dark');
-				break;
-				case 'black':
-					console.log("Theme Black");
-					rootvar.style.setProperty('--main-bg-color', 'black');
-					rootvar.style.setProperty('--sec-bg-color', 'black');
-					rootvar.style.setProperty('--ter-bg-color', 'black');
-					rootvar.style.setProperty('--accent-bg-color', '#222222');
-					rootvar.style.setProperty('--hover-bg-color', '#444444');
-					rootvar.style.setProperty('--main-text-color', 'white');
-					rootvar.style.setProperty('--sec-text-color', 'white');
-					rootvar.style.setProperty('--shadow-color', 'black');
-					rootvar.style.setProperty('--accent-border-color', '#888888');
-					rootvar.style.setProperty('color-scheme', 'dark');
-				break;
-				case 'blue':
-					console.log("Theme Blue");
-					rootvar.style.setProperty('--main-bg-color', '#0A1929');
-					rootvar.style.setProperty('--sec-bg-color', '#173A5E');
-					rootvar.style.setProperty('--ter-bg-color', '#173A5E');
-					rootvar.style.setProperty('--accent-bg-color', '#5090D3');
-					rootvar.style.setProperty('--hover-bg-color', '#66B2FF');
-					rootvar.style.setProperty('--main-text-color', 'white');
-					rootvar.style.setProperty('--sec-text-color', 'white');
-					rootvar.style.setProperty('--shadow-color', 'black');
-					rootvar.style.setProperty('--accent-border-color', 'transparent');
-					rootvar.style.setProperty('color-scheme', 'light');
-				break;
-				case 'cyber':
-					console.log("Cyber");
-					rootvar.style.setProperty('--main-bg-color', '#090d10');
-					rootvar.style.setProperty('--sec-bg-color', 'radial-gradient(rgba(0, 255, 200, 0.15) 1.5px, transparent 0)'); 
-					rootvar.style.setProperty('--ter-bg-color', '#11161b');
-					rootvar.style.setProperty('--accent-bg-color', 'rgba(0, 255, 200, 0.05)');
-					rootvar.style.setProperty('--hover-bg-color', 'rgba(0, 255, 200, 0.2)');
-					rootvar.style.setProperty('--main-text-color', '#00ffc8');
-					rootvar.style.setProperty('--sec-text-color', '#709095');
-					rootvar.style.setProperty('--shadow-color', 'rgba(0, 255, 200, 0.4)');
-					rootvar.style.setProperty('--accent-border-color', '#00ffc8');
-					rootvar.style.setProperty('color-scheme', 'dark');
-				break;
-				default:
-					console.log("No Theme");
-				break;
-				}
-			}
-
-		</script>
-	</head>
-	<body>
-		<div class="header">
-			<a onclick="alert('Verze 1.5\nLicence: GNU AGPLv3 nebo novější\nLicence kódu se nevztahuje na loga rádií.');" id="left">Radio</a>
-			<details class="header-menu" id="header-menu" open>
-				<summary aria-label="Nabídka">
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-				</summary>
-				<div class="header-options">
-					<select name="themechoice" id="themechoice" aria-label="Vzhled" onchange="themechange();">
-						<option value="light" selected>Světlý vzhled</option>
-						<option value="dark">Tmavý vzhled</option>
-						<option value="black">Černý vzhled</option>
-						<option value="blue">Modrý vzhled</option>
-						<option value="cyber">Cyber vzhled</option>
-					</select>
-					<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank" rel="noopener noreferrer">Zdrojový kód</a>
-				</div>
-			</details>
-		</div>
-
-		<div class="player" id="player">
-			<p id="player-name">Načítání stanic…</p>
-			
-			<!-- Skrytý audio element bez controls a preload="none" kvůli úspoře dat -->
-			<audio preload="none" id="audio"></audio>
-
-			<!-- Vlastní moderní ovládací panel s ikonkami -->
-			<div class="custom-controls">
-				<button id="custom-play-btn" type="button" disabled aria-label="Přehrát" title="Přehrát">
-					<!-- Ikona Play -->
-					<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-				</button>
-
-				<button id="custom-mute-btn" type="button" disabled aria-label="Ztlumit" aria-pressed="false" title="Ztlumit">
-					<!-- Ikona Hlasitosti (bude se měnit přes JS) -->
-					<svg id="mute-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
-				</button>
-
-				<!-- Posuvník hlasitosti -->
-				<input type="range" id="volume-slider" disabled aria-label="Hlasitost" min="0" max="100" value="80" title="Hlasitost">
-			</div>
-
-			<div class="quality-wrapper">
-				<label for="quality-selector">Kvalita</label>
-				<select id="quality-selector" disabled><option>Načítání…</option></select>
-			</div>
-			<p id="player-status" role="status" hidden></p>
-			<div class="autoplay-wrapper">
-				<input type="checkbox" id="autoplay" size="10">
-				<label for="autoplay">Autoplay</label>
-			</div>
-		</div>
-
-		<div class="wrapper" aria-busy="true">
-			<p class="language-header">Načítání stanic…</p>
-
-
-		</div>
-		<div class="footer">
-			<p id="year"></p>
-			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
-		</div>
-		<script src="js/player.js"></script>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+  <meta name="author" content="Miraficus">
+  <meta name="theme-color" content="#0a1929">
+  <title>Radio Online</title>
+  <link rel="icon" href="assets/favicon_white_black_border.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/player-ui.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Radio Online">
+  <meta name="apple-mobile-web-app-title" content="Radio Online">
+  <script src="js/themes.js"></script>
+  <script src="js/i18n.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <button type="button" id="left" class="brand" data-i18n-aria-label="aboutLabel" aria-label="O přehrávači Radio">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="m9 8 14-5M7 9h19a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V12a3 3 0 0 1 3-3Z"/><circle cx="12" cy="19" r="4"/><path d="M21 16h4m-4 6h4"/></svg>
+        <span>Radio</span>
+      </button>
+      <details class="header-menu" id="header-menu" open>
+        <summary data-i18n-aria-label="menu" aria-label="Nabídka"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></summary>
+        <div class="header-options">
+          <label class="menu-field"><span class="field-caption" data-i18n="appearance">Vzhled</span>
+            <select name="themechoice" id="themechoice" data-i18n-aria-label="appearance" aria-label="Vzhled">
+              <option value="light" data-i18n="theme.light">Světlý vzhled</option>
+              <option value="dark" data-i18n="theme.dark">Tmavý vzhled</option>
+              <option value="black" data-i18n="theme.black">Černý vzhled</option>
+              <option value="blue" data-i18n="theme.blue" selected>Modrý vzhled</option>
+              <option value="cyber" data-i18n="theme.cyber">Cyber vzhled</option>
+            </select>
+          </label>
+          <label class="menu-field"><span class="field-caption" data-i18n="language">Jazyk</span>
+            <select id="language-choice" data-i18n-aria-label="language" aria-label="Jazyk">
+              <option value="cs" lang="cs">Čeština</option><option value="en" lang="en">English</option>
+            </select>
+          </label>
+          <a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank" rel="noopener noreferrer" data-i18n="source">Zdrojový kód</a>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main class="app-shell">
+    <section class="player" id="player" aria-labelledby="player-name">
+      <audio preload="none" id="audio" hidden></audio>
+      <div class="player-artwork">
+        <img id="player-logo" alt="" hidden>
+        <svg id="player-logo-fallback" viewBox="0 0 32 32" aria-hidden="true"><path d="m9 8 14-5M7 9h19a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V12a3 3 0 0 1 3-3Z"/><circle cx="12" cy="19" r="4"/><path d="M21 16h4m-4 6h4"/></svg>
+      </div>
+      <div class="player-heading">
+        <h1 id="player-name" data-i18n="loading">Načítání stanic…</h1>
+        <p class="playback-state" id="playback-state" data-state="loading"><span class="state-dot" aria-hidden="true"></span><span id="playback-state-text">Načítání…</span></p>
+      </div>
+      <div class="custom-controls">
+        <button id="custom-play-btn" type="button" disabled aria-label="Přehrát" title="Přehrát"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+        <button id="custom-mute-btn" type="button" disabled aria-label="Ztlumit" aria-pressed="false" title="Ztlumit"><svg id="mute-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg></button>
+        <input type="range" id="volume-slider" disabled data-i18n-aria-label="volume" data-i18n-title="volume" aria-label="Hlasitost" min="0" max="100" value="80" title="Hlasitost">
+      </div>
+      <div class="player-settings">
+        <div class="quality-wrapper"><label for="quality-selector" data-i18n="quality">Kvalita</label><select id="quality-selector" disabled><option data-i18n="loading">Načítání stanic…</option></select></div>
+        <label class="autoplay-wrapper" for="autoplay"><span data-i18n="autoplay">Autoplay</span><input type="checkbox" id="autoplay" role="switch"></label>
+      </div>
+      <p id="player-status" role="status" hidden></p>
+    </section>
+    <div class="wrapper" aria-busy="true"><p class="language-header" data-i18n="loading">Načítání stanic…</p></div>
+    <noscript><p>Pro přehrávání zapni JavaScript. / Enable JavaScript to play radio.</p></noscript>
+  </main>
+  <footer class="footer"><span id="year"></span><span aria-hidden="true"> · </span><a href="https://github.com/miraficus/RadioPlayer/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPLv3</a></footer>
+  <script src="js/player.js"></script>
+</body>
 </html>

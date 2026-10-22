@@ -28,8 +28,36 @@ checked with the broadcaster; the player does not measure or convert audio quali
 Use the local HTTP server described above rather than opening `index.html` as a
 `file://` URL, because browsers need to fetch `stations.json` over HTTP.
 
-On phones (up to 689px), open the hamburger menu for the theme selector and source
-code link. On wider screens these controls stay visible in the header.
+On phones (up to 689px), open the hamburger menu for the theme selector, language
+selector and source code link. On wider screens these controls stay visible in the header.
+
+## Interface languages and themes
+
+The interface supports Czech and English. On the first visit, the browser's primary
+language (`navigator.languages[0]`, falling back to `navigator.language`) selects
+Czech for `cs` or `sk`, including regional tags such as `cs-CZ` and `sk-SK`.
+Every other primary language selects English; a secondary Czech preference does
+not override a different primary language.
+
+The language selector overrides the browser default and saves `uiLanguage` in
+localStorage. Changing language immediately translates controls, theme names,
+station group headings, player states, accessibility labels and errors without
+reloading the page or reconnecting the stream. Radio station brand names and
+canonical station/playlist data remain unchanged. With blocked storage the selector
+still works for the current page. Translations live in `docs/js/i18n.js`.
+
+All five themes (light, dark, black, blue and Cyber) use the same responsive layout.
+Blue is the new default, while an existing saved `selectedTheme` takes precedence.
+Colors live in `docs/js/themes.js`; language changes do not reset the selected theme.
+The player shows the chosen station's logo, with a fallback icon if it cannot load.
+Cards retain their 12:19 ratio and three columns on phones. The playback timestamp
+cache buster is retained for every new stream connection.
+
+Run the language and cache regression checks with Node.js 18+:
+
+```sh
+node --test tests/*.test.cjs
+```
 
 ## Code Snipppets 
 
@@ -47,7 +75,7 @@ code link. On wider screens these controls stay visible in the header.
 
 `docs/stations.json` is the source of truth for the website and all four fallback
 playlists. Edit station addresses and quality variants there, not in the generated
-M3U/PLS files. Website loading and quality selection are implemented separately in PR #13.
+M3U/PLS files. The web player loads the same JSON directly.
 
 - `url`: normal web/VLC/Jellyfin stream addresses, preserving HTTP where originally configured.
 - `http_url`: explicit HTTP-only fallback addresses for PSP Go and other legacy devices.
