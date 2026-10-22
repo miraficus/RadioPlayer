@@ -23,6 +23,46 @@ Website can be acessed on: http://localhost:8000
 - [PWA Icon Builder](https://www.pwabuilder.com/imageGenerator)
 - [Material Theme Builder](https://material-foundation.github.io/material-theme-builder/)
 
+## Playlist synchronization
+
+`docs/stations.json` is the source of truth for the website and all four fallback
+playlists. Edit station addresses and quality variants there, not in the generated
+M3U/PLS files. Website loading and quality selection are implemented separately in PR #13.
+
+- `url`: normal web/VLC/Jellyfin stream addresses, preserving HTTP where originally configured.
+- `http_url`: explicit HTTP-only fallback addresses for PSP Go and other legacy devices.
+  Add one for every quality. It may point to a different endpoint; the generator never
+  downgrades HTTPS automatically. An HTTP address can still redirect to HTTPS, so
+  compatibility must be checked on the target device.
+- `playlist`: display name, language/group, local logo path and unique numeric `order`
+  for exported playlists. This preserves the existing Jellyfin metadata and station order.
+- `img`, `name`, `lang`: the web player's logo, title and language.
+
+GitHub Actions **Sync radio playlists** validates station metadata and runs the generator
+on pull requests, providing all four outputs as the `radio-playlists` artifact. After
+changes reach `main`, it regenerates and commits the four root playlists with the
+built-in `GITHUB_TOKEN`. Run it manually from **Actions → Sync radio playlists → Run
+workflow** on `main` when needed. It does not modify or deploy the website.
+
+The workflow needs repository Actions enabled and permission for `contents: write`.
+Branch rules can block its bot commit; in that case run the commands below locally,
+commit the generated files through a pull request, or rerun the workflow after resolving
+the push conflict. It never force pushes and requires no personal access token.
+
+Local use (Python 3.10+; no extra dependencies):
+
+```sh
+python scripts/sync_playlists.py --write
+python scripts/sync_playlists.py --check
+python -m unittest discover -s tests -v
+```
+
+The generator preserves all configured variants, writes proper PLS entry numbers,
+lengths, entry count and version, and includes Jellyfin `tvg-name`, `group-title` and
+`tvg-logo`. These are generated files; manual playlist edits will be replaced.
+Generation checks data and file consistency, not stream availability, real bitrate,
+codec support, or whether an HTTP endpoint redirects to HTTPS.
+
 ## License
 I dont have one yet.
 

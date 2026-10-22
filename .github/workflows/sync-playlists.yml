@@ -1,0 +1,82 @@
+name: Sync radio playlists
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/stations.json
+      - scripts/sync_playlists.py
+      - tests/test_sync_playlists.py
+      - .github/workflows/sync-playlists.yml
+      - radios*.m3u
+      - radios*.pls
+  pull_request:
+    paths:
+      - docs/stations.json
+      - scripts/sync_playlists.py
+      - tests/test_sync_playlists.py
+      - .github/workflows/sync-playlists.yml
+      - radios*.m3u
+      - radios*.pls
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: radio-playlists-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Test generator and station metadata
+        run: python -m unittest discover -s tests -v
+      - name: Generate playlist preview
+        run: |
+          python scripts/sync_playlists.py --write
+          python scripts/sync_playlists.py --check
+          git diff --stat -- radios.m3u radios.pls radios-http.pls radios-jellyfin.m3u
+          echo 'Playlists are generated from docs/stations.json. On main the next job commits any generated changes; pull requests receive a preview only.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: radio-playlists
+          path: |
+            radios.m3u
+            radios.pls
+            radios-http.pls
+            radios-jellyfin.m3u
+          retention-days: 14
+
+  sync:
+    needs: validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Generate from the latest main, including any newer station changes.
+          ref: main
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Regenerate and commit fallback playlists
+        run: |
+          python scripts/sync_playlists.py --write
+          git add -- radios.m3u radios.pls radios-http.pls radios-jellyfin.m3u
+          if git diff --cached --quiet; then
+            echo 'Playlists are already synchronized.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: regenerate radio playlists from stations.json'
+          # A concurrent push or protected branch is rejected; never force push.
+          git push origin HEAD:main

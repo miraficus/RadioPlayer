@@ -6,7 +6,17 @@
       "64k": "https://ice6.abradio.cz/beat64.aac"
     },
     "img": "assets/covers/Czech/Beat.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Beat",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Beat.svg",
+      "order": 6
+    },
+    "http_url": {
+      "128k": "http://ice6.abradio.cz/beat128.aac",
+      "64k": "http://ice6.abradio.cz/beat64.aac"
+    }
   },
   "casrock": {
     "name": "Radio Čas Rock",
@@ -14,7 +24,16 @@
       "128k": "https://icecast7.play.cz/casrock128.mp3"
     },
     "img": "assets/covers/Czech/CasRock.png",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Radio Čas Rock",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/CasRock.png",
+      "order": 12
+    },
+    "http_url": {
+      "128k": "http://icecast7.play.cz/casrock128.mp3"
+    }
   },
   "country": {
     "name": "Country Radio",
@@ -22,7 +41,16 @@
       "standard": "https://n10a-eu.rcs.revma.com/h7rwanvb938uv"
     },
     "img": "assets/covers/Czech/CountryRadio.png",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Country Radio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/CountryRadio.png",
+      "order": 16
+    },
+    "http_url": {
+      "standard": "http://n10a-eu.rcs.revma.com/h7rwanvb938uv"
+    }
   },
   "evropa": {
     "name": "Radio Evropa2",
@@ -30,7 +58,16 @@
       "128k": "https://ice.actve.net/fm-evropa2-128"
     },
     "img": "assets/covers/Czech/Evropa2.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Evropa2",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Evropa2.jpg",
+      "order": 11
+    },
+    "http_url": {
+      "128k": "http://ice.actve.net/fm-evropa2-128"
+    }
   },
   "fajnradio": {
     "name": "Fajn Radio",
@@ -38,7 +75,16 @@
       "standard": "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac"
     },
     "img": "assets/covers/Czech/Fajnradio.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Fajn Radio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Fajnradio.svg",
+      "order": 23
+    },
+    "http_url": {
+      "standard": "http://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac"
+    }
   },
   "free": {
     "name": "Free Radio",
@@ -48,15 +94,35 @@
       "32k": "https://icecast8.play.cz/freeradio32.mp3"
     },
     "img": "assets/covers/Czech/Freeradio.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Free Radio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Freeradio.png",
+      "order": 8
+    },
+    "http_url": {
+      "128k": "http://icecast8.play.cz/freeradio128.mp3",
+      "64k": "http://icecast6.play.cz/freeradio64.mp3",
+      "32k": "http://icecast8.play.cz/freeradio32.mp3"
+    }
   },
   "frekvence": {
     "name": "Radio Frekvence 1",
     "url": {
-      "64k": "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac"
+      "64k": "https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac"
     },
     "img": "assets/covers/Czech/Frekvence1.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Frekvence 1",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Frekvence1.png",
+      "order": 13
+    },
+    "http_url": {
+      "64k": "http://29093.live.streamtheworld.com/FREKVENCE1AAC.aac"
+    }
   },
   "hey": {
     "name": "Radio Hey",
@@ -65,7 +131,17 @@
       "64k": "https://icecast8.play.cz/hey-radio64.mp3"
     },
     "img": "assets/covers/Czech/RadioHey.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Radio Hey",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/RadioHey.jpg",
+      "order": 9
+    },
+    "http_url": {
+      "128k": "http://icecast3.play.cz/hey-radio128.mp3",
+      "64k": "http://icecast8.play.cz/hey-radio64.mp3"
+    }
   },
   "city": {
     "name": "Hitradio City",
@@ -74,16 +150,34 @@
       "64k": "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHAAAC.aac"
     },
     "img": "assets/covers/Czech/HitradioCity.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Hitradio City",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/HitradioCity.svg",
+      "order": 7
+    },
+    "http_url": {
+      "128k": "http://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac",
+      "64k": "http://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHAAAC.aac"
+    }
   },
   "impuls": {
     "name": "Radio Impuls",
     "url": {
-      "128k": "https://icecast1.play.cz/impuls128.mp3",
-      "64k": "https://icecast5.play.cz/impuls64.mp3"
+      "128k": "https://icecast7.play.cz/impuls.mp3"
     },
     "img": "assets/covers/Czech/Impuls.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Impuls",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Impuls.png",
+      "order": 10
+    },
+    "http_url": {
+      "128k": "http://icecast7.play.cz/impuls.mp3"
+    }
   },
   "kiss": {
     "name": "Radio KissHady",
@@ -91,7 +185,16 @@
       "128k": "https://ice5.abradio.cz/kiss128.mp3"
     },
     "img": "assets/covers/Czech/Kiss.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Kiss",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Kiss.svg",
+      "order": 5
+    },
+    "http_url": {
+      "128k": "http://ice5.abradio.cz/kiss128.mp3"
+    }
   },
   "krokodyl": {
     "name": "Radio Krokodýl",
@@ -101,7 +204,18 @@
       "32k": "https://icecast6.play.cz/krokodyl32.mp3"
     },
     "img": "assets/covers/Czech/Krokodyl.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Krokodyl",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Krokodyl.png",
+      "order": 0
+    },
+    "http_url": {
+      "128k": "http://icecast4.play.cz/krokodyl128.mp3",
+      "64k": "http://icecast6.play.cz/krokodyl64.mp3",
+      "32k": "http://icecast6.play.cz/krokodyl32.mp3"
+    }
   },
   "metalheart": {
     "name": "Metal Heart Radio",
@@ -110,7 +224,17 @@
       "64k": "http://cz.radio-streamhosting.com:8000/metalheartradio64aac"
     },
     "img": "assets/covers/Czech/MetalHeart.png",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Metal Heart Radio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/MetalHeart.png",
+      "order": 15
+    },
+    "http_url": {
+      "128k": "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3",
+      "64k": "http://cz.radio-streamhosting.com:8000/metalheartradio64aac"
+    }
   },
   "oldies": {
     "name": "Oldies Radio",
@@ -119,7 +243,17 @@
       "64k": "https://ice2.abradio.cz/oldiesradio64.aac"
     },
     "img": "assets/covers/Czech/Oldies.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Oldies Radio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/Oldies.svg",
+      "order": 4
+    },
+    "http_url": {
+      "128k": "http://ice2.abradio.cz/oldiesradio128.aac",
+      "64k": "http://ice2.abradio.cz/oldiesradio64.aac"
+    }
   },
   "rockradio": {
     "name": "Rockovy Radio",
@@ -128,7 +262,17 @@
       "64k": "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIOAAC.aac"
     },
     "img": "assets/covers/Czech/RockRadio.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Rockradio",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/RockRadio.svg",
+      "order": 1
+    },
+    "http_url": {
+      "128k": "http://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac",
+      "64k": "http://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIOAAC.aac"
+    }
   },
   "rockradioalt": {
     "name": "Rockovy Radio - Alternative",
@@ -137,7 +281,17 @@
       "64k": "https://ice.abradio.cz/znamkapunku64.aac"
     },
     "img": "assets/covers/Czech/RockRadioAlternative.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Rockradio Alternative",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/RockRadioAlternative.svg",
+      "order": 3
+    },
+    "http_url": {
+      "128k": "http://ice2.abradio.cz/znamkapunku128.aac",
+      "64k": "http://ice.abradio.cz/znamkapunku64.aac"
+    }
   },
   "heavyrockradio": {
     "name": "Rockovy Radio - Hard & Heavy",
@@ -146,7 +300,17 @@
       "64k": "https://ice2.abradio.cz/metalomanie64.aac"
     },
     "img": "assets/covers/Czech/RockRadioHardAHeavy.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Rockradio Hard & Heavy",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/RockRadioHardAHeavy.svg",
+      "order": 2
+    },
+    "http_url": {
+      "128k": "http://ice2.abradio.cz/metalomanie128.aac",
+      "64k": "http://ice2.abradio.cz/metalomanie64.aac"
+    }
   },
   "rockzone": {
     "name": "Rock Zone",
@@ -154,7 +318,16 @@
       "128k": "https://stream.sepia.sk:8000/rockzone128.mp3"
     },
     "img": "assets/covers/Czech/RockZone.svg",
-    "lang": "Česky"
+    "lang": "Česky",
+    "playlist": {
+      "name": "Rock Zone",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/RockZone.svg",
+      "order": 17
+    },
+    "http_url": {
+      "128k": "http://stream.sepia.sk:8000/rockzone128.mp3"
+    }
   },
   "simulator": {
     "name": "Simulator Radio",
@@ -162,10 +335,22 @@
       "320k": "https://simulatorradio.stream/320",
       "128k": "https://simulatorradio.stream/128",
       "64k": "https://simulatorradio.stream/64",
-      "dstandard": "https://simulatorradio.stream/stream"
+      "standard": "https://simulatorradio.stream/stream"
     },
     "img": "assets/covers/English/SimulatorRadio.png",
-    "lang": "Anglicky"
+    "lang": "Anglicky",
+    "playlist": {
+      "name": "Simulator Radio",
+      "lang": "Anglicky",
+      "logo": "assets/covers/English/SimulatorRadio.png",
+      "order": 18
+    },
+    "http_url": {
+      "320k": "http://simulatorradio.stream/320",
+      "128k": "http://simulatorradio.stream/128",
+      "64k": "http://simulatorradio.stream/64",
+      "standard": "http://simulatorradio.stream/stream"
+    }
   },
   "simrock": {
     "name": "Simulator Radio Rock",
@@ -174,7 +359,17 @@
       "standard": "https://simulatorradio.stream/rock.mp3"
     },
     "img": "assets/covers/English/SimulatorRadio2.png",
-    "lang": "Anglicky"
+    "lang": "Anglicky",
+    "playlist": {
+      "name": "Simulator Radio Rock",
+      "lang": "Anglicky",
+      "logo": "assets/covers/English/SimulatorRadio2.png",
+      "order": 20
+    },
+    "http_url": {
+      "320k": "http://simulatorradio.stream/rock",
+      "standard": "http://simulatorradio.stream/rock.mp3"
+    }
   },
   "simdance": {
     "name": "Simulator Radio Dance",
@@ -182,7 +377,16 @@
       "320k": "https://simulatorradio.stream/dance.mp3"
     },
     "img": "assets/covers/English/SimulatorRadio3.png",
-    "lang": "Anglicky"
+    "lang": "Anglicky",
+    "playlist": {
+      "name": "Simulator Radio Dance",
+      "lang": "Anglicky",
+      "logo": "assets/covers/English/SimulatorRadio3.png",
+      "order": 19
+    },
+    "http_url": {
+      "320k": "http://simulatorradio.stream/dance.mp3"
+    }
   },
   "eska": {
     "name": "Eska Wroclaw (Vratislav)",
@@ -190,7 +394,16 @@
       "128k": "https://ic2.smcdn.pl/2180-1.mp3"
     },
     "img": "assets/covers/Polish/Eska.png",
-    "lang": "Polsky"
+    "lang": "Polsky",
+    "playlist": {
+      "name": "Eska Wroclaw (Vratislav)",
+      "lang": "Polsky",
+      "logo": "assets/covers/Polish/Eska.png",
+      "order": 21
+    },
+    "http_url": {
+      "128k": "http://ic2.smcdn.pl/2180-1.mp3"
+    }
   },
   "kronehit": {
     "name": "Kronehit",
@@ -198,6 +411,32 @@
       "64k": "https://secureonair.krone.at/kronehit64.aac"
     },
     "img": "assets/covers/Austrian/Kronehit.png",
-    "lang": "Německy"
+    "lang": "Německy",
+    "playlist": {
+      "name": "Kronehit",
+      "lang": "Rakousky",
+      "logo": "assets/covers/Austrian/Kronehit.png",
+      "order": 22
+    },
+    "http_url": {
+      "64k": "http://secureonair.krone.at/kronehit64.aac"
+    }
+  },
+  "metalheartczsk": {
+    "name": "Metal Heart Radio CZSK",
+    "url": {
+      "128k": "http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3"
+    },
+    "img": "assets/covers/Czech/MetalHeart.png",
+    "lang": "Česky",
+    "playlist": {
+      "name": "Metal Heart Radio CZSK",
+      "lang": "Česky",
+      "logo": "assets/covers/Czech/MetalHeart.png",
+      "order": 14
+    },
+    "http_url": {
+      "128k": "http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3"
+    }
   }
 }

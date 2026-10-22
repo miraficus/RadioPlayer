@@ -56,20 +56,17 @@ https://icecast8.play.cz/freeradio128.mp3
 #EXTINF:-1 tvg-name="Free Radio 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 64
 https://icecast6.play.cz/freeradio64.mp3
 
-#EXTINF:-1 tvg-name="Free Radio 32" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 128
+#EXTINF:-1 tvg-name="Free Radio 32" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Freeradio.png",Free Radio 32
 https://icecast8.play.cz/freeradio32.mp3
 
 #EXTINF:-1 tvg-name="Radio Hey 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 128
 https://icecast3.play.cz/hey-radio128.mp3
 
-#EXTINF:-1 tvg-name="Radio Hey 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 164
+#EXTINF:-1 tvg-name="Radio Hey 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RadioHey.jpg",Radio Hey 64
 https://icecast8.play.cz/hey-radio64.mp3
 
 #EXTINF:-1 tvg-name="Impuls 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Impuls.png",Impuls 128
-https://icecast1.play.cz/impuls128.mp3
-
-#EXTINF:-1 tvg-name="Impuls 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Impuls.png",Impuls 64
-https://icecast5.play.cz/impuls64.mp3
+https://icecast7.play.cz/impuls.mp3
 
 #EXTINF:-1 tvg-name="Evropa2 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Evropa2.jpg",Evropa2 128
 https://ice.actve.net/fm-evropa2-128
@@ -78,24 +75,22 @@ https://ice.actve.net/fm-evropa2-128
 https://icecast7.play.cz/casrock128.mp3
 
 #EXTINF:-1 tvg-name="Frekvence 1 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Frekvence1.png",Frekvence 1 64
-https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac
+https://29093.live.streamtheworld.com/FREKVENCE1AAC.aac
 
 #EXTINF:-1 tvg-name="Metal Heart Radio CZSK 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio CZSK 128
 http://cz.radio-streamhosting.com:8000/metalheartradioczsk128mp3
 
-#EXTINF:-1 tvg-name="Metal Heart Radio 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio 64
-http://cz.radio-streamhosting.com:8000/metalheartradio64aac
-
 #EXTINF:-1 tvg-name="Metal Heart Radio 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio 128
 http://cz.radio-streamhosting.com:8000/metalheartradio128mp3
 
-#EXTINF:-1 tvg-name="Country Radio" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/CountryRadio.png",Country Radio
+#EXTINF:-1 tvg-name="Metal Heart Radio 64" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/MetalHeart.png",Metal Heart Radio 64
+http://cz.radio-streamhosting.com:8000/metalheartradio64aac
+
+#EXTINF:-1 tvg-name="Country Radio (standard)" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/CountryRadio.png",Country Radio (standard)
 https://n10a-eu.rcs.revma.com/h7rwanvb938uv
 
-#EXTINF:-1 tvg-name="Rock Zone" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RockZone.svg",Country Radio
+#EXTINF:-1 tvg-name="Rock Zone 128" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/RockZone.svg",Rock Zone 128
 https://stream.sepia.sk:8000/rockzone128.mp3
-
-
 
 #EXTINF:-1 tvg-name="Simulator Radio 320" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio.png",Simulator Radio 320
 https://simulatorradio.stream/320
@@ -106,18 +101,23 @@ https://simulatorradio.stream/128
 #EXTINF:-1 tvg-name="Simulator Radio 64" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio.png",Simulator Radio 64
 https://simulatorradio.stream/64
 
+#EXTINF:-1 tvg-name="Simulator Radio (standard)" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio.png",Simulator Radio (standard)
+https://simulatorradio.stream/stream
+
 #EXTINF:-1 tvg-name="Simulator Radio Dance 320" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio3.png",Simulator Radio Dance 320
 https://simulatorradio.stream/dance.mp3
 
 #EXTINF:-1 tvg-name="Simulator Radio Rock 320" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio2.png",Simulator Radio Rock 320
 https://simulatorradio.stream/rock
 
-
+#EXTINF:-1 tvg-name="Simulator Radio Rock (standard)" group-title="Anglicky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/English/SimulatorRadio2.png",Simulator Radio Rock (standard)
+https://simulatorradio.stream/rock.mp3
 
 #EXTINF:-1 tvg-name="Eska Wroclaw (Vratislav) 128" group-title="Polsky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Polish/Eska.png",Eska Wroclaw (Vratislav) 128
 https://ic2.smcdn.pl/2180-1.mp3
 
-
-
 #EXTINF:-1 tvg-name="Kronehit 64" group-title="Rakousky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Austrian/Kronehit.png",Kronehit 64
 https://secureonair.krone.at/kronehit64.aac
+
+#EXTINF:-1 tvg-name="Fajn Radio (standard)" group-title="Česky" tvg-logo="https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/assets/covers/Czech/Fajnradio.svg",Fajn Radio (standard)
+https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac
