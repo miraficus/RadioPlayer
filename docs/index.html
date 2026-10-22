@@ -10,6 +10,7 @@
 		<link rel="icon" id="icon" href="assets/favicon_black.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:light)" />
 		<link rel="icon" id="icon" href="assets/favicon_white.svg" sizes="any" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
 		<link rel="stylesheet" type="text/css" href="css/base.css">
+		<link rel="stylesheet" href="css/player-ui.css">
 		<link rel="manifest" href="manifest.json" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,7 +18,6 @@
 		<meta name="apple-mobile-web-app-title" content="Radio Online" />
 		<meta name="msapplication-starturl" content="/index.html" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
-		<script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			if (window.document.documentMode) {
 				  alert("Please use better Chromium or Firefox based web browser!\nProsím použijte webový prohližeč založený na Chromiu nebo Firefox!");
@@ -113,47 +113,58 @@
 	<body>
 		<div class="header">
 			<a onclick="alert('Verze 1.4');" id="left">Radio</a>
-			<select name="themechoice" id="themechoice" onchange="themechange();">
-				<option value="light" selected>Světlý vzhled</option>
-			 	<option value="dark">Tmavý vzhled</option>
-				<option value="black">Černý vzhled</option>
-				<option value="blue">Modrý vzhled</option>
-				<option value="cyber">Cyber vzhled</option>
-			</select>
-			<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank">Zdrojový kód</a>
+			<details class="header-menu" id="header-menu" open>
+				<summary aria-label="Nabídka">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+				</summary>
+				<div class="header-options">
+					<select name="themechoice" id="themechoice" aria-label="Vzhled" onchange="themechange();">
+						<option value="light" selected>Světlý vzhled</option>
+						<option value="dark">Tmavý vzhled</option>
+						<option value="black">Černý vzhled</option>
+						<option value="blue">Modrý vzhled</option>
+						<option value="cyber">Cyber vzhled</option>
+					</select>
+					<a href="https://github.com/miraficus/RadioPlayer" id="right" target="_blank" rel="noopener noreferrer">Zdrojový kód</a>
+				</div>
+			</details>
 		</div>
 
 		<div class="player" id="player">
-			<p id="player-name">Krokodýl</p>
+			<p id="player-name">Načítání stanic…</p>
 			
 			<!-- Skrytý audio element bez controls a preload="none" kvůli úspoře dat -->
-			<audio preload="none" id="audio">
-				<source id="player-src" src="https://icecast4.play.cz/krokodyl128.mp3" type="audio/mpeg">
-			</audio>
+			<audio preload="none" id="audio"></audio>
 
 			<!-- Vlastní moderní ovládací panel s ikonkami -->
 			<div class="custom-controls">
-				<button id="custom-play-btn" type="button" title="Přehrát">
+				<button id="custom-play-btn" type="button" disabled aria-label="Přehrát" title="Přehrát">
 					<!-- Ikona Play -->
 					<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
 				</button>
 
-				<button id="custom-mute-btn" type="button" title="Ztlumit">
+				<button id="custom-mute-btn" type="button" disabled aria-label="Ztlumit" aria-pressed="false" title="Ztlumit">
 					<!-- Ikona Hlasitosti (bude se měnit přes JS) -->
 					<svg id="mute-icon" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
 				</button>
 
 				<!-- Posuvník hlasitosti -->
-				<input type="range" id="volume-slider" min="0" max="100" value="80" title="Hlasitost">
+				<input type="range" id="volume-slider" disabled aria-label="Hlasitost" min="0" max="100" value="80" title="Hlasitost">
 			</div>
 
+			<div class="quality-wrapper">
+				<label for="quality-selector">Kvalita</label>
+				<select id="quality-selector" disabled><option>Načítání…</option></select>
+			</div>
+			<p id="player-status" role="status" hidden></p>
 			<div class="autoplay-wrapper">
 				<input type="checkbox" id="autoplay" size="10">
 				<label for="autoplay">Autoplay</label>
 			</div>
 		</div>
 
-		<div class="wrapper">
+		<div class="wrapper" aria-busy="true">
+			<p class="language-header">Načítání stanic…</p>
 
 
 		</div>
@@ -161,248 +172,6 @@
 			<p id="year"></p>
 			<script type="text/javascript">document.getElementById("year").innerHTML = "© "+new Date().getFullYear();</script>
 		</div>
-		<script type="text/javascript">
-		
-			// --- Switch audio sources ---
-			
-			function checkautoplay() {
-				if (document.getElementById('autoplay').checked) {
-	            	console.log("Autoplay Checked");
-	            	var playersource = document.getElementById("audio").play();
-		        } else {
-		            console.log("Autoplay Unchecked");
-		        }
-			}
-
-			document.addEventListener('DOMContentLoaded', function() {
-				// Theme select
-				const themeSelect = document.getElementById('themechoice');
-				// Restore saved theme from localStorage
-				const savedTheme = localStorage.getItem('selectedTheme');
-				if (savedTheme) {
-					themeSelect.value = savedTheme;
-					themechange(); // Apply theme on load
-				}
-				// Save the theme to localStorage when changed
-				themeSelect.addEventListener('change', function() {
-					localStorage.setItem('selectedTheme', themeSelect.value);
-				});
-
-				// Autoplay checkbox
-				const autoplayCheckbox = document.getElementById('autoplay');
-				const savedAutoplay = localStorage.getItem('autoplayChecked');
-				if (savedAutoplay === "true") {
-					autoplayCheckbox.checked = true;
-				} else {
-					autoplayCheckbox.checked = false;
-				}
-				autoplayCheckbox.addEventListener('change', function() {
-					localStorage.setItem('autoplayChecked', autoplayCheckbox.checked);
-				});
-
-				// Render station icons (grouped by language)
-				renderStations();
-
-				// Restore last used station (if any)
-				const savedStation = localStorage.getItem('lastStation');
-				if (savedStation && stations[savedStation]) {
-					// changeStation will update the UI and call checkautoplay()
-					changeStation(savedStation);
-					// If autoplay was saved, ensure play is attempted (changeStation already calls checkautoplay)
-				}
-
-				$(document).ready(function() {
-					var audio = document.getElementById("audio");
-					var $playBtn = $("#custom-play-btn");
-					var $volumeSlider = $("#volume-slider");
-					var $muteBtn = $("#custom-mute-btn");
-					
-					// Uložení původní URL adresy streamu pro správné stopování
-					var originalSrc = ""; 
-
-					function getCleanSrc() {
-						// Pokud hraje rádio vybrané ze seznamu, vezmeme aktuální zdroj
-						return document.getElementById("player-src").src;
-					}
-
-					// Tlačítko PŘEHRÁT
-					$playBtn.click(function() {
-						if (audio.paused || audio.src === "") {
-							// Pokud byl stream stopnutý, musíme obnovit src
-							if (audio.src === "" || audio.src === window.location.href) {
-								audio.src = getCleanSrc();
-							}
-							audio.load();
-							audio.play();
-						} else {
-							// Pokud klikne na play během hraní, chová se to jako Stop (ideální pro streamy)
-							stopStream();
-						}
-					});
-
-					function stopStream() {
-						audio.pause();
-						audio.src = ""; // Vymazáním src donutíme prohlížeč zavřít spojení a vymazat buffer
-						$playBtn.removeClass("playing");
-						// Reset ikony na původní Play
-						$playBtn.find("svg").html('<path d="M8 5v14l11-7z"/>');
-					}
-
-					// Sledování stavu přehrávače pro změnu ikony Play na Pause
-					audio.addEventListener('play', function() {
-						$playBtn.addClass("playing");
-						// Změna vnitřku SVG na ikonu Pause
-						$playBtn.find("svg").html('<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>');
-					});
-
-					audio.addEventListener('pause', function() {
-						// Pokud se pauzlo z jiného důvodu než vynulováním src
-						if(audio.src !== "") {
-							$playBtn.removeClass("playing");
-							$playBtn.find("svg").html('<path d="M8 5v14l11-7z"/>');
-						}
-					});
-
-					// POSUVNÍK HLASITOSTI
-					// Nastavení výchozí hlasitosti podle slideru (80%)
-					audio.volume = $volumeSlider.val() / 100;
-
-					$volumeSlider.on("input change", function() {
-						var val = $(this).val();
-						audio.volume = val / 100;
-						if (val > 0) {
-							audio.muted = false;
-							updateMuteIcon(false);
-						} else {
-							updateMuteIcon(true);
-						}
-					});
-
-					// TLAČÍTKO MUTE
-					$muteBtn.click(function() {
-						audio.muted = !audio.muted;
-						updateMuteIcon(audio.muted);
-					});
-
-					function updateMuteIcon(isMuted) {
-						var $icon = $("#mute-icon");
-						if (isMuted) {
-							$muteBtn.addClass("muted");
-							// Ikona přeškrtnutého reproduktoru
-							$icon.html('<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.21.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>');
-						} else {
-							$muteBtn.removeClass("muted");
-							// Klasická ikona zvuku
-							$icon.html('<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>');
-						}
-					}
-				});
-
-
-			});
-
-			const stations = {
-				beat:        { name: "Radio Beat", url: "https://ice6.abradio.cz/beat128.aac", img: "assets/covers/Czech/Beat.svg", lang: "Česky" },
-				casrock:     { name: "Radio Čas Rock", url: "https://icecast7.play.cz/casrock128.mp3", img: "assets/covers/Czech/CasRock.png", lang: "Česky" },
-				country:     { name: "Country Radio", url: "https://n10a-eu.rcs.revma.com/h7rwanvb938uv", img: "assets/covers/Czech/CountryRadio.png", lang: "Česky" },
-				evropa:      { name: "Radio Evropa2", url: "https://ice.actve.net/fm-evropa2-128", img: "assets/covers/Czech/Evropa2.svg", lang: "Česky" },
-				fajnradio:   { name: "Fajn Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/FAJN_RADIO.aac", img: "assets/covers/Czech/Fajnradio.svg", lang: "Česky" },
-				free:        { name: "Free Radio", url: "https://icecast8.play.cz/freeradio128.mp3", img: "assets/covers/Czech/Freeradio.svg", lang: "Česky" },
-				frekvence:   { name: "Radio Frekvence 1", url: "https://25703.live.streamtheworld.com/FREKVENCE1AAC.aac", img: "assets/covers/Czech/Frekvence1.svg", lang: "Česky" },
-				hey:         { name: "Radio Hey", url: "https://icecast3.play.cz/hey-radio128.mp3", img: "assets/covers/Czech/RadioHey.svg", lang: "Česky" },
-				city:        { name: "Hitradio City", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/HITRADIO_CITY_PRAHA.aac", img: "assets/covers/Czech/HitradioCity.svg", lang: "Česky" },
-				impuls:      { name: "Radio Impuls", url: "https://icecast1.play.cz/impuls128.mp3", img: "assets/covers/Czech/Impuls.svg", lang: "Česky" },
-				kiss:        { name: "Radio KissHady", url: "https://ice5.abradio.cz/kiss128.mp3", img: "assets/covers/Czech/Kiss.svg", lang: "Česky" },
-				krokodyl:    { name: "Radio Krokodýl", url: "https://icecast4.play.cz/krokodyl128.mp3", img: "assets/covers/Czech/Krokodyl.svg", lang: "Česky" },
-				metalheart:  { name: "Metal Heart Radio", url: "http://cz.radio-streamhosting.com:8000/metalheartradio128mp3", img: "assets/covers/Czech/MetalHeart.png", lang: "Česky" },
-				oldies:      { name: "Oldies Radio", url: "https://ice2.abradio.cz/oldiesradio128.aac", img: "assets/covers/Czech/Oldies.svg", lang: "Česky" },
-				rockradio:   { name: "Rockovy Radio", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/ROCK_RADIO.aac", img: "assets/covers/Czech/RockRadio.svg", lang: "Česky" },
-				rockradioalt:{ name: "Rockovy Radio - Alternative", url: "https://ice2.abradio.cz/znamkapunku128.aac", img: "assets/covers/Czech/RockRadioAlternative.svg", lang: "Česky" },
-				heavyrockradio: { name: "Rockovy Radio - Hard & Heavy", url: "https://ice2.abradio.cz/metalomanie128.aac", img: "assets/covers/Czech/RockRadioHardAHeavy.svg", lang: "Česky" },
-				rockzone:   { name: "Rock Zone", url: "https://stream.sepia.sk:8000/rockzone128.mp3", img: "assets/covers/Czech/RockZone.svg", lang: "Česky" },
-				simulator:   { name: "Simulator Radio", url: "https://simulatorradio.stream/stream", img: "assets/covers/English/SimulatorRadio.png", lang: "Anglicky" },
-				simrock:     { name: "Simulator Radio Rock", url: "https://simulatorradio.stream/rock.mp3", img: "assets/covers/English/SimulatorRadio2.png", lang: "Anglicky" },
-				simdance:    { name: "Simulator Radio Dance", url: "https://simulatorradio.stream/dance.mp3", img: "assets/covers/English/SimulatorRadio3.png", lang: "Anglicky" },
-				eska:        { name: "Eska Wroclaw (Vratislav)", url: "https://ic2.smcdn.pl/2180-1.mp3", img: "assets/covers/Polish/Eska.png", lang: "Polsky" },
-				kronehit:    { name: "Kronehit", url: "https://secureonair.krone.at/kronehit64.aac", img: "assets/covers/Austrian/Kronehit.png", lang: "Německy" }
-			};
-
-			function renderStations() {
-				const wrapper = document.querySelector('.wrapper');
-				wrapper.innerHTML = ''; // Clear existing
-
-				// Group stations by language
-				const groups = {};
-				Object.entries(stations).forEach(([key, station]) => {
-					const lang = station.lang || 'Jiné';
-					if (!groups[lang]) groups[lang] = [];
-					groups[lang].push({ key, ...station });
-				});
-
-				// Order languages: prefer Česky first, Anglicky second, then rest alphabetically
-				const preferredOrder = ['Česky', 'Anglicky'];
-				const otherLangs = Object.keys(groups).filter(l => !preferredOrder.includes(l)).sort((a, b) => a.localeCompare(b, 'cs', { sensitivity: 'base' }));
-				const orderedLangs = [
-					...preferredOrder.filter(l => groups[l]),
-					...otherLangs
-				];
-
-				orderedLangs.forEach(lang => {
-					// Language header
-					const header = document.createElement('h2');
-					header.textContent = lang;
-					header.className = 'language-header';
-					wrapper.appendChild(header);
-
-					// Sort stations alphabetically by name (use Czech locale for proper diacritics sort)
-					const items = groups[lang].sort((a, b) => a.name.localeCompare(b.name, 'cs', { sensitivity: 'base' }));
-
-					const groupDiv = document.createElement('div');
-					groupDiv.className = 'language-group';
-
-					items.forEach(station => {
-						const div = document.createElement('div');
-						div.className = 'radio-icon';
-						div.onclick = () => changeStation(station.key);
-
-						const img = document.createElement('img');
-						img.src = station.img.startsWith('http') ? station.img : `https://raw.githubusercontent.com/miraficus/RadioPlayer/main/docs/${station.img}`;
-						img.alt = station.name;
-						img.onclick = () => changeStation(station.key);
-
-						const a = document.createElement('a');
-						a.textContent = station.name;
-						a.onclick = () => changeStation(station.key);
-
-						div.appendChild(img);
-						div.appendChild(a);
-						groupDiv.appendChild(div);
-					});
-
-					wrapper.appendChild(groupDiv);
-				});
-			}
-
-			function changeStation(stationKey) {
-				const station = stations[stationKey];
-				if (!station) return;
-				const timenow = new Date();
-				document.getElementById("player-name").innerHTML = station.name;
-				document.getElementById("player-src").src = station.url + "?time=" + timenow.getTime();
-				document.getElementById("audio").load();
-				audio.src = station.url + "?time=" + timenow.getTime();
-
-
-				// Save the last used station so it can be restored on reload
-				try {
-					localStorage.setItem('lastStation', stationKey);
-				} catch (e) {
-					console.warn("Could not save lastStation to localStorage:", e);
-				}
-
-				checkautoplay();
-			}
-
-		</script>
+		<script src="js/player.js"></script>
 	</body>
 </html>

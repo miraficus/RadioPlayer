@@ -1,0 +1,109 @@
+/* Keep desktop actions inline; native details provides the mobile disclosure. */
+.header {
+	overflow: visible;
+}
+.header-menu {
+	flex: 1;
+	min-width: 0;
+}
+.header-menu summary {
+	display: none;
+}
+.header-options {
+	display: flex;
+	align-items: center;
+}
+.quality-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	max-width: 100%;
+}
+#quality-selector {
+	max-width: 100%;
+	min-height: 36px;
+	padding: 6px 10px;
+	border: 1px solid var(--accent-border-color);
+	border-radius: var(--sec-radius);
+	background: var(--ter-bg-color);
+	color: var(--main-text-color);
+	font: inherit;
+}
+#player-status {
+	margin: 8px;
+	text-align: center;
+	color: var(--sec-text-color);
+}
+.custom-controls button:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+.radio-icon:focus-visible,
+.header-menu summary:focus-visible {
+	outline: 2px solid var(--main-text-color);
+	outline-offset: -3px;
+}
+@media (max-width: 689px) {
+	.header {
+		height: 48px;
+		min-height: 48px;
+		flex-wrap: nowrap;
+	}
+	.header-menu {
+		flex: none;
+		margin-left: auto;
+	}
+	.header-menu summary {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		list-style: none;
+		cursor: pointer;
+		border-radius: var(--sec-radius);
+	}
+	.header-menu summary::-webkit-details-marker {
+		display: none;
+	}
+	.header-menu summary svg {
+		width: 24px;
+		height: 24px;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+	}
+	.header-menu[open] summary {
+		background: var(--hover-bg-color);
+	}
+	.header-options {
+		position: absolute;
+		top: 100%;
+		left: 7px;
+		right: 7px;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 8px;
+		padding: 12px;
+		max-height: calc(100vh - 64px);
+		max-height: calc(100dvh - 64px);
+		overflow-y: auto;
+		box-sizing: border-box;
+		background: var(--ter-bg-color);
+		border: 1px solid var(--accent-border-color);
+		border-radius: var(--main-radius);
+		box-shadow: 0 4px 12px var(--shadow-color);
+	}
+	.header select,
+	.header #right {
+		flex: none;
+		width: 100%;
+		max-width: none;
+		min-height: 44px;
+		margin: 0;
+		font-size: 1rem;
+	}
+}
