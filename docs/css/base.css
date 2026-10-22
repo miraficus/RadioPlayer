@@ -90,6 +90,7 @@ a { color: inherit; }
 .header-menu { min-width: 0; margin-left: auto; }
 .header-menu summary { display: none; }
 .header-options { display: flex; align-items: center; gap: 12px; }
+.header-menu:not([open]) > .header-options { display: none; }
 .menu-field { display: block; min-width: 0; }
 .field-caption { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 select {

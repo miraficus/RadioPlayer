@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	async function loadStations() {
 		try {
-			const response = await fetch('stations.json');
+			const response = await fetch('stations.json', {cache: 'no-cache'});
 			if (!response.ok) throw new Error(`HTTP ${response.status}`);
 			const data = await response.json();
 			if (!data || typeof data !== 'object' || Array.isArray(data) || !Object.keys(data).length) throw new Error('Empty station list');
