@@ -1,0 +1,30 @@
+# Copyright (C) 2022-2026 miraficus and contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Player regression tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - docs/js/player.js
+      - tests/*.test.cjs
+      - .github/workflows/player-tests.yml
+  pull_request:
+    paths:
+      - docs/js/player.js
+      - tests/*.test.cjs
+      - .github/workflows/player-tests.yml
+
+permissions:
+  contents: read
+
+jobs:
+  player:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check JavaScript syntax
+        run: node --check docs/js/player.js
+      - name: Check stream cache busting
+        run: node --test tests/*.test.cjs

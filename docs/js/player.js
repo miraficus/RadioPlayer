@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let activeStation = null;
 	let streamUrl = '';
 	let playRequest = 0;
+	let lastStreamTimestamp = 0;
 	let qualities = {};
 
 	// A blocked/full localStorage must not prevent the player from starting.
@@ -96,7 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!streamUrl) return;
 		const request = ++playRequest;
 		showStatus();
-		if (!audio.hasAttribute('src')) audio.src = streamUrl;
+		// Each connection needs a fresh URL so a restart cannot reuse cached audio.
+		const source = new URL(streamUrl);
+		lastStreamTimestamp = Math.max(Date.now(), lastStreamTimestamp + 1);
+		source.searchParams.set('time', String(lastStreamTimestamp));
+		audio.src = source.href;
 		try { await audio.play(); } catch (error) {
 			if (request !== playRequest || error.name === 'AbortError') return;
 			showStatus(error.name === 'NotAllowedError'
