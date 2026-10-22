@@ -18,7 +18,7 @@ function player(url) {
 	const audio = {src: 'https://old.example/cached', plays: 0, async play() { this.plays++; }};
 	const context = vm.createContext({
 		audio, streamUrl: url, playRequest: 0, lastStreamTimestamp: 0,
-		URL, Math, clock: 1700000000000, showStatus() {}
+		URL, Math, clock: 1700000000000, showStatus() {}, setPlaybackState() {}
 	});
 	vm.runInContext('const Date = {now: () => clock};\n' + source.slice(start, end), context);
 	return {audio, context, play: () => context.startPlayback()};
