@@ -1,4 +1,6 @@
 # Radio Player
+
+Current version: **1.5**.
 ## Description
 Website for listening to Online Radios. You can also use the radios.m3u or .pls files and listen to radios in VLC or other media player that supports theese files, or use the jellyfin version. I live in Czech Republic so i will have mostly Czech radios on this website.
 
@@ -82,6 +84,22 @@ Generation checks data and file consistency, not stream availability, real bitra
 codec support, or whether an HTTP endpoint redirects to HTTPS.
 
 ## License
-I dont have one yet.
+The original source code of Radio Player is licensed under the
+**GNU Affero General Public License, version 3 or (at your option) any later
+version** (`AGPL-3.0-or-later`). See [LICENSE](LICENSE) for the full license text.
+
+Copyright (C) 2022-2026 miraficus and contributors.
+
+This license applies to the project's original source code, scripts and
+configuration. It does **not** apply to third-party radio station names, logos or
+artwork, including the assets in `docs/assets/covers`. Rights in those materials
+remain with their respective rights holders; no permission to reuse or redistribute
+them is granted by the project's software license. See the
+[third-party assets notice](docs/assets/covers/Files%20Downloaded%20From%20Internet).
+Any other third-party components retain their own applicable licenses.
+
+The application's **Zdrojový kód** link provides access to its source code.
+If you publish a modified version, update that link to provide the corresponding
+source of the version you actually operate and comply with the AGPL requirements.
 
 
