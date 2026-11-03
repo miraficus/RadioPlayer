@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	let activeStation = null;
 	let streamUrl = '';
 	let playRequest = 0;
+	let wantsPlayback = false;
+	let reconnectTimer;
+	let reconnectAttempts = 0;
+	const mediaSession = navigator.mediaSession;
 	let lastStreamTimestamp = 0;
 	let qualities = {};
 	let language = RadioI18n.resolveLanguage(readSetting('uiLanguage'), navigator);
@@ -92,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	function setPlaybackState(state) {
 		playbackState = state;
+		if (mediaSession && state !== 'connecting') {
+			mediaSession.playbackState = state === 'playing' ? 'playing' : activeStation ? 'paused' : 'none';
+		}
 		document.getElementById('playback-state').dataset.state = state;
 		document.getElementById('playback-state-text').textContent = t('state.' + state);
 	}
@@ -152,7 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
 			showStatus(error.name === 'NotAllowedError' ? 'error.autoplay' : 'error.play');
 		}
 	}
+	function requestPlayback() {
+		if (!streamUrl || !audio.paused) return;
+		clearTimeout(reconnectTimer);
+		wantsPlayback = true;
+		reconnectAttempts = 0;
+		reconnectTimer = undefined;
+		startPlayback();
+	}
 	function stopPlayback() {
+		wantsPlayback = false;
+		clearTimeout(reconnectTimer);
+		reconnectTimer = undefined;
 		++playRequest;
 		audio.pause();
 		audio.removeAttribute('src');
@@ -161,16 +179,45 @@ document.addEventListener('DOMContentLoaded', () => {
 		setPlaybackState('stopped');
 	}
 	playButton.addEventListener('click', () => {
-		if (audio.paused) startPlayback();
+		if (audio.paused) requestPlayback();
 		else { stopPlayback(); showStatus(); }
 	});
 	audio.addEventListener('play', () => { updatePlayButton(); setPlaybackState('connecting'); });
-	audio.addEventListener('pause', () => { updatePlayButton(); setPlaybackState('stopped'); });
+	audio.addEventListener('pause', () => {
+		if (audio.paused && !audio.ended && !audio.error) wantsPlayback = false;
+		updatePlayButton();
+		setPlaybackState('stopped');
+	});
 	audio.addEventListener('playing', () => setPlaybackState('playing'));
 	audio.addEventListener('waiting', () => { if (!audio.paused) setPlaybackState('connecting'); });
-	audio.addEventListener('error', () => {
-		if (audio.hasAttribute('src')) { setPlaybackState('error'); showStatus('error.stream'); }
-	});
+	function handleStreamFailure() {
+		if (!audio.hasAttribute('src')) return;
+		if (wantsPlayback && reconnectAttempts < 2) {
+			if (reconnectTimer !== undefined) return;
+			const request = playRequest;
+			setPlaybackState('connecting');
+			reconnectTimer = setTimeout(() => {
+				reconnectTimer = undefined;
+				if (!wantsPlayback || request !== playRequest) return;
+				reconnectAttempts++;
+				startPlayback();
+			}, 1500 * (reconnectAttempts + 1));
+			return;
+		}
+		setPlaybackState('error');
+		showStatus('error.stream');
+	}
+	audio.addEventListener('error', handleStreamFailure);
+	audio.addEventListener('ended', handleStreamFailure);
+	if (mediaSession) {
+		for (const [action, handler] of Object.entries({
+			play: requestPlayback,
+			pause: stopPlayback,
+			stop: stopPlayback
+		})) {
+			try { mediaSession.setActionHandler(action, handler); } catch { /* Unsupported action. */ }
+		}
+	}
 	audio.volume = Number(volumeSlider.value) / 100;
 	volumeSlider.addEventListener('input', () => {
 		audio.volume = Number(volumeSlider.value) / 100;
@@ -189,13 +236,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		streamUrl = source;
 		showStatus();
 		setPlaybackState('ready');
-		if (resume) startPlayback();
+		if (resume) requestPlayback();
 	}
 	function changeStation(key) {
 		if (!Object.hasOwn(stations, key)) return;
 		const resume = !audio.paused || autoplay.checked;
 		activeStation = key;
 		const station = stations[key];
+		if (mediaSession && typeof MediaMetadata === 'function') {
+			mediaSession.metadata = new MediaMetadata({
+				title: station.name,
+				artist: 'RadioPlayer',
+				artwork: [{src: new URL(station.img, document.baseURI).href}]
+			});
+		}
 		const name = document.getElementById('player-name');
 		name.removeAttribute('data-i18n');
 		name.textContent = station.name;
