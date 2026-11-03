@@ -25,6 +25,7 @@
 			'error.play': 'Stream se nepodařilo spustit. Zkus jinou kvalitu nebo stanici.',
 			'error.stream': 'Stream není dostupný. Zkus jinou kvalitu nebo stanici.',
 			'error.stations': 'Seznam stanic se nepodařilo načíst. Zkus obnovit stránku.',
+			buildUnknown: 'commit nezjištěn',
 			about: 'Verze {version}\nLicence: GNU AGPLv3 nebo novější\nLicence kódu se nevztahuje na loga rádií.'
 		},
 		en: {
@@ -45,6 +46,7 @@
 			'error.play': 'Could not start the stream. Try another quality or station.',
 			'error.stream': 'The stream is unavailable. Try another quality or station.',
 			'error.stations': 'Could not load the station list. Try refreshing the page.',
+			buildUnknown: 'commit unknown',
 			about: 'Version {version}\nLicense: GNU AGPLv3 or later\nThe code license does not cover radio station logos.'
 		}
 	};
