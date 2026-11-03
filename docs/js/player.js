@@ -68,7 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		saveSetting('uiLanguage', language);
 		translatePage();
 	});
-	document.getElementById('left').addEventListener('click', () => alert(t('about', {version: '1.5'})));
+	document.getElementById('left').addEventListener('click', async () => {
+		let revision = t('buildUnknown');
+		try {
+			const response = await fetch('build-info.json', {
+				cache: 'no-store',
+				signal: globalThis.AbortSignal?.timeout?.(3000)
+			});
+			if (response.ok) {
+				const {commit} = await response.json();
+				if (typeof commit === 'string' && /^[a-f0-9]{40}$/i.test(commit)) revision = commit.slice(0, 7);
+			}
+		} catch { /* Local static servers do not process the Pages build template. */ }
+		alert(t('about', {version: '1.5 (' + revision + ')'}));
+	});
 	document.getElementById('year').textContent = '© ' + new Date().getFullYear();
 	playerLogo.addEventListener('error', () => { playerLogo.hidden = true; logoFallback.hidden = false; });
 	autoplay.checked = readSetting('autoplayChecked') === 'true';
